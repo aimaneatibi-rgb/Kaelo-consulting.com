@@ -1,15 +1,20 @@
 import { z } from "zod";
 
+/**
+ * Discovery: het audit-formulier op /start.
+ * Volgorde matcht de stappen in StartForm.tsx.
+ */
 export const DiscoverySchema = z.object({
-  bedrijf: z.string().min(2, "Geef in één zin door wat jullie doen."),
-  sector: z.string().min(2, "Kies een sector."),
-  omvang: z.string().min(1, "Geef de bedrijfsomvang door."),
-  tijdvreter: z.string().min(10, "Beschrijf wat tijd kost."),
+  probleem: z.string().min(10, "Beschrijf kort het probleem."),
+  sector: z.string().min(2, "Geef je sector door."),
+  kosten: z.string().min(10, "Wat kost dit probleem op dit moment?"),
+  opgelost: z.string().min(10, "Wat zou het opleveren als opgelost?"),
   doel: z.string().min(10, "Waar willen jullie naartoe?"),
-  geprobeerd: z.string().min(2, "Vertel wat jullie al geprobeerd hebben."),
+
   voornaam: z.string().min(1),
   achternaam: z.string().min(1),
   bedrijfsnaam: z.string().min(1),
+  functie: z.string().min(1, "Wat is je functie?"),
   email: z.string().email("Geef een geldig e-mailadres door."),
   telefoon: z.string().min(6),
 });
@@ -19,8 +24,8 @@ export type Discovery = z.infer<typeof DiscoverySchema>;
 export const KansSchema = z.object({
   titel: z.string(),
   wat: z.string(),
-  tijdsbesparing: z.string(),
-  complexiteit: z.enum(["Foundation", "Build"]),
+  impact: z.string(),
+  complexiteit: z.enum(["Foundation", "Web", "Brand", "Build"]),
 });
 
 export type Kans = z.infer<typeof KansSchema>;

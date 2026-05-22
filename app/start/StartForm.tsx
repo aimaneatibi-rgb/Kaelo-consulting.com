@@ -14,77 +14,58 @@ type Step =
       placeholder?: string;
     }
   | {
-      kind: "select";
-      key: FieldKey;
-      label: string;
-      options: string[];
-    }
-  | {
       kind: "contact";
     };
 
 const steps: Step[] = [
   {
+    kind: "textarea",
+    key: "probleem",
+    label: "Wat is het probleem waar jullie het meeste mee worstelen?",
+    placeholder:
+      "Bijv. monteurs inplannen kost uren per dag, offertes blijven liggen, klantadministratie raakt uit de hand…",
+  },
+  {
     kind: "text",
-    key: "bedrijf",
-    label: "In één zin: wat doet jullie bedrijf?",
-    placeholder: "Bijv. installatiebedrijf voor warmtepompen in Noord-Holland",
-  },
-  {
-    kind: "select",
     key: "sector",
-    label: "In welke sector zitten jullie?",
-    options: [
-      "Installatie",
-      "Productie",
-      "Logistiek",
-      "Groothandel",
-      "Bouw",
-      "Zorg",
-      "Dienstverlening",
-      "Anders",
-    ],
-  },
-  {
-    kind: "select",
-    key: "omvang",
-    label: "Hoeveel mensen werken er nu?",
-    options: ["1–5", "5–20", "20–50", "50–200", "200+"],
+    label: "In welke sector zitten jullie precies?",
+    placeholder:
+      "Bijv. installatiebedrijf warmtepompen, MKB-accountantskantoor, zorgaanbieder thuiszorg…",
   },
   {
     kind: "textarea",
-    key: "tijdvreter",
-    label: "Wat kost jullie nu het meeste tijd dat je het liefst kwijt zou willen?",
+    key: "kosten",
+    label: "Wat kost dit probleem op dit moment?",
     placeholder:
-      "Bijv. het inplannen van monteurs, het maken van offertes, het bijhouden van voorraad…",
+      "Uren per week, gemiste omzet, gefrustreerd team, klanten die weglopen — wat je voelt en kan inschatten.",
+  },
+  {
+    kind: "textarea",
+    key: "opgelost",
+    label: "Wat zou het opleveren als dit opgelost is?",
+    placeholder:
+      "Bijv. team weer aan klantcontact in plaats van admin, dubbele omzet zonder dubbele bezetting, hoofd rustig…",
   },
   {
     kind: "textarea",
     key: "doel",
-    label: "Waar willen jullie over 12 maanden staan?",
+    label: "Waar willen jullie als bedrijf naartoe?",
     placeholder:
-      "Bijv. dubbele omzet zonder dubbele bezetting, of: dezelfde omzet met halve administratie…",
-  },
-  {
-    kind: "textarea",
-    key: "geprobeerd",
-    label: "Wat hebben jullie al geprobeerd om dat op te lossen?",
-    placeholder:
-      "Bijv. software gekocht maar niemand gebruikt het, extra mensen aangenomen, nog niets…",
+      "Korte- of langetermijn-ambitie. Bijv. marktleider in Noord-Holland over 3 jaar, of: rustig groeien zonder personeel uit te branden.",
   },
   { kind: "contact" },
 ];
 
 const empty: Discovery = {
-  bedrijf: "",
+  probleem: "",
   sector: "",
-  omvang: "",
-  tijdvreter: "",
+  kosten: "",
+  opgelost: "",
   doel: "",
-  geprobeerd: "",
   voornaam: "",
   achternaam: "",
   bedrijfsnaam: "",
+  functie: "",
   email: "",
   telefoon: "",
 };
@@ -110,6 +91,7 @@ export default function StartForm() {
         data.voornaam.length > 0 &&
         data.achternaam.length > 0 &&
         data.bedrijfsnaam.length > 0 &&
+        data.functie.length > 0 &&
         /.+@.+\..+/.test(data.email) &&
         data.telefoon.length >= 6
       );
@@ -131,7 +113,9 @@ export default function StartForm() {
       setResult(json.analyse);
     } catch (e) {
       console.error(e);
-      setError("Iets ging mis. Probeer opnieuw of mail ons direct op hello@kaelo-consulting.com.");
+      setError(
+        "Iets ging mis. Probeer opnieuw of mail ons direct op hello@kaelo-consulting.com."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -207,30 +191,6 @@ export default function StartForm() {
                     className="w-full resize-none border-b-2 border-border bg-transparent pb-3 text-xl leading-relaxed outline-none transition focus:border-accent md:text-2xl"
                   />
                 )}
-                {step.kind === "select" && (
-                  <div className="flex flex-wrap gap-3">
-                    {step.options.map((opt) => {
-                      const active = data[step.key] === opt;
-                      return (
-                        <button
-                          key={opt}
-                          type="button"
-                          onClick={() => {
-                            update(step.key, opt);
-                            setTimeout(next, 200);
-                          }}
-                          className={`rounded-full border px-5 py-3 font-mono text-sm uppercase tracking-widest transition ${
-                            active
-                              ? "border-accent bg-accent text-accent-foreground"
-                              : "border-border hover:border-accent hover:text-accent"
-                          }`}
-                        >
-                          {opt}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
               </div>
             </>
           )}
@@ -252,19 +212,17 @@ export default function StartForm() {
         >
           ← Terug
         </button>
-        {step.kind !== "select" && (
-          <button
-            type="button"
-            onClick={next}
-            disabled={!canAdvance()}
-            className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            {index === total - 1 ? "Versturen" : "Volgende"}
-            <span className="transition-transform group-hover:translate-x-1" aria-hidden>
-              →
-            </span>
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={next}
+          disabled={!canAdvance()}
+          className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          {index === total - 1 ? "Versturen" : "Volgende"}
+          <span className="transition-transform group-hover:translate-x-1" aria-hidden>
+            →
+          </span>
+        </button>
       </div>
     </div>
   );
@@ -285,7 +243,8 @@ function ContactStep({
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
         <Field label="Voornaam" value={data.voornaam} onChange={(v) => update("voornaam", v)} />
         <Field label="Achternaam" value={data.achternaam} onChange={(v) => update("achternaam", v)} />
-        <Field label="Bedrijfsnaam" value={data.bedrijfsnaam} onChange={(v) => update("bedrijfsnaam", v)} className="md:col-span-2" />
+        <Field label="Bedrijfsnaam" value={data.bedrijfsnaam} onChange={(v) => update("bedrijfsnaam", v)} />
+        <Field label="Functie" value={data.functie} onChange={(v) => update("functie", v)} placeholder="Bijv. eigenaar, operations manager…" />
         <Field label="Zakelijk e-mail" type="email" value={data.email} onChange={(v) => update("email", v)} />
         <Field label="Telefoon" type="tel" value={data.telefoon} onChange={(v) => update("telefoon", v)} />
       </div>
@@ -299,12 +258,14 @@ function Field({
   onChange,
   type = "text",
   className = "",
+  placeholder,
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
   type?: string;
   className?: string;
+  placeholder?: string;
 }) {
   return (
     <label className={`block ${className}`}>
@@ -315,7 +276,8 @@ function Field({
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 w-full border-b-2 border-border bg-transparent pb-2 text-lg outline-none transition focus:border-accent"
+        placeholder={placeholder}
+        className="mt-2 w-full border-b-2 border-border bg-transparent pb-2 text-lg outline-none transition focus:border-accent placeholder:text-muted-foreground/50"
       />
     </label>
   );
@@ -372,7 +334,7 @@ function Result({ analyse, naam }: { analyse: Analyse; naam: string }) {
                 {k.complexiteit}
               </p>
               <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                {k.tijdsbesparing}
+                {k.impact}
               </p>
             </div>
             <h3 className="mt-6 font-display text-3xl tracking-tight">

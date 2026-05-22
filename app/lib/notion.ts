@@ -18,29 +18,40 @@ export async function saveLeadToNotion(d: Discovery, a: Analyse) {
       parent: { database_id: databaseId },
       properties: {
         Naam: {
-          title: [{ text: { content: `${d.voornaam} ${d.achternaam} — ${d.bedrijfsnaam}` } }],
+          title: [
+            {
+              text: {
+                content: `${d.voornaam} ${d.achternaam} — ${d.bedrijfsnaam}`,
+              },
+            },
+          ],
         },
         Email: { email: d.email },
         Telefoon: { phone_number: d.telefoon },
         Bedrijf: { rich_text: [{ text: { content: d.bedrijfsnaam } }] },
+        Functie: { rich_text: [{ text: { content: d.functie } }] },
         Sector: { rich_text: [{ text: { content: d.sector } }] },
-        Omvang: { rich_text: [{ text: { content: d.omvang } }] },
-        Samenvatting: { rich_text: [{ text: { content: a.samenvatting.slice(0, 1900) } }] },
+        Samenvatting: {
+          rich_text: [{ text: { content: a.samenvatting.slice(0, 1900) } }],
+        },
         Status: { select: { name: "Nieuw" } },
       },
       children: [
-        block("heading_2", "Wat doen ze"),
-        block("paragraph", d.bedrijf),
-        block("heading_2", "Tijdvreter"),
-        block("paragraph", d.tijdvreter),
-        block("heading_2", "Doel over 12 maanden"),
+        block("heading_2", "Probleem"),
+        block("paragraph", d.probleem),
+        block("heading_2", "Wat het probleem nu kost"),
+        block("paragraph", d.kosten),
+        block("heading_2", "Wat het oplossen oplevert"),
+        block("paragraph", d.opgelost),
+        block("heading_2", "Doel van het bedrijf"),
         block("paragraph", d.doel),
-        block("heading_2", "Wat hebben ze al geprobeerd"),
-        block("paragraph", d.geprobeerd),
         block("heading_2", "AI-analyse — Drie kansen"),
         ...a.kansen.flatMap((k) => [
           block("heading_3", `${k.titel} — ${k.complexiteit}`),
-          block("paragraph", `${k.wat}\nGeschatte tijdsbesparing: ${k.tijdsbesparing}`),
+          block(
+            "paragraph",
+            `${k.wat}\nVerwachte impact: ${k.impact}`
+          ),
         ]),
       ],
     });
@@ -51,7 +62,10 @@ export async function saveLeadToNotion(d: Discovery, a: Analyse) {
   }
 }
 
-function block(type: "heading_2" | "heading_3" | "paragraph", text: string) {
+function block(
+  type: "heading_2" | "heading_3" | "paragraph",
+  text: string
+) {
   const rich_text = [{ type: "text" as const, text: { content: text } }];
   switch (type) {
     case "heading_2":

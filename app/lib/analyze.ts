@@ -2,27 +2,38 @@ import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import { Discovery, Analyse, AnalyseSchema } from "./schema";
 
-const SYSTEM_PROMPT = `Je bent een senior strategist bij Kaelo, een Nederlands AI-build studio dat MKB-bedrijven helpt om werk weg te halen via custom software en AI-systemen.
+const SYSTEM_PROMPT = `Je bent een senior strategist bij Kaelo, een Nederlandse AI-build studio dat MKB-bedrijven en startups helpt om werk weg te halen via custom software, web, branding en AI-systemen.
 
-Je krijgt het verhaal van een prospect via een korte intake. Jouw taak: lees het verhaal scherp en bedenk drie concrete kansrichtingen waar Kaelo direct mee aan de slag zou kunnen.
+Je krijgt een korte intake. Daarin staat:
+- het probleem waar het bedrijf het meest mee worstelt
+- de sector
+- wat dat probleem op dit moment kost (tijd, geld, frustratie)
+- wat het zou opleveren als het opgelost is
+- waar het bedrijf als geheel naartoe wil
+
+Jouw taak: lees scherp en bedenk drie concrete kansrichtingen waar Kaelo direct mee aan de slag zou kunnen om dit probleem op te lossen en het bedrijf richting hun doel te brengen.
 
 Richtlijnen:
 - Schrijf in het Nederlands.
-- Wees concreet en specifiek — niet "we kunnen processen optimaliseren" maar "we bouwen een planning-dashboard dat monteurs zelf hun routes laat plannen op basis van postcodes en spoedmeldingen".
+- Wees concreet en specifiek — niet "we optimaliseren processen" maar "we bouwen een planning-dashboard dat monteurs zelf hun route plannen op basis van postcode en spoedmeldingen".
 - Wees eerlijk. Als iets pas in fase 2 kan, zeg dat.
 - Geen marketingtaal, geen buzzwords, geen uitroeptekens.
-- Tijdsbesparing: schat realistisch in uren per week of percentage administratieve last. Mag een range zijn ("ca. 6–10 uur per week").
-- Complexiteit: "Foundation" = standaard bouwsteen (CRM/dashboard/workflow); "Build" = custom software/AI-agent.
+- Impact: vertaal naar concrete waarde — "ca. 6–10 uur/week minder admin" of "30% snellere offertes" of "team kan zich richten op klantcontact in plaats van planning".
+- Complexiteit: kies één van:
+  - "Foundation" = standaard bouwsteen (CRM/dashboard/workflow/portal)
+  - "Web" = website, landing page, klantportaal of brand-driven webexperience
+  - "Brand" = positionering / brandbook / brand-workflow
+  - "Build" = custom software, custom AI-agent, SaaS, integratielaag
 
 Output formaat: geldige JSON die exact dit schema volgt:
 {
-  "samenvatting": "Eén tot twee zinnen die in plain Nederlands samenvatten waar dit bedrijf staat en wat de grootste kans is.",
+  "samenvatting": "Eén tot twee zinnen die in plain Nederlands samenvatten waar dit bedrijf staat, wat het probleem in essentie is, en wat de grootste kans is.",
   "kansen": [
     {
       "titel": "Korte naam van de kans (max 6 woorden)",
-      "wat": "Eén heldere zin over wat we zouden bouwen.",
-      "tijdsbesparing": "ca. X uur/week, of: X% minder administratie",
-      "complexiteit": "Foundation" | "Build"
+      "wat": "Eén heldere zin over wat we zouden bouwen, gericht op het probleem.",
+      "impact": "Concrete waarde — uren per week, % sneller, of wat het team teruggeeft.",
+      "complexiteit": "Foundation" | "Web" | "Brand" | "Build"
     },
     ... (precies 3)
   ]
@@ -32,24 +43,24 @@ Retourneer ALLEEN de JSON, geen omhullende tekst.`;
 
 function fallbackAnalyse(d: Discovery): Analyse {
   return {
-    samenvatting: `${d.bedrijfsnaam} is actief in ${d.sector}. Op basis van het verhaal liggen er meerdere kansen om handmatig werk te automatiseren en het team te ontzorgen.`,
+    samenvatting: `${d.bedrijfsnaam} (${d.sector}) heeft een concreet probleem waar nu tijd en aandacht naar gaat. Op basis van het verhaal zien we drie kansen om dat weg te halen en richting jullie doel te bewegen.`,
     kansen: [
       {
         titel: "Centraal werkdashboard",
         wat: "Eén plek waar bedrijfsinformatie, taken en planning samenkomen — gekoppeld aan jullie bestaande systemen.",
-        tijdsbesparing: "ca. 5–8 uur/week",
+        impact: "ca. 5–8 uur/week minder admin",
         complexiteit: "Foundation",
       },
       {
         titel: "Geautomatiseerde mailflows",
         wat: "Klantcommunicatie en interne notificaties die automatisch lopen op de juiste momenten in jullie proces.",
-        tijdsbesparing: "ca. 3–6 uur/week",
+        impact: "ca. 3–6 uur/week, minder gemiste opvolging",
         complexiteit: "Foundation",
       },
       {
         titel: "AI-agent voor terugkerend werk",
-        wat: "Custom agent die het meest tijdrovende stuk uit jullie dagelijkse routine overneemt en aan jullie team teruggeeft.",
-        tijdsbesparing: "ca. 8–15 uur/week",
+        wat: "Custom agent die het meest tijdrovende stuk uit jullie dagelijkse routine overneemt.",
+        impact: "ca. 8–15 uur/week, team kan zich richten op klantwerk",
         complexiteit: "Build",
       },
     ],
@@ -66,19 +77,19 @@ export async function analyseDiscovery(d: Discovery): Promise<Analyse> {
 
   const userPrompt = `Bedrijf: ${d.bedrijfsnaam}
 Sector: ${d.sector}
-Omvang: ${d.omvang}
+Contactpersoon: ${d.voornaam} ${d.achternaam} (${d.functie})
 
-Wat doen ze:
-${d.bedrijf}
+Probleem:
+${d.probleem}
 
-Wat kost ze nu het meeste tijd:
-${d.tijdvreter}
+Wat kost dit probleem nu:
+${d.kosten}
 
-Waar willen ze over 12 maanden staan:
-${d.doel}
+Wat zou het opleveren als opgelost:
+${d.opgelost}
 
-Wat hebben ze al geprobeerd:
-${d.geprobeerd}`;
+Doel van het bedrijf:
+${d.doel}`;
 
   try {
     const res = await client.messages.create({

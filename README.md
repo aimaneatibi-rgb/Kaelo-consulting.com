@@ -50,9 +50,12 @@ Push naar `main` → Vercel deployt automatisch. Zet de env vars uit `.env.examp
 - `Email` — email
 - `Telefoon` — phone_number
 - `Bedrijf` — rich_text
+- `Functie` — rich_text
 - `Sector` — rich_text
-- `Omvang` — rich_text
 - `Samenvatting` — rich_text
 - `Status` — select (met optie `Nieuw`)
+
+Page-body krijgt automatisch de uitgewerkte intake (probleem, kosten, opgelost, doel)
+plus de AI-analyse met de drie kansen.
 
 Mailing-workflows zijn losgekoppeld — ze triggeren op `Status` in Notion zelf.

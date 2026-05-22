@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 const paragrafen = [
   "De meeste bedrijven proberen te groeien door meer te doen. Meer mensen, meer marketing, meer uren, meer rapporten. Dat werkt soms voor 2x. Voor 10x werkt het nooit.",
   "10x is geen 2x met een tandje erbij. 10x is een ander soort beweging. Je moet werk wéghalen, niet erbij stapelen.",
-  "Daarom bestaat Kaelo. Wij bouwen software die het saaie, repetitieve werk doet. Het werk waar geen mens gelukkig van wordt en waar geen klant op zit te wachten.",
-  "We doen dat niet vanaf een afstand. We komen langs. Een dag op jullie werkvloer. We zien wat er echt gebeurt — niet wat er op het organogram staat. Dat is het verschil tussen software die werkt en software die in een la verdwijnt.",
-  "En we leveren in vier weken. Niet “in vier tot zes weken”. Niet “we doen ons best”. Vier weken. Vaste datum. Dat is de enige eerlijke manier om met een MKB-ondernemer te werken — jullie hebben geen jaar om te wachten.",
+  "Daarom bestaat Kaelo. Wij bouwen software — code, web, CRM, dashboards, AI-agents. Plus de branding eromheen: positionering, brandbook, brand-workflows. Geen advertenties, geen photoshoots, geen rapporten. Alleen de dingen die nodig zijn om het saaie werk uit jullie dagen te halen.",
+  "We werken remote. Als jullie systeem complex is en het de build écht beter maakt, komen we een halve dag meedraaien. Niet voor de show. Een systeem dat op papier werkt maar in de praktijk faalt is een rapport met een UI eromheen.",
+  "En we werken snel. Soms in een week. Soms in zes. Wat het project ook vraagt — we noemen vooraf een vaste datum, en die halen we. Dat is de enige eerlijke manier om met een MKB-ondernemer te werken — jullie hebben geen jaar om te wachten.",
 ];
 
 export default function ManifestPage() {

@@ -114,7 +114,7 @@ export default function StartForm() {
     } catch (e) {
       console.error(e);
       setError(
-        "Iets ging mis. Probeer opnieuw of mail ons direct op hello@kaelo-consulting.com."
+        "Iets ging mis. Probeer opnieuw of mail ons direct op hallo@kaelo-consulting.com."
       );
     } finally {
       setSubmitting(false);
@@ -352,7 +352,7 @@ function Result({ analyse, naam }: { analyse: Analyse; naam: string }) {
           We nemen binnen één werkdag contact op om de kennismaking in te plannen.
         </p>
         <p className="mt-4 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          Of mail ons direct: hello@kaelo-consulting.com
+          Of mail ons direct: hallo@kaelo-consulting.com
         </p>
       </div>
     </div>

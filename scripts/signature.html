@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kaelo — Email Signature</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background: #f4f4f4;
+        font-family: "Inter", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .frame {
+        padding: 80px;
+        display: inline-block;
+      }
+      .signature {
+        width: 600px;
+        background: #0a0a0a;
+        color: #f5f5f5;
+        padding: 36px 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      .accent-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 100%;
+        background: #e5ff00;
+      }
+      .row {
+        display: flex;
+        gap: 32px;
+        align-items: flex-end;
+      }
+      .left {
+        flex: 1;
+      }
+      .right {
+        flex-shrink: 0;
+        text-align: right;
+      }
+      .wordmark {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-weight: 500;
+        font-size: 68px;
+        letter-spacing: -0.04em;
+        line-height: 0.85;
+        color: #f5f5f5;
+      }
+      .wordmark .dot {
+        color: #e5ff00;
+      }
+      .tagline {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+        color: #8a8a8a;
+        margin-top: 12px;
+      }
+      .divider {
+        height: 1px;
+        background: #2a2a2a;
+        margin: 28px 0 24px;
+      }
+      .name {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+        color: #f5f5f5;
+      }
+      .role {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #8a8a8a;
+        margin-top: 6px;
+      }
+      .contact {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        line-height: 1.7;
+        color: #c5c5c5;
+        text-align: right;
+      }
+      .contact a {
+        color: #c5c5c5;
+        text-decoration: none;
+      }
+      .contact .accent {
+        color: #e5ff00;
+      }
+      .meta {
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #5a5a5a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="signature">
+        <div class="accent-bar"></div>
+
+        <div class="wordmark">
+          Kaelo<span class="dot">.</span>
+        </div>
+        <div class="tagline">Wij bouwen het systeem.</div>
+
+        <div class="divider"></div>
+
+        <div class="row">
+          <div class="left">
+            <div class="name" data-name>Aimane Atibi</div>
+            <div class="role" data-role>Founder · Builder</div>
+          </div>
+          <div class="right">
+            <div class="contact">
+              <a href="mailto:hallo@kaelo-consulting.com">hallo@kaelo-consulting.com</a><br />
+              <a href="tel:+31621365990">+31 6 21 36 59 90</a><br />
+              <a href="https://www.kaelo-consulting.com"
+                ><span class="accent">→</span> kaelo-consulting.com</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="meta">
+          <span>AI Build Studio</span>
+          <span>NL · BE — Remote first</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

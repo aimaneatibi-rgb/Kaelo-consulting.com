@@ -33,7 +33,7 @@ export default function Footer() {
             Contact
           </p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="mailto:hello@kaelo-consulting.com" className="hover:text-accent">hello@kaelo-consulting.com</a></li>
+            <li><a href="mailto:hallo@kaelo-consulting.com" className="hover:text-accent">hallo@kaelo-consulting.com</a></li>
             <li><a href="tel:+31621365990" className="hover:text-accent">+31 6 21 36 59 90</a></li>
           </ul>
         </div>

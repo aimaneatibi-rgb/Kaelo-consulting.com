@@ -44,18 +44,38 @@ Push naar `main` → Vercel deployt automatisch. Zet de env vars uit `.env.examp
 
 ## Notion CRM
 
-`/api/discovery` schrijft naar een Notion-database met deze property-namen (case sensitive):
+De site sluit aan op de **bestaande Kaelo CRM-workspace** in Notion. Geen nieuwe
+databases — we schrijven direct in jouw `🌱 Leads` database zodat de Hot Leads / Inbox /
+Funnel views meteen werken.
 
-- `Naam` — title
-- `Email` — email
-- `Telefoon` — phone_number
-- `Bedrijf` — rich_text
-- `Functie` — rich_text
-- `Sector` — rich_text
-- `Samenvatting` — rich_text
-- `Status` — select (met optie `Nieuw`)
+### Setup (eenmalig)
+1. Ga naar https://www.notion.so/profile/integrations en maak een **internal
+   integration** (kies de workspace waar de Kaelo CRM in staat).
+2. Kopieer het **Internal Integration Token** → zet als `NOTION_API_KEY` in `.env.local`
+   (en in Vercel project settings).
+3. Open de **📊 Kaelo CRM** page in Notion, klik `...` rechtsboven → **Connections** →
+   voeg jouw integration toe. Permission inherit dan naar alle child-databases.
 
-Page-body krijgt automatisch de uitgewerkte intake (probleem, kosten, opgelost, doel)
-plus de AI-analyse met de drie kansen.
+### Property-mapping (`/api/discovery` → 🌱 Leads)
+- `Naam` (title) ← `${voornaam} ${achternaam} — ${bedrijfsnaam}`
+- `Email` ← email
+- `Telefoon` ← telefoon
+- `Bedrijf (ruw)` ← bedrijfsnaam (raw — gekoppeld bedrijf via Notion-relation komt later)
+- `Functie` ← functie
+- `Houdt mij wakker` ← probleem
+- `Verhaal` ← sector + kosten + opgelost + doel (gecombineerd)
+- `Verdieping antwoorden` ← AI-samenvatting
+- `Aanmelddatum` ← server timestamp
+- `Lead bron` ← `🌱 Website Onboarding`
+- `Lead status` ← `🆕 Nieuw`
+- `Form Type` ← `onboarding`
+- `Source URL` ← https://www.kaelo-consulting.com/start
 
-Mailing-workflows zijn losgekoppeld — ze triggeren op `Status` in Notion zelf.
+De page-body krijgt automatisch nette secties: Probleem / Wat het kost /
+Wat oplossen oplevert / Doel / AI-samenvatting / Drie kansen.
+
+### Workflow
+Nieuwe leads landen automatisch in **🆕 Inbox** + **📊 Funnel** (kolom "🆕 Nieuw").
+Hot leads filterview pakt ze op op basis van **Lead Score**.
+Bij conversie: maak handmatig een Deal aan (relation gaat automatisch via
+`Converted Deal`), en daarna een **🚀 Projecten** record met Lead/Deal/Klant gelinkt.

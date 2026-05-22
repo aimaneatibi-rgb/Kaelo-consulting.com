@@ -34,6 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
+# Intern brandbook — bewust niet in repo
+BRANDBOOK.md
+
 # vercel
 .vercel
 

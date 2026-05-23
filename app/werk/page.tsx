@@ -114,7 +114,7 @@ function CaseHeroImage() {
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
           <Photo
-            photo={photos.oplossing}
+            photo={photos.klok}
             className="aspect-[16/10] w-full rounded-2xl"
             sizes="(max-width: 1600px) 100vw, 1600px"
           />

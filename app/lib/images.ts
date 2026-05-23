@@ -76,6 +76,14 @@ export const photos = {
     aspect: 1.5,
   },
 
+  /** Klok case (op /werk) — persoon met "STAFF" shirt, past direct bij staffing-platform context. */
+  klok: {
+    src: "https://images.unsplash.com/photo-1653930351140-d8dca047455e",
+    alt: "Een persoon draagt een zwart shirt met de tekst STAFF — de uitzendkracht achter de Klok-flow.",
+    credit: { name: "Joao Viegas", href: "https://unsplash.com/@joaopcviegas" },
+    aspect: 1.5,
+  },
+
   /** Voor wie — werkvloer-team, blijft als anchor voor menselijke factor. */
   voorwie: {
     src: "https://images.unsplash.com/photo-1652211955967-99c892925469",

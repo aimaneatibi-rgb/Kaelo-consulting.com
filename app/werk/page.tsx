@@ -110,13 +110,13 @@ function CaseHero() {
 
 function CaseHeroImage() {
   return (
-    <section className="px-6 pb-16 md:px-12">
-      <div className="mx-auto max-w-[1600px]">
+    <section className="px-6 pb-8 md:px-12">
+      <div className="mx-auto max-w-3xl">
         <Reveal>
           <Photo
             photo={photos.klok}
-            className="aspect-[16/10] w-full rounded-2xl"
-            sizes="(max-width: 1600px) 100vw, 1600px"
+            className="aspect-[21/9] w-full rounded-xl"
+            sizes="(max-width: 768px) 100vw, 768px"
           />
         </Reveal>
       </div>

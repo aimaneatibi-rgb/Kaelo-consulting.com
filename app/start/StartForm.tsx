@@ -96,7 +96,7 @@ export default function StartForm() {
         data.telefoon.length >= 6
       );
     }
-    return data[step.key].length >= (step.kind === "textarea" ? 10 : 2);
+    return data[step.key].length >= 1;
   }
 
   async function submit() {

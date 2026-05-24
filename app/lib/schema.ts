@@ -5,11 +5,11 @@ import { z } from "zod";
  * Volgorde matcht de stappen in StartForm.tsx.
  */
 export const DiscoverySchema = z.object({
-  probleem: z.string().min(10, "Beschrijf kort het probleem."),
-  sector: z.string().min(2, "Geef je sector door."),
-  kosten: z.string().min(10, "Wat kost dit probleem op dit moment?"),
-  opgelost: z.string().min(10, "Wat zou het opleveren als opgelost?"),
-  doel: z.string().min(10, "Waar willen jullie naartoe?"),
+  probleem: z.string().min(1, "Vul iets in."),
+  sector: z.string().min(1, "Vul iets in."),
+  kosten: z.string().min(1, "Vul iets in."),
+  opgelost: z.string().min(1, "Vul iets in."),
+  doel: z.string().min(1, "Vul iets in."),
 
   voornaam: z.string().min(1),
   achternaam: z.string().min(1),

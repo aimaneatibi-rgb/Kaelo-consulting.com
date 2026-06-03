@@ -138,21 +138,13 @@ function Probleem() {
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-16 max-w-3xl text-xl leading-snug text-muted-foreground md:text-3xl">
-            Meer mensen. Meer marketing. Meer uren. Meer vergaderingen om de extra uren
-            te coördineren. Meer rapporten om de vergaderingen te rechtvaardigen.
+            Meer mensen, meer uren, meer rapporten — zo proberen de meeste bedrijven
+            hun 2x te halen. En precies zó halen ze hun 10x nooit.
           </p>
         </Reveal>
-        <Reveal delay={0.35}>
-          <p className="mt-12 font-display text-[clamp(1.75rem,5vw,4rem)] leading-[1.05] tracking-tight">
-            Precies de manier waarop bedrijven 2x proberen te halen<br />
-            <span className="text-muted-foreground">— is precies de reden waarom ze 10x niet halen.</span>
-          </p>
-        </Reveal>
-        <Reveal delay={0.5}>
-          <p className="mt-24 font-display text-[clamp(1.5rem,4vw,3rem)] leading-tight tracking-tight">
-            10x vraagt geen extra werk.
-            <br />
-            <span className="text-accent">10x vraagt minder werk.</span>
+        <Reveal delay={0.4}>
+          <p className="mt-16 font-display text-[clamp(2rem,6vw,5rem)] leading-tight tracking-tight">
+            10x vraagt <span className="text-accent">minder</span> werk.
           </p>
         </Reveal>
       </div>
@@ -161,23 +153,25 @@ function Probleem() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* FULL BLEED DIVIDER — beeld als ademruimte tussen probleem en oplossing      */
+/* DIVIDER — typografisch statement tussen probleem en oplossing               */
 /* -------------------------------------------------------------------------- */
 
 function FullBleedDivider() {
   return (
-    <section className="relative h-[60svh] overflow-hidden md:h-[80svh]">
-      <Photo
-        photo={photos.divider}
-        className="absolute inset-0 h-full w-full"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/30 to-transparent" />
-      <Reveal className="absolute inset-x-0 bottom-0 px-6 pb-12 md:px-12 md:pb-16">
-        <p className="font-display text-[clamp(2rem,6vw,5rem)] leading-[0.95] tracking-tight">
-          Werk weg-automatiseren<span className="text-accent">.</span>
-        </p>
-      </Reveal>
+    <section className="relative flex min-h-[60svh] items-center justify-center overflow-hidden border-t border-border px-6 md:min-h-[70svh] md:px-12">
+      <div className="mx-auto max-w-[1600px] text-center">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            Werk weghalen
+          </p>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <h2 className="mt-8 font-display text-[clamp(3rem,12vw,13rem)] font-medium leading-[0.88] tracking-[-0.04em]">
+            Niet stapelen.<br />
+            <span className="text-muted-foreground">Weghalen</span><span className="text-accent">.</span>
+          </h2>
+        </Reveal>
+      </div>
     </section>
   );
 }
@@ -201,34 +195,25 @@ function Oplossing() {
             Schaf het werk af<span className="text-accent">.</span>
           </h2>
         </Reveal>
-        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal delay={0.2} className="lg:col-span-5">
-            <Photo
-              photo={photos.oplossing}
-              className="aspect-[4/5] w-full rounded-2xl"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
+        <div className="mt-16 max-w-4xl space-y-10">
+          <Reveal delay={0.2}>
+            <p className="text-xl leading-relaxed md:text-2xl">
+              Wij bouwen software die het saaie werk doet. Het werk dat tijd kost,
+              fouten maakt, mensen uitput, en niemand mist als het weg is.
+            </p>
           </Reveal>
-          <div className="lg:col-span-7 lg:pt-8">
-            <Reveal delay={0.3}>
-              <p className="text-xl leading-relaxed md:text-2xl">
-                Wij bouwen software die het saaie werk doet. Het werk dat tijd kost,
-                fouten maakt, mensen uitput, en niemand mist als het weg is.
-              </p>
-            </Reveal>
-            <Reveal delay={0.4}>
-              <p className="mt-8 text-xl leading-relaxed text-muted-foreground md:text-2xl">
-                Wat overblijft is het werk waar jullie voor in dit vak zitten.
-              </p>
-            </Reveal>
-            <Reveal delay={0.5}>
-              <p className="mt-12 font-display text-2xl leading-tight tracking-tight md:text-4xl">
-                Personeel in zijn kracht.<br />
-                Marge omhoog.<br />
-                Hoofd rustig<span className="text-accent">.</span>
-              </p>
-            </Reveal>
-          </div>
+          <Reveal delay={0.3}>
+            <p className="text-xl leading-relaxed text-muted-foreground md:text-2xl">
+              Wat overblijft is het werk waar jullie voor in dit vak zitten.
+            </p>
+          </Reveal>
+          <Reveal delay={0.4}>
+            <p className="font-display text-2xl leading-tight tracking-tight md:text-5xl">
+              Personeel in zijn kracht.<br />
+              Marge omhoog.<br />
+              Hoofd rustig<span className="text-accent">.</span>
+            </p>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -242,26 +227,26 @@ function Oplossing() {
 const stappen = [
   {
     nr: "01",
-    titel: "Je vertelt ons je bedrijf",
-    body: "Korte AI-conversatie op deze site. Wij weten al waar het schuurt voordat de telefoon gaat.",
+    titel: "Vertel ons over je bedrijf",
+    body: "Een paar korte vragen op de site. Jij in je eigen woorden: wat speelt er, waar wil je naartoe. Wij lezen mee — geen vragenlijst van 40 vragen.",
     duur: "± 5 min",
   },
   {
     nr: "02",
     titel: "Kennismaking + offerte",
-    body: "Remote of in-person — meestal genoeg om scope helder te krijgen. Daarna een concrete roadmap met vaste prijs en vaste opleverdatum.",
+    body: "Een gesprek mens-tot-mens. Remote of bij jullie aan tafel. Daarna een concrete roadmap met vaste prijs en vaste opleverdatum.",
     duur: "Binnen 5 werkdagen",
   },
   {
     nr: "03",
-    titel: "Bij akkoord: kort meedraaien",
-    body: "Mocht het systeem complex zijn, komen we graag langs en even meedraaien om dingen operationeel beter te begrijpen.",
-    duur: "Optioneel ½ dag",
+    titel: "We staan dicht op je werkdag",
+    body: "Korte demo's, snelle reactie, geen verstop-acts. Mocht het systeem complex zijn, komen we een halve dag meedraaien om het écht te begrijpen.",
+    duur: "Doorlopend",
   },
   {
     nr: "04",
     titel: "Wij bouwen, jij draait",
-    body: "Remote, met wekelijkse demo. Snel als het kan, langer als het project dat vraagt — maar altijd op de vooraf afgesproken datum.",
+    body: "Wekelijkse demo. Snel als het kan, langer als het project dat vraagt — maar altijd op de vooraf afgesproken datum.",
     duur: "Vaste datum",
   },
 ];

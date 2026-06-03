@@ -28,11 +28,11 @@ export const photos = {
     aspect: 1.5,
   },
 
-  /** Full-bleed divider — robotarm laswerk, letterlijk geautomatiseerde productie. */
+  /** Full-bleed divider — blauwe industriële robotarm, automation zonder auto-context. */
   divider: {
-    src: "https://images.unsplash.com/photo-1567789884554-0b844b597180",
-    alt: "Robotarm voert geautomatiseerde lasbewerking uit op een productielijn.",
-    credit: { name: "Lenny Kuhne", href: "https://unsplash.com/@lennykuhne" },
+    src: "https://images.unsplash.com/photo-1716191299980-a6e8827ba10b",
+    alt: "Blauwe industriële robotarm in een fabrieksomgeving — geautomatiseerd werk in actie.",
+    credit: { name: "Homa Appliances", href: "https://unsplash.com/@homaappliances" },
     aspect: 1.6,
   },
 
@@ -44,11 +44,11 @@ export const photos = {
     aspect: 1.5,
   },
 
-  /** Foundation product-card — live data-monitor. */
+  /** Foundation product-card — black & silver laptop met code/editor. */
   foundation: {
-    src: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74",
-    alt: "Actief data-monitoringscherm met live-meetwaarden.",
-    credit: { name: "Stephen Dawson", href: "https://unsplash.com/@srd844" },
+    src: "https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b",
+    alt: "Een zwarte laptop met code en design tools — het fundament van een softwarebedrijf.",
+    credit: { name: "path digital", href: "https://unsplash.com/@pathdigital" },
     aspect: 1.5,
   },
 
@@ -60,11 +60,11 @@ export const photos = {
     aspect: 1.5,
   },
 
-  /** Brand product-card — rode tulp tussen gele tulpen, klassieke "stand out / andere richting" metafoor. */
+  /** Brand product-card — color code book / Pantone-achtige kleurstalen, vangt positionering & brand-systeem. */
   brand: {
-    src: "https://images.unsplash.com/photo-1516659257916-7be846591235",
-    alt: "Een rode tulp staat tussen gele tulpen — opvallen tussen de massa.",
-    credit: { name: "Rupert Britton", href: "https://unsplash.com/@rupert_britton" },
+    src: "https://images.unsplash.com/photo-1561070791-2526d30994b5",
+    alt: "Een color code book met opengeklapte kleurstalen — een kleurenpalet zoals een brand-systeem werkt.",
+    credit: { name: "Balázs Kétyi", href: "https://unsplash.com/@balazsketyi" },
     aspect: 1.5,
   },
 

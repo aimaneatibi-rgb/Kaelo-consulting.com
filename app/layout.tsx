@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
 import SmoothScroll from "./components/SmoothScroll";
+import Splash from "./components/Splash";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,6 +54,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} kaelo-grain`}
     >
       <body className="min-h-screen bg-background text-foreground">
+        <Splash />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

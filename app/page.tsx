@@ -35,7 +35,8 @@ const heroWords = [
   "het systeem",
   "de CRM",
   "het dashboard",
-  "de software",
+  "de webapp",
+  "de iOS-app",
   "de AI-agent",
   "de website",
   "de automatisering",
@@ -44,11 +45,11 @@ const heroWords = [
 const heroTicker = [
   "CRM",
   "DASHBOARDS",
-  "WEB",
+  "WEB APPS",
+  "iOS APPS",
   "BRANDING",
   "CUSTOM SAAS",
   "AI-AGENTS",
-  "WORKFLOWS",
   "AUTOMATION",
 ];
 
@@ -320,7 +321,7 @@ const producten = [
   {
     label: "Build",
     titel: "Custom software",
-    body: "SaaS, AI-agents die je werk doen, integratie-laag tussen jullie bestaande tools.",
+    body: "Webapps en iOS-apps voor B2B en B2C. SaaS-platformen, AI-agents die je werk doen, integratie-laag tussen jullie bestaande tools.",
     duur: "Custom",
     photo: photos.build,
   },

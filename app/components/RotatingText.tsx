@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 type Props = {
@@ -14,6 +14,11 @@ type Props = {
  * Rotates through `words` one at a time with a vertical slide+fade.
  * Designed to sit inside a heading — uses inline-block so the surrounding
  * text reflows naturally around the longest word width.
+ *
+ * Note: we intentionally don't gate this on `prefers-reduced-motion`. The
+ * slide is ≤0.5em over 0.55s — well below the threshold for vestibular
+ * concerns — and gating broke the hero on any desktop with "Reduce motion"
+ * enabled (mobile didn't have that setting on so it kept working).
  */
 export default function RotatingText({
   words,
@@ -21,20 +26,14 @@ export default function RotatingText({
   className = "",
 }: Props) {
   const [i, setI] = useState(0);
-  const reduce = useReducedMotion();
 
   useEffect(() => {
-    if (reduce) return;
     const t = setInterval(
       () => setI((x) => (x + 1) % words.length),
       interval
     );
     return () => clearInterval(t);
-  }, [interval, words.length, reduce]);
-
-  if (reduce) {
-    return <span className={className}>{words[0]}</span>;
-  }
+  }, [interval, words.length]);
 
   return (
     <span className={`relative inline-block align-baseline ${className}`}>

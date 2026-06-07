@@ -72,6 +72,38 @@ export async function sendLeadNotification(
 }
 
 /* -------------------------------------------------------------------------- */
+/* /start — auto-bedankje naar de prospect zelf                                */
+/* -------------------------------------------------------------------------- */
+
+export async function sendThankYouToLead(d: Discovery): Promise<SendResult> {
+  const client = getClient();
+  if (!client) {
+    console.warn("[Kaelo] RESEND_API_KEY ontbreekt — thank-you mail overgeslagen.");
+    return { ok: false, reason: "missing-env" };
+  }
+
+  try {
+    const result = await client.emails.send({
+      from: envFrom(),
+      to: d.email,
+      // Replies van de prospect gaan naar Kaelo's inbox
+      replyTo: envTo(),
+      subject: `Bedankt, ${d.voornaam} — we lezen je verhaal`,
+      html: thankYouHtml(d),
+      text: thankYouText(d),
+    });
+    if (result.error) {
+      console.error("[Kaelo] Resend thank-you error:", result.error);
+      return { ok: false, reason: "api-error" };
+    }
+    return { ok: true, id: result.data?.id };
+  } catch (err) {
+    console.error("[Kaelo] Resend thank-you mislukt:", err);
+    return { ok: false, reason: "api-error" };
+  }
+}
+
+/* -------------------------------------------------------------------------- */
 /* Generiek — voor /contact en andere formulieren                              */
 /* -------------------------------------------------------------------------- */
 
@@ -212,6 +244,83 @@ ${kansen}
 ---
 
 Reply om direct ${d.voornaam} te mailen, of bel: ${d.telefoon}
+`;
+}
+
+function thankYouHtml(d: Discovery): string {
+  return `<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bedankt — Kaelo</title>
+</head>
+<body style="margin:0;padding:0;background:#0a0a0a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#f5f5f5;line-height:1.55;">
+  <div style="max-width:640px;margin:0 auto;padding:40px 24px;">
+
+    <!-- Kaelo wordmark -->
+    <div style="margin-bottom:40px;">
+      <span style="font-size:36px;font-weight:600;letter-spacing:-0.04em;color:#f5f5f5;">Kaelo</span><span style="font-size:36px;font-weight:600;color:#e5ff00;">.</span>
+    </div>
+
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8a8a8a;margin:0 0 16px;">
+      We hebben je verhaal binnen
+    </p>
+
+    <h1 style="font-size:36px;margin:0 0 24px;color:#f5f5f5;line-height:1.15;letter-spacing:-0.02em;">
+      Bedankt, ${esc(d.voornaam)}<span style="color:#e5ff00;">.</span>
+    </h1>
+
+    <p style="font-size:17px;color:#c5c5c5;margin:0 0 16px;">
+      We hebben je verhaal over <strong style="color:#f5f5f5;">${esc(d.bedrijfsnaam)}</strong> goed ontvangen. We lezen het rustig door.
+    </p>
+
+    <p style="font-size:17px;color:#c5c5c5;margin:0 0 32px;">
+      <strong style="color:#f5f5f5;">Binnen één werkdag</strong> nemen we persoonlijk contact op met de drie richtingen waar wij voor jullie zouden beginnen — en hoe we dat concreet aanpakken.
+    </p>
+
+    <hr style="border:none;border-top:1px solid #1f1f1f;margin:32px 0;" />
+
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.25em;color:#e5ff00;margin:0 0 12px;">
+      Vragen tussendoor?
+    </p>
+    <p style="font-size:15px;color:#c5c5c5;margin:0 0 8px;">
+      Mail rechtstreeks: <a href="mailto:hallo@kaelo-consulting.com" style="color:#e5ff00;text-decoration:none;">hallo@kaelo-consulting.com</a>
+    </p>
+    <p style="font-size:15px;color:#c5c5c5;margin:0 0 32px;">
+      Of bel: <a href="tel:+31621365990" style="color:#e5ff00;text-decoration:none;">+31 6 21 36 59 90</a>
+    </p>
+
+    <hr style="border:none;border-top:1px solid #1f1f1f;margin:32px 0;" />
+
+    <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#5a5a5a;margin:0;">
+      Kaelo · Wij bouwen het systeem.
+    </p>
+    <p style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#5a5a5a;margin:8px 0 0;">
+      <a href="https://www.kaelo-consulting.com" style="color:#5a5a5a;text-decoration:none;">kaelo-consulting.com</a>
+    </p>
+  </div>
+</body>
+</html>`;
+}
+
+function thankYouText(d: Discovery): string {
+  return `Bedankt, ${d.voornaam}.
+
+We hebben je verhaal over ${d.bedrijfsnaam} goed ontvangen. We lezen het rustig door.
+
+Binnen één werkdag nemen we persoonlijk contact op met de drie richtingen waar wij voor jullie zouden beginnen — en hoe we dat concreet aanpakken.
+
+---
+
+Vragen tussendoor?
+Mail rechtstreeks: hallo@kaelo-consulting.com
+Of bel: +31 6 21 36 59 90
+
+---
+
+Kaelo · Wij bouwen het systeem.
+kaelo-consulting.com
 `;
 }
 

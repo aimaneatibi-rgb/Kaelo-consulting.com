@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
 import SmoothScroll from "./components/SmoothScroll";
 import Splash from "./components/Splash";
+import Cursor from "./components/Cursor";
+import ScrollProgress from "./components/ScrollProgress";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,11 +29,11 @@ export const metadata: Metadata = {
     template: "%s — Kaelo",
   },
   description:
-    "Wij bouwen AI-systemen die werk weghalen. Op jullie werkvloer ontworpen, in vier weken geleverd. Voor MKB-bedrijven die richting 10x willen.",
+    "Wij bouwen AI-systemen die werk weghalen. Eigen code, vaste prijs, vaste datum. Voor MKB-bedrijven die richting 10x willen.",
   openGraph: {
     title: "Kaelo — Wij bouwen het systeem",
     description:
-      "AI-systemen die werk weghalen. Op jullie werkvloer ontworpen, in vier weken geleverd.",
+      "AI-systemen die werk weghalen. Eigen code, vaste prijs, vaste datum.",
     type: "website",
     locale: "nl_NL",
   },
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kaelo — Wij bouwen het systeem",
     description:
-      "AI-systemen die werk weghalen. Op jullie werkvloer ontworpen, in vier weken geleverd.",
+      "AI-systemen die werk weghalen. Eigen code, vaste prijs, vaste datum.",
   },
 };
 
@@ -55,6 +57,8 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background text-foreground">
         <Splash />
+        <ScrollProgress />
+        <Cursor />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

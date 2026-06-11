@@ -4,6 +4,9 @@ import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import Photo from "./components/Photo";
 import RotatingText from "./components/RotatingText";
+import Calculator from "./components/Calculator";
+import Vergelijk from "./components/Vergelijk";
+import Magnetic from "./components/Magnetic";
 import { photos } from "./lib/images";
 
 export default function Home() {
@@ -15,11 +18,13 @@ export default function Home() {
         <Probleem />
         <FullBleedDivider />
         <Oplossing />
+        <Rekensom />
         <Hoe />
         <Wat />
+        <NietDoen />
         <Belofte />
         <VoorWie />
-        <Pijlers />
+        <Vergelijk />
         <Closing />
       </main>
       <Footer />
@@ -79,13 +84,15 @@ function Hero() {
         </Reveal>
         <Reveal delay={0.4}>
           <div className="flex flex-wrap items-center gap-6">
-            <Link
-              href="/start"
-              className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground transition hover:opacity-90"
-            >
-              Start je project
-              <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
-            </Link>
+            <Magnetic>
+              <Link
+                href="/start"
+                className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground transition hover:opacity-90"
+              >
+                Start je project
+                <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+              </Link>
+            </Magnetic>
             <Link
               href="#wat"
               className="font-mono text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground"
@@ -222,6 +229,38 @@ function Oplossing() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* REKENSOM — interactieve calculator: wat kost het saaie werk per jaar        */
+/* -------------------------------------------------------------------------- */
+
+function Rekensom() {
+  return (
+    <section className="border-t border-border px-6 py-32 md:px-12 md:py-48">
+      <div className="mx-auto max-w-[1600px]">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            03 · De rekensom
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,9vw,9rem)] font-medium leading-[0.95] tracking-[-0.03em]">
+            Reken het lek<span className="text-accent">.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-12 max-w-3xl text-xl leading-snug text-muted-foreground md:text-2xl">
+            Geen marketingcijfers. Jullie eigen getallen. Schuif en kijk wat
+            repetitief werk nu per jaar kost.
+          </p>
+        </Reveal>
+        <Reveal delay={0.3}>
+          <Calculator />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
 /* HOE — vier stappen, compact, met kleine accent-thumbnails                   */
 /* -------------------------------------------------------------------------- */
 
@@ -258,7 +297,7 @@ function Hoe() {
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            03 · Hoe wij werken
+            04 · Hoe wij werken
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -333,7 +372,7 @@ function Wat() {
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            04 · Wat wij bouwen
+            05 · Wat wij bouwen
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -400,6 +439,59 @@ function Wat() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* NIET DOEN — doorgestreepte marquee: alles wat wij bewust niet doen          */
+/* -------------------------------------------------------------------------- */
+
+const nietDoen = [
+  "Advertenties",
+  "Photoshoots",
+  "Rapporten",
+  "Powerpoints",
+  "Uurtje-factuurtje",
+  "Scope-creep",
+  "No-code plakwerk",
+];
+
+function NietDoen() {
+  return (
+    <section className="overflow-hidden border-t border-border py-24 md:py-32">
+      <div className="px-6 md:px-12">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            Wat wij niet doen
+          </p>
+        </Reveal>
+      </div>
+      <Reveal delay={0.15}>
+        <div className="relative mt-12 w-full overflow-hidden">
+          <div className="kaelo-marquee flex w-max gap-12 whitespace-nowrap px-6 md:px-12">
+            {[...nietDoen, ...nietDoen].map((item, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-12 font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-tight text-muted-foreground"
+              >
+                <span className="line-through decoration-accent decoration-4">
+                  {item}
+                </span>
+                <span aria-hidden className="text-accent no-underline">/</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+      <div className="px-6 md:px-12">
+        <Reveal delay={0.3}>
+          <p className="mt-12 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            Alles wat hierboven staat, leidt af van het enige dat telt:
+            werkende software die werk weghaalt.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
 /* BELOFTE — compact, twee zinnen, krachtige headline                          */
 /* -------------------------------------------------------------------------- */
 
@@ -409,7 +501,7 @@ function Belofte() {
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            05 · De belofte
+            06 · De belofte
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -451,7 +543,7 @@ function VoorWie() {
         <div className="mx-auto max-w-[1600px]">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              06 · Voor wie
+              07 · Voor wie
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -492,59 +584,6 @@ function VoorWie() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* PIJLERS — drie korte verdedigende zinnen                                    */
-/* -------------------------------------------------------------------------- */
-
-const pijlers = [
-  {
-    nr: "I",
-    titel: "Alleen wat nodig is",
-    body: "Geen advertenties, geen photoshoots, geen rapporten. Wel code, web, CRM, dashboards, branding, AI. Alles wat een MKB nodig heeft om verder te komen — niets wat ervan afleidt.",
-  },
-  {
-    nr: "II",
-    titel: "We blijven up-to-date",
-    body: "Wij volgen AI-ontwikkelingen op de voet en brengen direct in beeld wat bij jullie inzetbaar is om meer omzet te genereren. Dat hoort bij elke build.",
-  },
-  {
-    nr: "III",
-    titel: "Wat we afspreken, leveren we",
-    body: "Vaste prijs, vaste deliverable, vaste datum in de offerte. Werkt iets niet? Dan werken wij door tot het werkt.",
-  },
-];
-
-function Pijlers() {
-  return (
-    <section className="border-t border-border px-6 py-32 md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
-        <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            07 · Waarom Kaelo
-          </p>
-        </Reveal>
-        <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
-          {pijlers.map((p, i) => (
-            <Reveal key={p.nr} delay={i * 0.1}>
-              <article>
-                <p className="font-mono text-xs uppercase tracking-widest text-accent">
-                  {p.nr}
-                </p>
-                <h3 className="mt-6 font-display text-3xl leading-tight tracking-tight md:text-4xl">
-                  {p.titel}<span className="text-accent">.</span>
-                </h3>
-                <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-                  {p.body}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* -------------------------------------------------------------------------- */
 /* CLOSING — accent-vlak, één zin, één CTA                                     */
 /* -------------------------------------------------------------------------- */
 
@@ -554,7 +593,7 @@ function Closing() {
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] opacity-60">
-            08 · Klaar?
+            09 · Klaar?
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -570,13 +609,15 @@ function Closing() {
         </Reveal>
         <Reveal delay={0.3}>
           <div className="mt-12">
-            <Link
-              href="/start"
-              className="group inline-flex items-center gap-3 rounded-full bg-background px-10 py-5 font-mono text-sm uppercase tracking-widest text-foreground transition hover:opacity-90"
-            >
-              Start de audit
-              <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
-            </Link>
+            <Magnetic>
+              <Link
+                href="/start"
+                className="group inline-flex items-center gap-3 rounded-full bg-background px-10 py-5 font-mono text-sm uppercase tracking-widest text-foreground transition hover:opacity-90"
+              >
+                Start de audit
+                <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+              </Link>
+            </Magnetic>
             <p className="mt-6 max-w-lg font-mono text-xs uppercase tracking-widest opacity-60">
               Geen verplichtingen. Geen kosten.
             </p>

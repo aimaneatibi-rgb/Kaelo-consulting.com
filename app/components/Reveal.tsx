@@ -21,12 +21,18 @@ export default function Reveal({
   const reduce = useReducedMotion();
   const MotionTag = motion[as] as typeof motion.div;
 
+  // Initial state is identical op server en client (anders hydration-mismatch);
+  // reduced motion krijgt een instant transitie in plaats van een andere initial.
   return (
     <MotionTag
-      initial={reduce ? { opacity: 1 } : { opacity: 0, y }}
+      initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={
+        reduce
+          ? { duration: 0 }
+          : { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }
+      }
       className={className}
     >
       {children}

@@ -91,6 +91,32 @@ Personeel komt in zijn kracht. Marge stijgt. Hoofd wordt rustig.
 
 ---
 
+### 1.3b De rekensom (interactieve calculator)
+
+**Section-header:**
+> Reken het lek.
+
+**Intro:**
+Geen marketingcijfers. Jullie eigen getallen. Schuif en kijk wat repetitief werk nu per jaar kost.
+
+**Drie sliders:**
+- Mensen met repetitief werk (1–100)
+- Uur repetitief werk, per persoon per week (1–20)
+- Loonkosten per uur (€25–€100)
+
+**Drie uitkomsten (live, geanimeerd):**
+- Uur per jaar (groot, accent)
+- Loonkosten per jaar
+- Fte aan saai werk
+
+**Footnote:**
+> Rekensom: mensen × uren × 46 werkweken. Indicatie, geen offerte.
+
+**CTA:**
+> Kijk wat weg kan →
+
+---
+
 ### 1.4 Hoe wij werken
 
 **Section-header:**
@@ -162,16 +188,47 @@ Wel voor wie wil dat de zaak draait, ook zonder dat de eigenaar er staat.
 
 ---
 
-### 1.8 Differentiator-rij (drie pijlers, korte tekst)
+### 1.8 Kaelo vs. de rest (vergelijkingstabel)
 
-**Pijler 1: We komen langs.**
-Niet één keer. We draaien een dag mee. Een systeem dat op papier werkt maar op de vloer faalt, is een rapport met een UI eromheen.
+**Section-header:**
+> Vergelijk ons gerust.
 
-**Pijler 2: We bouwen écht.**
-Geen Make/Zapier-plakwerk dat omvalt als één API verandert. Custom software, eigen platform, schaalbaar, jullie eigendom.
+**Intro:**
+Niemand hoeft het op ons woord te geloven. Leg ons naast het bureau, de freelancer en het no-code plakwerk — rij voor rij.
 
-**Pijler 3: Vier weken. Altijd.**
-Vaste levertijd. Vaste prijs. Geen scope-creep, geen verrassingen achteraf.
+**Kolommen:** Traditioneel bureau / Freelancer / No-code koppelaar / **Kaelo** (uitgelicht in accent)
+
+**Rijen (criterium → ✓ / ✕ / ~ per kolom, met korte noot):**
+1. Eigen code, jullie eigendom — bureau: soms (vaak hun framework) / freelancer: ja / no-code: nee (je huurt het) / Kaelo: ja, altijd
+2. Vaste prijs, vaste datum — bureau: nee (uurtje-factuurtje) / freelancer: wisselt / no-code: ja / Kaelo: ja, in elke offerte
+3. AI verweven in elke build — bureau: los project, losse factuur / freelancer: soms / no-code: plugin erbij / Kaelo: standaard
+4. Je praat met de bouwer zelf — bureau: nee (accountmanager ertussen) / freelancer: ja / no-code: ja / Kaelo: altijd direct
+5. Schaalt zonder licenties per stoel — no-code: nee (elke seat kost geld) / Kaelo: ja, jullie platform
+6. Blijft doorbouwen na oplevering — bureau: strippenkaart / freelancer: weg na het project / Kaelo: ja (Operate)
+7. Werkt door tot het werkt, zonder factuur — bureau: meerwerk / Kaelo: ja, de belofte
+
+**Footnote:**
+> Generalisatie? Zeker. Uitzonderingen bestaan — wij zijn er één.
+
+---
+
+### 1.8b Wat wij niet doen (doorgestreepte marquee)
+
+**Label:** Wat wij niet doen
+
+**Marquee-items (groot, doorgestreept in accent):**
+Advertenties / Photoshoots / Rapporten / Powerpoints / Uurtje-factuurtje / Scope-creep / No-code plakwerk
+
+**Outro:**
+Alles wat hierboven staat, leidt af van het enige dat telt: werkende software die werk weghaalt.
+
+---
+
+### Interactie-laag (geen copy, wel merk)
+
+- **Custom cursor:** accent-dot + naijlende ring, zwelt op boven links en knoppen. Alleen op desktop (pointer: fine); native cursor blijft zichtbaar.
+- **Magnetische CTA's:** primaire knoppen trekken richting de cursor en veren terug.
+- **Scroll-progress:** dunne accent-balk bovenaan over de hele site.
 
 ---
 

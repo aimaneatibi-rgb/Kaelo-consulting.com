@@ -4,7 +4,7 @@ import Marquee from "./Marquee";
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-background pt-24">
-      <Marquee items={["Wij bouwen het systeem", "10x is makkelijker dan 2x", "Wij komen langs", "Vier weken"]} />
+      <Marquee items={["Wij bouwen het systeem", "10x is makkelijker dan 2x", "Eigen code, jullie eigendom", "Vaste prijs, vaste datum"]} />
       <div className="mx-auto mt-24 grid max-w-[1600px] grid-cols-1 gap-12 px-6 pb-12 md:grid-cols-4 md:px-12">
         <div className="md:col-span-2">
           <p className="font-display text-3xl tracking-tight md:text-4xl">

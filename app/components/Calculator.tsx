@@ -128,13 +128,13 @@ export default function Calculator() {
         </p>
       </div>
 
-      <div className="flex flex-col justify-between gap-12 border-t border-border pt-12 lg:border-l lg:border-t-0 lg:pl-20 lg:pt-0">
+      <div className="kaelo-glass flex flex-col justify-between gap-12 rounded-2xl p-8 md:p-12">
         <div className="space-y-10">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
               Uur per jaar
             </p>
-            <p className="mt-2 font-display text-[clamp(3rem,7vw,6.5rem)] leading-none tracking-tight text-accent">
+            <p className="kaelo-gradient-text mt-2 font-display text-[clamp(3rem,7vw,6.5rem)] leading-none tracking-tight">
               <AnimatedNumber value={urenPerJaar} format={fmtInt} />
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function Calculator() {
           <Magnetic>
             <Link
               href="/start"
-              className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground transition hover:opacity-90"
+              className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground shadow-[0_0_40px_rgba(124,108,255,0.4)] transition hover:opacity-90"
             >
               Kijk wat weg kan
               <span

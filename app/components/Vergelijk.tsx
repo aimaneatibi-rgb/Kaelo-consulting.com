@@ -122,7 +122,7 @@ export default function Vergelijk() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="mt-20 overflow-x-auto">
+          <div className="kaelo-glass mt-20 overflow-x-auto rounded-2xl p-6 md:p-10">
             <table className="w-full min-w-[860px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-border">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import SmoothScroll from "./components/SmoothScroll";
 import Splash from "./components/Splash";
 import Cursor from "./components/Cursor";
@@ -14,12 +14,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -53,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} kaelo-grain`}
+      className={`${geistSans.variable} ${geistMono.variable} kaelo-grain`}
     >
       <body className="min-h-screen bg-background text-foreground">
         <Splash />

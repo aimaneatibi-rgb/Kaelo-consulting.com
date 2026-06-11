@@ -41,20 +41,28 @@
 
 ### 1.1 Hero
 
-**Pre-headline (klein, monospace, boven de h1):**
-> KAELO — AI BUILD STUDIO
+**Status-badge (pill, pulserende dot, boven de h1):**
+> AI build studio — beschikbaar voor nieuwe builds
 
-**Headline (h1, schermvullend):**
-> Wij bouwen het systeem.
+**Headline (h1, roterend object in gradient):**
+> Wij bouwen [het systeem | de CRM | het dashboard | de webapp | de iOS-app | de AI-agent | de website | de automatisering].
 
-**Subkop (één regel, eronder):**
-> AI-systemen die werk weghalen. Gebouwd op jullie werkvloer. In vier weken.
+**Subkop:**
+> Software die werk weghaalt bij MKB en startups. Eigen code, vaste prijs, vaste datum. Geen advertenties, geen rapporten — alleen systemen die draaien.
 
 **Primary CTA:**
-> Start de audit →
+> Start je project →
 
-**Secondary CTA (klein, onder de primary):**
-> Of: kijk eerst wat we bouwen ↓
+**Secondary CTA (klein, naast de primary):**
+> Of: kijk wat we bouwen ↓
+
+**Hero-visual (rechts naast de copy): de console.**
+Een terminal-paneel gelabeld "voorbeeld-run" dat drie runs typt en doorwisselt:
+1. `kaelo build crm --voor installatiebedrijf` → offerteflow geautomatiseerd / planning gekoppeld aan de buitendienst / facturatie loopt zonder handwerk → ✓ live op de afgesproken datum
+2. `kaelo build agent --voor groothandel` → orders uitgelezen uit de mailbox / voorraad realtime bijgewerkt / inkoopvoorstel klaargezet door AI → ✓ het saaie werk is uit de week
+3. `kaelo build dashboard --voor productie` → machinedata in één scherm / afkeur zichtbaar per shift / rapportage schrijft zichzelf → ✓ beslissen op cijfers, niet op gevoel
+
+Statusbalk onderin: "systeem draait · run X/3". Het label "voorbeeld-run" staat er bewust — dit zijn illustraties, geen klant-claims.
 
 ---
 
@@ -232,19 +240,19 @@ Alles wat hierboven staat, leidt af van het enige dat telt: werkende software di
 
 ---
 
-### 1.9 Closing CTA
+### 1.9 Closing CTA (gradient glass-paneel)
 
 **Section-header:**
 > Begin met de audit.
 
 **Body:**
-Vijf minuten op deze site. Wij komen binnen een week langs.
+Vijf minuten op deze site. Wij nemen binnen één werkdag contact op.
 
 **Primary CTA:**
 > Start de audit →
 
 **Onder de knop:**
-> Geen verplichtingen. Geen kosten. Wel direct een eerste analyse van waar tijd verloren gaat.
+> Geen verplichtingen. Geen kosten.
 
 ---
 

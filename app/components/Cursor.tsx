@@ -61,7 +61,7 @@ export default function Cursor() {
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[90] h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent mix-blend-difference"
+        className="pointer-events-none fixed left-0 top-0 z-[90] h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/70"
         style={{ x: ringX, y: ringY }}
         animate={{
           scale: pressed ? 0.7 : hovering ? 2.2 : 1,

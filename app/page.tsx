@@ -2,12 +2,11 @@ import Link from "next/link";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
-import Photo from "./components/Photo";
 import RotatingText from "./components/RotatingText";
 import Calculator from "./components/Calculator";
 import Vergelijk from "./components/Vergelijk";
 import Magnetic from "./components/Magnetic";
-import { photos } from "./lib/images";
+import Console from "./components/Console";
 
 export default function Home() {
   return (
@@ -33,7 +32,7 @@ export default function Home() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* HERO — full-width typografie met roterende build-objecten                  */
+/* HERO — blueprint-grid, gradient-headline, live console                      */
 /* -------------------------------------------------------------------------- */
 
 const heroWords = [
@@ -60,51 +59,75 @@ const heroTicker = [
 
 function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden px-6 pb-0 pt-32 md:px-12 md:pt-40">
-      <Reveal>
-        <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          Kaelo · AI build studio
-        </p>
-      </Reveal>
+    <section className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden px-6 pb-0 pt-36 md:px-12 md:pt-44">
+      {/* achtergrond: grid + glows */}
+      <div aria-hidden className="kaelo-grid absolute inset-0" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-48 left-1/2 h-[640px] w-[1000px] -translate-x-1/2 rounded-full bg-accent/15 blur-[180px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-200px] top-1/3 h-[420px] w-[560px] rounded-full bg-accent-2/10 blur-[160px]"
+      />
 
-      <div className="my-12 flex flex-col gap-10 lg:my-auto lg:py-16">
-        <Reveal delay={0.1}>
-          <h1 className="font-display text-[clamp(3.5rem,12vw,13rem)] font-medium leading-[0.92] tracking-[-0.04em]">
-            Wij bouwen<br />
-            <RotatingText words={heroWords} className="text-accent" />
-            <span className="text-accent">.</span>
-          </h1>
-        </Reveal>
-        <Reveal delay={0.25}>
-          <p className="max-w-2xl text-lg leading-snug text-muted-foreground md:text-2xl">
-            Code, web, CRM, brand, AI. Wij bouwen wat jullie nodig hebben —
-            in een tempo dat past bij het project. Geen advertenties, geen rapporten.
-            Alleen werkende software.
-          </p>
-        </Reveal>
-        <Reveal delay={0.4}>
-          <div className="flex flex-wrap items-center gap-6">
-            <Magnetic>
-              <Link
-                href="/start"
-                className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground transition hover:opacity-90"
-              >
-                Start je project
-                <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
-              </Link>
-            </Magnetic>
-            <Link
-              href="#wat"
-              className="font-mono text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground"
-            >
-              Of: kijk wat we bouwen ↓
-            </Link>
+      <div className="relative mx-auto w-full max-w-[1400px]">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <Reveal>
+              <p className="inline-flex items-center gap-2.5 rounded-full border border-border bg-white/[0.03] px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="relative flex h-2 w-2" aria-hidden>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                </span>
+                AI build studio — beschikbaar voor nieuwe builds
+              </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h1 className="mt-10 font-display text-[clamp(3rem,8vw,7.5rem)] font-medium leading-[0.95] tracking-[-0.045em]">
+                Wij bouwen<br />
+                <RotatingText words={heroWords} className="kaelo-gradient-text" />
+                <span className="text-accent">.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.25}>
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+                Software die werk weghaalt bij MKB en startups. Eigen code,
+                vaste prijs, vaste datum. Geen advertenties, geen rapporten —
+                alleen systemen die draaien.
+              </p>
+            </Reveal>
+            <Reveal delay={0.4}>
+              <div className="mt-10 flex flex-wrap items-center gap-6">
+                <Magnetic>
+                  <Link
+                    href="/start"
+                    className="group inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-sm uppercase tracking-widest text-accent-foreground shadow-[0_0_40px_rgba(124,108,255,0.4)] transition hover:opacity-90"
+                  >
+                    Start je project
+                    <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+                  </Link>
+                </Magnetic>
+                <Link
+                  href="#wat"
+                  className="font-mono text-sm uppercase tracking-widest text-muted-foreground transition hover:text-foreground"
+                >
+                  Of: kijk wat we bouwen ↓
+                </Link>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+
+          <div className="lg:col-span-5">
+            <Reveal delay={0.3} y={48}>
+              <Console />
+            </Reveal>
+          </div>
+        </div>
       </div>
 
       <Reveal delay={0.55}>
-        <div className="border-t border-border pt-6">
+        <div className="relative mt-20 border-t border-border pt-6">
           <div className="relative -mx-6 overflow-hidden md:-mx-12">
             <div className="kaelo-marquee flex w-max gap-10 whitespace-nowrap px-6 font-mono text-sm uppercase tracking-[0.25em] text-muted-foreground md:px-12">
               {[...heroTicker, ...heroTicker].map((item, i) => (
@@ -126,33 +149,33 @@ function Hero() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* PROBLEEM — compacter, één tekstkolom, krachtige outro                       */
+/* PROBLEEM — typografisch statement                                           */
 /* -------------------------------------------------------------------------- */
 
 function Probleem() {
   return (
-    <section className="border-t border-border px-6 py-32 md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
+    <section className="border-t border-border px-6 py-32 md:px-12 md:py-44">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             01 · Het probleem
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-8 font-display text-[clamp(2.5rem,9vw,9rem)] font-medium leading-[0.95] tracking-[-0.03em]">
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,7vw,7rem)] font-medium leading-[0.95] tracking-[-0.045em]">
             2x is moeilijker<br />
             dan 10x<span className="text-accent">.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="mt-16 max-w-3xl text-xl leading-snug text-muted-foreground md:text-3xl">
+          <p className="mt-14 max-w-3xl text-xl leading-snug text-muted-foreground md:text-2xl">
             Meer mensen, meer uren, meer rapporten — zo proberen de meeste bedrijven
             hun 2x te halen. En precies zó halen ze hun 10x nooit.
           </p>
         </Reveal>
         <Reveal delay={0.4}>
-          <p className="mt-16 font-display text-[clamp(2rem,6vw,5rem)] leading-tight tracking-tight">
-            10x vraagt <span className="text-accent">minder</span> werk.
+          <p className="mt-14 font-display text-[clamp(1.8rem,4.5vw,4rem)] leading-tight tracking-tight">
+            10x vraagt <span className="kaelo-gradient-text">minder</span> werk.
           </p>
         </Reveal>
       </div>
@@ -166,17 +189,21 @@ function Probleem() {
 
 function FullBleedDivider() {
   return (
-    <section className="relative flex min-h-[60svh] items-center justify-center overflow-hidden border-t border-border px-6 md:min-h-[70svh] md:px-12">
-      <div className="mx-auto max-w-[1600px] text-center">
+    <section className="relative flex min-h-[55svh] items-center justify-center overflow-hidden border-t border-border px-6 md:min-h-[65svh] md:px-12">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[160px]"
+      />
+      <div className="relative mx-auto max-w-[1400px] text-center">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             Werk weghalen
           </p>
         </Reveal>
         <Reveal delay={0.15}>
-          <h2 className="mt-8 font-display text-[clamp(3rem,12vw,13rem)] font-medium leading-[0.88] tracking-[-0.04em]">
+          <h2 className="mt-8 font-display text-[clamp(3rem,9vw,9.5rem)] font-medium leading-[0.92] tracking-[-0.045em]">
             Niet stapelen.<br />
-            <span className="text-muted-foreground">Weghalen</span><span className="text-accent">.</span>
+            <span className="kaelo-gradient-text">Weghalen</span><span className="text-accent">.</span>
           </h2>
         </Reveal>
       </div>
@@ -185,25 +212,25 @@ function FullBleedDivider() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* OPLOSSING — twee kolommen: beeld + compactere tekst                         */
+/* OPLOSSING                                                                   */
 /* -------------------------------------------------------------------------- */
 
 function Oplossing() {
   return (
-    <section className="border-t border-border bg-muted px-6 py-32 md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
+    <section className="border-t border-border bg-muted px-6 py-32 md:px-12 md:py-44">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             02 · De oplossing
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-8 font-display text-[clamp(2.5rem,9vw,9rem)] font-medium leading-[0.95] tracking-[-0.03em]">
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,7vw,7rem)] font-medium leading-[0.95] tracking-[-0.045em]">
             Bouw het systeem.<br />
             Schaf het werk af<span className="text-accent">.</span>
           </h2>
         </Reveal>
-        <div className="mt-16 max-w-4xl space-y-10">
+        <div className="mt-14 max-w-4xl space-y-10">
           <Reveal delay={0.2}>
             <p className="text-xl leading-relaxed md:text-2xl">
               Wij bouwen software die het saaie werk doet. Het werk dat tijd kost,
@@ -216,7 +243,7 @@ function Oplossing() {
             </p>
           </Reveal>
           <Reveal delay={0.4}>
-            <p className="font-display text-2xl leading-tight tracking-tight md:text-5xl">
+            <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl">
               Personeel in zijn kracht.<br />
               Marge omhoog.<br />
               Hoofd rustig<span className="text-accent">.</span>
@@ -234,15 +261,19 @@ function Oplossing() {
 
 function Rekensom() {
   return (
-    <section className="border-t border-border px-6 py-32 md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
+    <section className="relative overflow-hidden border-t border-border px-6 py-32 md:px-12 md:py-44">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-160px] top-0 h-[420px] w-[560px] rounded-full bg-accent/10 blur-[160px]"
+      />
+      <div className="relative mx-auto max-w-[1400px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             03 · De rekensom
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-8 font-display text-[clamp(2.5rem,9vw,9rem)] font-medium leading-[0.95] tracking-[-0.03em]">
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,7vw,7rem)] font-medium leading-[0.95] tracking-[-0.045em]">
             Reken het lek<span className="text-accent">.</span>
           </h2>
         </Reveal>
@@ -261,7 +292,7 @@ function Rekensom() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* HOE — vier stappen, compact, met kleine accent-thumbnails                   */
+/* HOE — vier stappen als timeline                                             */
 /* -------------------------------------------------------------------------- */
 
 const stappen = [
@@ -293,36 +324,38 @@ const stappen = [
 
 function Hoe() {
   return (
-    <section className="border-t border-border px-6 py-32 md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
+    <section className="border-t border-border px-6 py-32 md:px-12 md:py-44">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             04 · Hoe wij werken
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-8 font-display text-[clamp(2.5rem,9vw,9rem)] font-medium leading-[0.95] tracking-[-0.03em]">
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,7vw,7rem)] font-medium leading-[0.95] tracking-[-0.045em]">
             Vier stappen.<br />
             Geen omwegen<span className="text-accent">.</span>
           </h2>
         </Reveal>
-        <div className="mt-20 divide-y divide-border border-y border-border">
+        <div className="mt-20 grid grid-cols-1 gap-5 lg:grid-cols-4">
           {stappen.map((s, i) => (
-            <Reveal key={s.nr} delay={i * 0.06}>
-              <div className="group grid grid-cols-12 items-start gap-6 py-10 transition hover:bg-muted/30 md:py-14">
-                <p className="col-span-2 font-mono text-sm text-muted-foreground md:col-span-1">
-                  {s.nr}
-                </p>
-                <h3 className="col-span-10 font-display text-2xl leading-tight tracking-tight md:col-span-5 md:text-4xl">
+            <Reveal key={s.nr} delay={i * 0.08}>
+              <article className="kaelo-glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-8 transition hover:border-accent/50">
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent/0 via-accent/60 to-accent-2/0 opacity-0 transition group-hover:opacity-100"
+                />
+                <p className="font-mono text-sm text-accent">{s.nr}</p>
+                <h3 className="mt-6 font-display text-2xl leading-tight tracking-tight md:text-[1.7rem]">
                   {s.titel}<span className="text-accent">.</span>
                 </h3>
-                <p className="col-span-12 text-base leading-relaxed text-muted-foreground md:col-span-4 md:text-lg">
+                <p className="mt-4 flex-1 text-base leading-relaxed text-muted-foreground">
                   {s.body}
                 </p>
-                <p className="col-span-12 font-mono text-xs uppercase tracking-widest text-muted-foreground md:col-span-2 md:text-right">
+                <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted-foreground">
                   {s.duur}
                 </p>
-              </div>
+              </article>
             </Reveal>
           ))}
         </div>
@@ -332,7 +365,7 @@ function Hoe() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* WAT — drie product-cards met grayscale beeld-thumbnails                     */
+/* WAT — vier product-cards, glass met gradient-hairline                       */
 /* -------------------------------------------------------------------------- */
 
 const producten = [
@@ -341,78 +374,72 @@ const producten = [
     titel: "Het fundament",
     body: "CRM, dashboards, workflows, klant-portalen. De systemen die elk bedrijf nodig heeft maar niemand goed bouwt.",
     duur: "Modulair",
-    photo: photos.foundation,
   },
   {
     label: "Web",
     titel: "Websites die werken",
     body: "Marketing-sites, landing pages, klant-portalen. Snel, conversie-gericht, met motion waar het hoort.",
     duur: "Modulair",
-    photo: photos.oplossing,
   },
   {
     label: "Brand",
     titel: "Brand op orde",
     body: "Positionering, brandbook, brand-workflows. Marketing-ervaring zit in de strategie — niet in advertenties of photoshoots.",
     duur: "Strategie",
-    photo: photos.brand,
   },
   {
     label: "Build",
     titel: "Custom software",
     body: "Webapps en iOS-apps voor B2B en B2C. SaaS-platformen, AI-agents die je werk doen, integratie-laag tussen jullie bestaande tools.",
     duur: "Custom",
-    photo: photos.build,
   },
 ];
 
 function Wat() {
   return (
-    <section id="wat" className="border-t border-border bg-muted px-6 py-32 md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
+    <section id="wat" className="border-t border-border bg-muted px-6 py-32 md:px-12 md:py-44">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             05 · Wat wij bouwen
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-8 font-display text-[clamp(2.5rem,9vw,9rem)] font-medium leading-[0.95] tracking-[-0.03em]">
-            Drie soorten<br />
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,7vw,7rem)] font-medium leading-[0.95] tracking-[-0.045em]">
+            Vier soorten<br />
             systemen<span className="text-accent">.</span>
           </h2>
         </Reveal>
-        <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-20 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {producten.map((p, i) => (
             <Reveal key={p.label} delay={i * 0.1}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-background transition hover:border-accent">
-                <Photo
-                  photo={p.photo}
-                  className="aspect-[4/3] w-full grayscale transition duration-700 group-hover:grayscale-0"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+              <article className="kaelo-glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-8 transition hover:border-accent/50">
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent/0 via-accent/60 to-accent-2/0 opacity-0 transition group-hover:opacity-100"
                 />
-                <div className="flex flex-1 flex-col p-8">
-                  <p className="font-mono text-xs uppercase tracking-widest text-accent">
-                    {p.label}
-                  </p>
-                  <h3 className="mt-4 font-display text-3xl tracking-tight md:text-4xl">
-                    {p.titel}
-                  </h3>
-                  <p className="mt-4 flex-1 text-base leading-relaxed text-muted-foreground">
-                    {p.body}
-                  </p>
-                  <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                    {p.duur}
-                  </p>
-                </div>
+                <p className="font-mono text-xs uppercase tracking-widest text-accent">
+                  {p.label}
+                </p>
+                <h3 className="mt-5 font-display text-2xl tracking-tight md:text-3xl">
+                  {p.titel}
+                </h3>
+                <p className="mt-4 flex-1 text-base leading-relaxed text-muted-foreground">
+                  {p.body}
+                </p>
+                <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  {p.duur}
+                </p>
               </article>
             </Reveal>
           ))}
         </div>
+
         {/* Operate band — doorlopende dienst, AI mee groeien */}
         <Reveal delay={0.5}>
-          <div className="mt-20 grid grid-cols-1 gap-8 border-t border-border pt-12 lg:grid-cols-12 lg:gap-16">
+          <div className="kaelo-glass mt-10 grid grid-cols-1 gap-8 rounded-2xl p-10 lg:grid-cols-12 lg:gap-16 lg:p-14">
             <div className="lg:col-span-5">
-              <p className="font-mono text-xs uppercase tracking-widest text-accent">
+              <p className="font-mono text-xs uppercase tracking-widest text-accent-2">
                 Optioneel · Doorlopend
               </p>
               <h3 className="mt-6 font-display text-3xl leading-tight tracking-tight md:text-5xl">
@@ -429,7 +456,7 @@ function Wat() {
         </Reveal>
 
         <Reveal delay={0.6}>
-          <p className="mt-16 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+          <p className="mt-14 font-mono text-xs uppercase tracking-widest text-muted-foreground">
             Pricing volgt op maat in de offerte.
           </p>
         </Reveal>
@@ -468,7 +495,7 @@ function NietDoen() {
             {[...nietDoen, ...nietDoen].map((item, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-12 font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-tight text-muted-foreground"
+                className="inline-flex items-center gap-12 font-display text-[clamp(3rem,8vw,7rem)] font-medium leading-none tracking-tight text-muted-foreground/60"
               >
                 <span className="line-through decoration-accent decoration-4">
                   {item}
@@ -492,33 +519,33 @@ function NietDoen() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* BELOFTE — compact, twee zinnen, krachtige headline                          */
+/* BELOFTE                                                                     */
 /* -------------------------------------------------------------------------- */
 
 function Belofte() {
   return (
-    <section className="border-t border-border px-6 py-32 md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
+    <section className="border-t border-border px-6 py-32 md:px-12 md:py-44">
+      <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             06 · De belofte
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-8 font-display text-[clamp(2.5rem,8vw,7rem)] font-medium leading-[0.95] tracking-[-0.03em]">
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,6.5vw,6rem)] font-medium leading-[0.95] tracking-[-0.045em]">
             Wat we afspreken,<br />
             leveren we<span className="text-accent">.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.3}>
-          <p className="mt-16 max-w-3xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
+          <p className="mt-14 max-w-3xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
             Geen vage timelines, geen scope-creep. Een vaste afspraak per project —
             datum, prijs, deliverable — en daar houden we ons aan.
           </p>
         </Reveal>
         <Reveal delay={0.4}>
           <p className="mt-8 max-w-3xl text-xl leading-relaxed md:text-2xl">
-            Iets werkt niet? <span className="text-foreground">Dat gaan we regelen.</span>
+            Iets werkt niet? <span className="kaelo-gradient-text">Dat gaan we regelen.</span>
           </p>
         </Reveal>
       </div>
@@ -527,56 +554,52 @@ function Belofte() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* VOOR WIE — full-bleed werkvloer-foto met overlay + korte tekst              */
+/* VOOR WIE — wel/niet in twee glass panelen                                   */
 /* -------------------------------------------------------------------------- */
 
 function VoorWie() {
   return (
-    <section className="relative overflow-hidden border-t border-border">
-      <Photo
-        photo={photos.voorwie}
-        className="absolute inset-0 h-full w-full"
-        sizes="100vw"
+    <section className="relative overflow-hidden border-t border-border bg-muted px-6 py-32 md:px-12 md:py-44">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[-200px] bottom-0 h-[420px] w-[560px] rounded-full bg-accent/10 blur-[160px]"
       />
-      <div className="absolute inset-0 bg-background/80" />
-      <div className="relative z-10 px-6 py-32 md:px-12 md:py-48">
-        <div className="mx-auto max-w-[1600px]">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              07 · Voor wie
-            </p>
+      <div className="relative mx-auto max-w-[1400px]">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            07 · Voor wie
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,6.5vw,6rem)] font-medium leading-[0.95] tracking-[-0.045em]">
+            MKB Nederland.<br />
+            Startups met visie<span className="text-accent">.</span>
+          </h2>
+        </Reveal>
+        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2">
+          <Reveal delay={0.2}>
+            <div className="kaelo-glass h-full rounded-2xl p-10">
+              <p className="font-mono text-xs uppercase tracking-widest text-accent-2">
+                Wel
+              </p>
+              <p className="mt-4 text-lg leading-relaxed md:text-xl">
+                Heel MKB Nederland — installatie, productie, logistiek,
+                groothandel, dienstverlening, zorg, retail. Plus: grote
+                startups met grote doelen die we mee helpen waarmaken.
+              </p>
+            </div>
           </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="mt-8 font-display text-[clamp(2.5rem,8vw,7rem)] font-medium leading-[0.95] tracking-[-0.03em]">
-              MKB Nederland.<br />
-              Startups met visie<span className="text-accent">.</span>
-            </h2>
+          <Reveal delay={0.3}>
+            <div className="h-full rounded-2xl border border-border p-10">
+              <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                Niet
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-muted-foreground md:text-xl">
+                Pre-revenue startups zonder concreet probleem. Wie een rapport
+                wil — wij leveren werkende software, geen powerpoints.
+              </p>
+            </div>
           </Reveal>
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-            <Reveal delay={0.2}>
-              <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-accent">
-                  Wel
-                </p>
-                <p className="mt-4 text-lg leading-relaxed md:text-xl">
-                  Heel MKB Nederland — installatie, productie, logistiek,
-                  groothandel, dienstverlening, zorg, retail. Plus: grote
-                  startups met grote doelen die we mee helpen waarmaken.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  Niet
-                </p>
-                <p className="mt-4 text-lg leading-relaxed text-muted-foreground md:text-xl">
-                  Pre-revenue startups zonder concreet probleem. Wie een rapport
-                  wil — wij leveren werkende software, geen powerpoints.
-                </p>
-              </div>
-            </Reveal>
-          </div>
         </div>
       </div>
     </section>
@@ -584,45 +607,58 @@ function VoorWie() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* CLOSING — accent-vlak, één zin, één CTA                                     */
+/* CLOSING — gradient-paneel, één zin, één CTA                                 */
 /* -------------------------------------------------------------------------- */
 
 function Closing() {
   return (
-    <section className="relative border-t border-border bg-accent px-6 py-32 text-accent-foreground md:px-12 md:py-48">
-      <div className="mx-auto max-w-[1600px]">
-        <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.25em] opacity-60">
-            09 · Klaar?
-          </p>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <h2 className="mt-8 font-display text-[clamp(3rem,12vw,12rem)] font-medium leading-[0.9] tracking-[-0.03em]">
-            Begin met<br />
-            de audit.
-          </h2>
-        </Reveal>
-        <Reveal delay={0.2}>
-          <p className="mt-12 max-w-2xl text-xl leading-snug md:text-2xl">
-            Vijf minuten op deze site. Wij komen binnen een week langs.
-          </p>
-        </Reveal>
-        <Reveal delay={0.3}>
-          <div className="mt-12">
-            <Magnetic>
-              <Link
-                href="/start"
-                className="group inline-flex items-center gap-3 rounded-full bg-background px-10 py-5 font-mono text-sm uppercase tracking-widest text-foreground transition hover:opacity-90"
-              >
-                Start de audit
-                <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
-              </Link>
-            </Magnetic>
-            <p className="mt-6 max-w-lg font-mono text-xs uppercase tracking-widest opacity-60">
-              Geen verplichtingen. Geen kosten.
-            </p>
+    <section className="border-t border-border px-6 py-24 md:px-12 md:py-32">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="kaelo-glass relative overflow-hidden rounded-3xl px-8 py-24 text-center md:px-16 md:py-32">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[760px] -translate-x-1/2 rounded-full bg-accent/25 blur-[140px]"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-40 right-0 h-[320px] w-[480px] rounded-full bg-accent-2/15 blur-[140px]"
+          />
+          <div className="relative">
+            <Reveal>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                09 · Klaar?
+              </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h2 className="mx-auto mt-8 max-w-4xl font-display text-[clamp(2.8rem,8vw,8rem)] font-medium leading-[0.92] tracking-[-0.045em]">
+                Begin met<br />
+                <span className="kaelo-gradient-text">de audit</span>
+                <span className="text-accent">.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="mx-auto mt-10 max-w-2xl text-xl leading-snug text-muted-foreground md:text-2xl">
+                Vijf minuten op deze site. Wij nemen binnen één werkdag contact op.
+              </p>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <div className="mt-12">
+                <Magnetic>
+                  <Link
+                    href="/start"
+                    className="group inline-flex items-center gap-3 rounded-full bg-accent px-10 py-5 font-mono text-sm uppercase tracking-widest text-accent-foreground shadow-[0_0_50px_rgba(124,108,255,0.45)] transition hover:opacity-90"
+                  >
+                    Start de audit
+                    <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
+                  </Link>
+                </Magnetic>
+                <p className="mt-6 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  Geen verplichtingen. Geen kosten.
+                </p>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

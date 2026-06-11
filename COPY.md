@@ -196,27 +196,26 @@ Wel voor wie wil dat de zaak draait, ook zonder dat de eigenaar er staat.
 
 ---
 
-### 1.8 Kaelo vs. de rest (vergelijkingstabel)
+### 1.8 Wat wij betekenen (drie pijlers + signature-regel)
+
+*Geen vergelijking met concurrenten — we blijven bij onszelf en wat we echt betekenen voor de klant.*
 
 **Section-header:**
-> Vergelijk ons gerust.
+> Niet wat we doen. Wat het oplevert.
 
-**Intro:**
-Niemand hoeft het op ons woord te geloven. Leg ons naast het bureau, de freelancer en het no-code plakwerk — rij voor rij.
+**Drie glass-cards:**
 
-**Kolommen:** Traditioneel bureau / Freelancer / No-code koppelaar / **Kaelo** (uitgelicht in accent)
+**01 — Tijd terug.**
+Het saaie werk doet zichzelf. De uren die vrijkomen gaan naar klanten, product en groei — het werk waarvoor jullie ooit begonnen zijn.
 
-**Rijen (criterium → ✓ / ✕ / ~ per kolom, met korte noot):**
-1. Eigen code, jullie eigendom — bureau: soms (vaak hun framework) / freelancer: ja / no-code: nee (je huurt het) / Kaelo: ja, altijd
-2. Vaste prijs, vaste datum — bureau: nee (uurtje-factuurtje) / freelancer: wisselt / no-code: ja / Kaelo: ja, in elke offerte
-3. AI verweven in elke build — bureau: los project, losse factuur / freelancer: soms / no-code: plugin erbij / Kaelo: standaard
-4. Je praat met de bouwer zelf — bureau: nee (accountmanager ertussen) / freelancer: ja / no-code: ja / Kaelo: altijd direct
-5. Schaalt zonder licenties per stoel — no-code: nee (elke seat kost geld) / Kaelo: ja, jullie platform
-6. Blijft doorbouwen na oplevering — bureau: strippenkaart / freelancer: weg na het project / Kaelo: ja (Operate)
-7. Werkt door tot het werkt, zonder factuur — bureau: meerwerk / Kaelo: ja, de belofte
+**02 — Eigendom.**
+Eigen code, eigen platform. Geen licenties per stoel, geen abonnement dat jullie gijzelt. Wat we bouwen is van jullie en groeit met jullie mee.
 
-**Footnote:**
-> Generalisatie? Zeker. Uitzonderingen bestaan — wij zijn er één.
+**03 — Rust.**
+Eén afspraak per project: datum, prijs, deliverable. En daarna een bouwer die blijft — wij volgen AI voor jullie en melden wat omzet kan opleveren.
+
+**Signature-regel (groot, gradient op het slot):**
+> Een zaak die draait — ook zonder dat jij er staat.
 
 ---
 

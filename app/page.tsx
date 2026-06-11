@@ -4,7 +4,6 @@ import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import RotatingText from "./components/RotatingText";
 import Calculator from "./components/Calculator";
-import Vergelijk from "./components/Vergelijk";
 import Magnetic from "./components/Magnetic";
 import Console from "./components/Console";
 
@@ -23,7 +22,7 @@ export default function Home() {
         <NietDoen />
         <Belofte />
         <VoorWie />
-        <Vergelijk />
+        <Betekenis />
         <Closing />
       </main>
       <Footer />
@@ -601,6 +600,76 @@ function VoorWie() {
             </div>
           </Reveal>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* BETEKENIS — wat er verandert als het systeem er staat                       */
+/* -------------------------------------------------------------------------- */
+
+const betekenis = [
+  {
+    nr: "01",
+    titel: "Tijd terug",
+    body: "Het saaie werk doet zichzelf. De uren die vrijkomen gaan naar klanten, product en groei — het werk waarvoor jullie ooit begonnen zijn.",
+  },
+  {
+    nr: "02",
+    titel: "Eigendom",
+    body: "Eigen code, eigen platform. Geen licenties per stoel, geen abonnement dat jullie gijzelt. Wat we bouwen is van jullie en groeit met jullie mee.",
+  },
+  {
+    nr: "03",
+    titel: "Rust",
+    body: "Eén afspraak per project: datum, prijs, deliverable. En daarna een bouwer die blijft — wij volgen AI voor jullie en melden wat omzet kan opleveren.",
+  },
+];
+
+function Betekenis() {
+  return (
+    <section className="relative overflow-hidden border-t border-border px-6 py-32 md:px-12 md:py-44">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-180px] top-1/4 h-[420px] w-[560px] rounded-full bg-accent/10 blur-[160px]"
+      />
+      <div className="relative mx-auto max-w-[1400px]">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            08 · Wat wij betekenen
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="mt-8 font-display text-[clamp(2.5rem,7vw,7rem)] font-medium leading-[0.95] tracking-[-0.045em]">
+            Niet wat we doen.<br />
+            Wat het oplevert<span className="text-accent">.</span>
+          </h2>
+        </Reveal>
+        <div className="mt-20 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {betekenis.map((b, i) => (
+            <Reveal key={b.nr} delay={i * 0.1}>
+              <article className="kaelo-glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-8 transition hover:border-accent/50 md:p-10">
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent/0 via-accent/60 to-accent-2/0 opacity-0 transition group-hover:opacity-100"
+                />
+                <p className="font-mono text-sm text-accent">{b.nr}</p>
+                <h3 className="mt-6 font-display text-2xl leading-tight tracking-tight md:text-3xl">
+                  {b.titel}<span className="text-accent">.</span>
+                </h3>
+                <p className="mt-4 flex-1 text-base leading-relaxed text-muted-foreground md:text-lg">
+                  {b.body}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={0.4}>
+          <p className="mt-20 max-w-4xl font-display text-[clamp(1.8rem,4.5vw,4rem)] leading-tight tracking-tight">
+            Een zaak die draait — <span className="kaelo-gradient-text">ook zonder dat jij er staat</span>.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

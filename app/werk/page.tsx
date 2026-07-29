@@ -33,10 +33,10 @@ const cases: Case[] = [
     slug: "panvia",
     index: "02",
     naam: "Panvia",
-    kicker: "Web platform · Livegang in voorbereiding",
+    kicker: "Web platform · Livegang 10 augustus",
     omschrijving:
-      "Vastgoedplatform, direct van eigenaar naar koper. Aanbod met filters, meerstaps plaatsingsflow, chat en bieden — zonder makelaar.",
-    tags: ["Web platform", "Eigen huisstijl", "Vercel"],
+      "Vastgoedplatform, direct van eigenaar naar koper. Aanbod met kaart, chat en bieden, echte betalingen en eigen huisstijl — zonder makelaar.",
+    tags: ["Web platform", "Supabase", "Mollie"],
   },
 ];
 

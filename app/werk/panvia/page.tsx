@@ -7,37 +7,41 @@ import Reveal from "../../components/Reveal";
 export const metadata: Metadata = {
   title: "Panvia — Case",
   description:
-    "Panvia — een vastgoedplatform waar eigenaren rechtstreeks aan kopers verkopen, zonder makelaar. Positionering, eigen huisstijl én build in één hand. Eigen Kaelo-build.",
+    "Panvia — een vastgoedplatform waar eigenaren rechtstreeks aan kopers verkopen, zonder makelaar. Positionering, huisstijl “Open Huis” én live platform met echte betalingen. Eigen Kaelo-build.",
 };
 
 const features = [
   {
     label: "Aanbod",
-    body: "Woning, commercieel en vakantie in één overzicht — client-side filters op type, plaats, prijs, oppervlakte en BAR, met resultaatteller en lege-staat.",
+    body: "Woning, commercieel en vakantie in één overzicht — met kaart-splitview en prijs-markers, zoeken, filters, sorteren en favorieten.",
   },
   {
-    label: "Plaatsen",
-    body: "Meerstaps plaatsingsflow met verkopersaccount, eigenaarsverklaring, per-stap validatie in gewone taal en live courtagevergelijking vóór het betalen.",
-  },
-  {
-    label: "Detailpagina",
-    body: "Elk pand met galerij, kenmerkentabel, kadastrale info en een contactblok dat rechtstreeks naar de eigenaar leidt.",
+    label: "Plaatsen & betalen",
+    body: "Plaatsingsflow in drie stappen met eigenaarsverklaring en live courtagevergelijking — afgerekend via een echte Mollie-checkout.",
   },
   {
     label: "Chat & bieden",
-    body: "Marktplaats-achtig gesprek met de eigenaar en een gestructureerd, niet-bindend bod — Panvia bemiddelt bewust niet.",
+    body: "Gesprek met de eigenaar en een gestructureerd, niet-bindend bod — plus een berichten-paneel dat op elke pagina meereist.",
+  },
+  {
+    label: "Accounts",
+    body: "Eén account met koper- en verkopersrollen: e-mail en wachtwoord, veilige sessies en wachtwoord-herstel per mail. Het account ontstaat pas ná betaling.",
   },
   {
     label: "Mijn Panvia",
-    body: "Eigenaarskant met een inbox van alle gesprekken en biedingen; antwoorden verschijnen live aan de koperszijde.",
+    body: "Eigenaarskant met een inbox-splitview van alle gesprekken en biedingen; antwoorden verschijnen live aan de koperszijde.",
+  },
+  {
+    label: "Gidsen & vindbaarheid",
+    body: "Vier uitgewerkte gidsen als statische pagina's, structured data, clean URLs en zelf-gehoste fonts — gebouwd om organisch gevonden te worden.",
   },
   {
     label: "Zakelijk & Projecten",
-    body: "Commercieel aanbod met BAR-filter en pakketten voor parken, complexen en ontwikkelaars vanaf tien eenheden.",
+    body: "Commercieel aanbod met BAR-filter en kwartaalpakketten met automatische incasso voor parken, complexen en ontwikkelaars.",
   },
 ];
 
-const stack = ["HTML", "CSS", "JavaScript", "Geen framework", "Eigen huisstijl", "Vercel"];
+const stack = ["HTML", "CSS", "JavaScript", "Vercel Serverless", "Supabase", "Mollie", "Resend"];
 
 export default function PanviaCasePage() {
   return (
@@ -97,7 +101,7 @@ function CaseHero() {
               Merk + build
             </span>
             <span className="inline-flex items-center gap-3 rounded-full border border-border px-6 py-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              Livegang in voorbereiding
+              Livegang 10 augustus
             </span>
           </div>
         </Reveal>
@@ -107,7 +111,7 @@ function CaseHero() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* BLUEPRINT PANEL — op-brand voor Panvia (Ultramarijn, blauwdruk i.p.v. foto) */
+/* BRAND PANEL — op-brand voor Panvia (v3 "Open Huis": blauwverloop, rond)     */
 /* -------------------------------------------------------------------------- */
 
 function BlueprintPanel() {
@@ -116,19 +120,33 @@ function BlueprintPanel() {
       <div className="mx-auto max-w-3xl">
         <Reveal>
           <div
-            className="relative flex aspect-[21/9] w-full items-center justify-center overflow-hidden rounded-xl border border-border"
+            className="relative flex aspect-[21/9] w-full items-center justify-center overflow-hidden rounded-3xl border border-border"
             style={{
-              backgroundColor: "#2438D8",
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px)",
-              backgroundSize: "32px 32px",
+              backgroundImage: "linear-gradient(135deg, #2438D8 0%, #101854 100%)",
             }}
           >
-            <span className="font-display text-4xl font-medium tracking-tight text-white md:text-6xl">
-              Panvia
-            </span>
-            <span className="absolute bottom-3 right-4 font-mono text-[10px] uppercase tracking-widest text-white/70">
-              Huisstijl · Blauwdruk
+            <div className="flex items-center gap-4">
+              <svg
+                viewBox="0 0 48 48"
+                aria-hidden
+                className="h-10 w-10 md:h-14 md:w-14"
+                fill="none"
+                stroke="#fff"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 40V21L24 10l12 11v19h-7V29h-4" />
+              </svg>
+              <span className="font-display text-4xl font-medium tracking-tight text-white md:text-6xl">
+                Panvia
+              </span>
+            </div>
+            <span
+              className="absolute bottom-4 right-5 rounded-full px-4 py-1.5 font-mono text-[10px] uppercase tracking-widest"
+              style={{ backgroundColor: "#E8C24B", color: "#0B1030" }}
+            >
+              Huisstijl · Open Huis
             </span>
           </div>
         </Reveal>
@@ -195,12 +213,12 @@ function CaseDetails() {
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-8">
             <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl">
-              Eigen huisstijl &ldquo;Blauwdruk&rdquo;<span className="text-accent">.</span>
+              Eigen huisstijl &ldquo;Open Huis&rdquo;<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">
-                Ultramarijn als merk én actie, Fraunces en IBM Plex Mono,
-                blauwdruk-beelden in plaats van stockfoto&apos;s — een strak
-                token-systeem afgedwongen in de code.
+                Panvia-blauw met een nachtblauw verloop, Poppins en Inter,
+                ronde vormen en foto&apos;s voorop — warm en toegankelijk, als
+                token-systeem consequent doorgevoerd tot in de checkout.
               </span>
             </p>
           </Reveal>
@@ -236,11 +254,12 @@ function CaseDetails() {
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-8">
             <p className="font-display text-2xl leading-tight tracking-tight md:text-4xl">
-              Positionering, merk én werkende site — in één hand<span className="text-accent">.</span>
+              Positionering, merk én live platform — in één hand<span className="text-accent">.</span>
               <br />
               <span className="text-muted-foreground">
-                Van strategie tot brandbook tot build. Alles klopt met elkaar,
-                omdat het van dezelfde tekentafel komt.
+                Van strategie tot brandbook tot een platform dat echte
+                betalingen int — inclusief accounts, mail en vindbaarheid.
+                Alles klopt met elkaar, omdat het van dezelfde tekentafel komt.
               </span>
             </p>
           </Reveal>

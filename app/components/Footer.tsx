@@ -22,6 +22,7 @@ export default function Footer() {
             <FooterLink href="/portfolio">Portfolio</FooterLink>
             <FooterLink href="/manifest">Manifest</FooterLink>
             <FooterLink href="/start">Audit</FooterLink>
+            <FooterLink href="/#contact">Contact</FooterLink>
           </nav>
           <div className="text-[12px] font-semibold text-white/50">
             <a href="mailto:hallo@kaelo-consulting.com" className="hover:text-accent">

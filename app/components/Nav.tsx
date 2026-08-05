@@ -15,10 +15,13 @@ export default function Nav() {
           kaelo<sup className="text-[10px] font-bold">®</sup>
         </Link>
 
+        {/* zelfde volgorde en items als de statische pagina's in public/site */}
         <nav className="hidden items-center gap-2 md:flex">
+          <NavLink href="/#aanpak">Aanpak</NavLink>
+          <NavLink href="/#systemen">Systemen</NavLink>
           <NavLink href="/portfolio">Portfolio</NavLink>
           <NavLink href="/manifest">Manifest</NavLink>
-          <NavLink href="/#systemen">Systemen</NavLink>
+          <NavLink href="/#contact">Contact</NavLink>
         </nav>
 
         <Link

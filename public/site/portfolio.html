@@ -4,7 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Portfolio van Kaelo — wat we bouwden voor KLOK Works, Panvia en onze eigen cockpit. Per project: de opdracht, wat we bouwden, hoe we het deden en de schermen uit het systeem.">
-<title>KAELO® — Portfolio: wat we bouwden, en hoe.</title>
+<title>Portfolio — wat we bouwden, en hoe | Kaelo</title>
+<link rel="canonical" href="https://www.kaelo-consulting.com/portfolio">
+<meta name="theme-color" content="#FF2EB2">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/pink/kaelo-pink-icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/brand/pink/kaelo-pink-icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/pink/kaelo-pink-icon-180.png">
+
+<!-- Open Graph / social & Google -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kaelo">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://www.kaelo-consulting.com/portfolio">
+<meta property="og:title" content="Portfolio — wat we bouwden, en hoe">
+<meta property="og:description" content="KLOK Works, Panvia en onze eigen cockpit. Per project: de opdracht, wat we bouwden, hoe we het aanpakten en de schermen uit het systeem.">
+<meta property="og:image" content="https://www.kaelo-consulting.com/brand/pink/kaelo-pink-og-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kaelo — Wij bouwen het systeem. AI Build Studio.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfolio — wat we bouwden, en hoe">
+<meta name="twitter:description" content="KLOK Works, Panvia en onze eigen cockpit — met de schermen uit elk systeem.">
+<meta name="twitter:image" content="https://www.kaelo-consulting.com/brand/pink/kaelo-pink-og-1200x630.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Unbounded:wght@500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -55,7 +80,7 @@ img{max-width:100%;display:block;}
 .phero-inner{max-width:var(--max-w);margin:0 auto;}
 .back{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:9px 20px;margin-bottom:26px;transition:all .2s;}
 .back:hover{background:var(--ink);color:var(--pink);transform:translateX(-4px);}
-.phero-h{font-weight:900;font-size:clamp(46px,7vw,100px);line-height:.93;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:26px;}
+.phero-h{font-weight:900;font-size:clamp(38px,7vw,100px);line-height:.93;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:26px;}
 .phero-h .white{color:#fff;}
 .phero-h .outline{color:transparent;-webkit-text-stroke:3px var(--ink);}
 .phero-sub{font-size:17px;font-weight:500;line-height:1.6;max-width:620px;}
@@ -90,7 +115,7 @@ img{max-width:100%;display:block;}
 .screen-face.klok{background:var(--yellow);}
 .screen-face.panvia{background:var(--blue);color:#fff;}
 .screen-face.cc{background:var(--ink);color:#fff;}
-.smark{font-family:'Unbounded',sans-serif;font-size:clamp(40px,6vw,76px);font-weight:900;letter-spacing:-.035em;line-height:1;}
+.smark{font-family:'Unbounded',sans-serif;font-size:clamp(32px,6vw,76px);font-weight:900;letter-spacing:-.035em;line-height:1;}
 .stag{font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
 .screen-face.cc .smark{color:var(--mint);}
 
@@ -240,7 +265,7 @@ img{max-width:100%;display:block;}
 /* FOOTER */
 footer{background:var(--ink);color:#fff;padding:76px 32px 40px;overflow:hidden;}
 .footer-inner{max-width:var(--max-w);margin:0 auto;}
-.footer-mega{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(70px,15vw,220px);line-height:.9;letter-spacing:-.04em;color:var(--pink);text-align:center;user-select:none;}
+.footer-mega{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(52px,15vw,220px);line-height:.9;letter-spacing:-.04em;color:var(--pink);text-align:center;user-select:none;}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:52px;padding-top:26px;border-top:1.5px solid rgba(255,255,255,.15);}
 .flinks{display:flex;gap:26px;flex-wrap:wrap;}
 .flink{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.7);transition:color .2s;}
@@ -276,6 +301,18 @@ footer{background:var(--ink);color:#fff;padding:76px 32px 40px;overflow:hidden;}
   .vac{flex-wrap:wrap;}
   .ex-card.wide .ex-body{overflow-x:auto;}
   .ex-card.wide .tbl{min-width:520px;}
+}
+@media(max-width:520px){
+  .nav-inner,.phero,.pcta,footer{padding-left:20px;padding-right:20px;}
+  .nlinks{padding:20px;}
+  .proj{padding:52px 16px;}
+  .screen-face{padding:32px 20px;}
+  .screen,.ex-card,.result{box-shadow:6px 6px 0 var(--ink);}
+  .jump-item{width:100%;justify-content:space-between;}
+  .ex-body{padding:20px 16px;}
+  .meta-cell{padding:18px 20px;}
+  .result{padding:26px 22px;}
+  .how-step{padding:22px 20px;}
 }
 </style>
 </head>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kaelo — Pink OG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Unbounded:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 100%; height: 100%; }
+      body {
+        background: #ff2eb2;
+        font-family: "Archivo", system-ui, sans-serif;
+        color: #0b0b0d;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .top {
+        flex: 1;
+        position: relative;
+        padding: 6.5vh 6% 4vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .brandrow {
+        position: absolute;
+        top: 6.5vh;
+        left: 6%;
+        right: 6%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: "Unbounded", sans-serif;
+        font-weight: 900;
+        font-size: 3.4vh;
+        letter-spacing: -0.02em;
+      }
+      .logo sup { font-size: 1.4vh; vertical-align: super; }
+      .chip {
+        font-size: 1.85vh;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        background: #8ff5c6;
+        border: 0.42vh solid #0b0b0d;
+        border-radius: 99px;
+        padding: 1.1vh 2.6vh;
+      }
+      h1 {
+        font-weight: 900;
+        font-size: 14.2vh;
+        line-height: 0.9;
+        letter-spacing: -0.035em;
+        text-transform: uppercase;
+      }
+      .tilt {
+        display: inline-block;
+        background: #f2ff3d;
+        padding: 0 0.16em;
+        border-radius: 0.14em;
+        transform: rotate(-2.5deg);
+        box-shadow: 0.9vh 0.9vh 0 #0b0b0d;
+      }
+      .outline {
+        color: transparent;
+        -webkit-text-stroke: 0.62vh #0b0b0d;
+      }
+      .bar {
+        background: #0b0b0d;
+        color: #fff;
+        padding: 2.9vh 6%;
+        display: flex;
+        align-items: center;
+        gap: 2.4vh;
+        font-size: 2.35vh;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        white-space: nowrap;
+      }
+      .dot {
+        width: 1.5vh;
+        height: 1.5vh;
+        border-radius: 50%;
+        background: #ff2eb2;
+        flex: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="brandrow">
+        <div class="logo">kaelo<sup>®</sup></div>
+        <div class="chip">AI Build Studio</div>
+      </div>
+      <h1>
+        Wij bouwen<br />
+        <span class="tilt">het</span> <span class="outline">systeem.</span>
+      </h1>
+    </div>
+    <div class="bar">
+      <span>Eigen code</span><span class="dot"></span>
+      <span>Vaste prijs</span><span class="dot"></span>
+      <span>Vaste datum</span><span class="dot"></span>
+      <span>Geen rapporten</span>
+    </div>
+  </body>
+</html>

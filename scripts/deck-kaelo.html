@@ -52,8 +52,10 @@
   .c3{grid-template-columns:repeat(3,1fr);}
   .c2{grid-template-columns:1fr 1fr;}
   .c4{grid-template-columns:repeat(4,1fr);}
-  .card{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:24px 22px;
-    box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;}
+  /* Kleur expliciet zetten: op .slide.ink en .slide.blue erft een kaart anders
+     witte tekst en valt hij weg tegen zijn eigen lichte achtergrond. */
+  .card{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:20px;
+    padding:24px 22px;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;}
   .card.mint{background:var(--mint);} .card.yellow{background:var(--yellow);}
   .card.lilac{background:var(--lilac);} .card.dark{background:var(--ink);color:#fff;}
   .card.pink{background:var(--pink);color:#fff;}
@@ -207,11 +209,11 @@
     <span class="pill p">05 · Ook mogelijk — inhuur</span>
   </div>
   <div class="body">
-    <h1 style="font-size:44px;margin-bottom:14px;">De AI die je al hebt,<br><span class="tilt">eindelijk</span> nuttig.</h1>
-    <p class="lead" style="font-size:17px;margin-bottom:20px;max-width:880px;">
-      Veel bedrijven hebben AI al in huis — licenties, tools, een paar enthousiaste collega's — maar
-      het zit nergens in de bedrijfsvoering. Wij komen op freelance basis binnen en maken er wél een
-      werkend onderdeel van je proces van.
+    <h1 style="font-size:40px;margin-bottom:12px;">Dezelfde organisatie.<br><span class="tilt">Minder</span> mensen nodig.</h1>
+    <p class="lead" style="font-size:16px;margin-bottom:18px;max-width:920px;">
+      De AI-systemen zijn er vaak al, maar ze zitten nergens in de bedrijfsvoering. Wij integreren ze
+      zó in jullie processen dat het werk dat nu handen kost door het systeem gedaan wordt. Daar is
+      expertise voor nodig: wij werken daarvoor een deel van de tijd bij jullie op kantoor, de rest remote.
     </p>
     <div class="cards c3" style="margin-bottom:16px;">
       <div class="card" style="padding:18px 20px;">
@@ -227,6 +229,10 @@
         <p style="font-size:13px;margin-top:8px;">Trainen en overdragen, zodat het blijft draaien als wij weer weg zijn.</p>
       </div>
     </div>
+    <p class="lead" style="font-size:15px;font-weight:800;margin-bottom:14px;">
+      Het verschil zit niet in de tool — dat is een licentie. Het zit in weten hoe je hem in een
+      proces krijgt zonder dat het werk erbij komt.
+    </p>
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
       <span class="pill w" style="font-size:11px;padding:6px 14px;">Marketing &amp; SEO</span>
       <span class="pill w" style="font-size:11px;padding:6px 14px;">Calculatie</span>
@@ -262,11 +268,46 @@
   <div class="foot"><span>Kaelo — inhuur &amp; AI-integratie</span><span>06</span></div>
 </div>
 
-<!-- 7 — ZO WERKEN WE -->
+<!-- 7 — DE TERUGVERDIENSOM -->
+<div class="slide ink">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill y">06 · Wat het oplevert</span>
+  </div>
+  <div class="body">
+    <h1 class="sm" style="margin-bottom:8px;">Eén FTE minder is<br><span style="color:var(--pink);">€ 82.800 per jaar.</span></h1>
+    <p class="lead" style="font-size:17px;margin-bottom:22px;">
+      Gerekend met € 45 werkgeverskosten per uur over 46 werkweken. Elk jaar opnieuw, zonder dat
+      er iets bij hoeft.
+    </p>
+    <div class="cards c4" style="margin-bottom:18px;">
+      <div class="card" style="padding:20px;"><div class="num" style="font-size:32px;white-space:nowrap;">€ 82.800</div><div class="kicker">1 FTE minder · per jaar</div></div>
+      <div class="card mint" style="padding:20px;"><div class="num" style="font-size:32px;white-space:nowrap;">€ 165.600</div><div class="kicker">2 FTE minder · per jaar</div></div>
+      <div class="card yellow" style="padding:20px;"><div class="num" style="font-size:32px;white-space:nowrap;">€ 331.200</div><div class="kicker">4 FTE minder · per jaar</div></div>
+      <div class="card pink" style="padding:20px;"><div class="num" style="font-size:32px;white-space:nowrap;">€ 496.800</div><div class="kicker" style="opacity:.8;">6 FTE minder · per jaar</div></div>
+    </div>
+    <div class="card" style="padding:18px 24px;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;">
+      <div>
+        <div class="kicker" style="margin-top:0;">Wat een traject kost</div>
+        <div class="num" style="font-size:30px;margin-top:4px;white-space:nowrap;">€ 27.000 — € 51.000</div>
+      </div>
+      <div style="font-size:14px;font-weight:800;text-align:right;line-height:1.5;max-width:520px;">
+        Zo'n 120 uur begeleiding tegen € 225 — € 425 per uur, ex. btw.<br>
+        Bij twee FTE minder binnen 2 tot 4 maanden terugverdiend — daarna loopt het door.
+      </div>
+    </div>
+    <p class="mono" style="font-size:11px;margin-top:14px;opacity:.5;">
+      Indicatie op basis van gemiddelden. In de audit rekenen we met jullie eigen loonkosten en uren.
+    </p>
+  </div>
+  <div class="foot"><span>Kaelo — de terugverdiensom</span><span>07</span></div>
+</div>
+
+<!-- 8 — ZO WERKEN WE -->
 <div class="slide">
   <div class="top">
     <div class="logo">kaelo<sup>®</sup></div>
-    <span class="pill p">06 · Zo werken we</span>
+    <span class="pill p">07 · Zo werken we</span>
   </div>
   <div class="body">
     <h1 class="sm" style="margin-bottom:26px;">Vier stappen. Geen omwegen.</h1>
@@ -277,14 +318,14 @@
       <div class="card"><div class="num" style="color:var(--pink-hot);">04</div><h2 style="margin-top:12px;">Wij bouwen, jij draait</h2><p>Wekelijkse demo, oplevering op de afgesproken datum.</p><div class="kicker" style="margin-top:auto;">Vaste datum</div></div>
     </div>
   </div>
-  <div class="foot"><span>Kaelo — werkwijze</span><span>07</span></div>
+  <div class="foot"><span>Kaelo — werkwijze</span><span>08</span></div>
 </div>
 
-<!-- 8 — WAT WE BOUWDEN -->
+<!-- 9 — WAT WE BOUWDEN -->
 <div class="slide">
   <div class="top">
     <div class="logo">kaelo<sup>®</sup></div>
-    <span class="pill y">07 · Wat we bouwden</span>
+    <span class="pill y">08 · Wat we bouwden</span>
   </div>
   <div class="body">
     <h1 class="sm" style="margin-bottom:24px;">Geen portfolio-praat. Live systemen.</h1>
@@ -309,14 +350,14 @@
       </div>
     </div>
   </div>
-  <div class="foot"><span>Kaelo — portfolio</span><span>08</span></div>
+  <div class="foot"><span>Kaelo — portfolio</span><span>09</span></div>
 </div>
 
-<!-- 9 — DE BELOFTE + VOOR WIE -->
+<!-- 10 — DE BELOFTE + VOOR WIE -->
 <div class="slide ink">
   <div class="top">
     <div class="logo">kaelo<sup>®</sup></div>
-    <span class="pill p">08 · De belofte</span>
+    <span class="pill p">09 · De belofte</span>
   </div>
   <div class="body">
     <h1 class="sm">Wat we afspreken,<br><span style="color:var(--pink);">leveren we.</span></h1>
@@ -329,14 +370,14 @@
       <div class="card" style="background:transparent;border-color:rgba(255,255,255,.35);color:#fff;box-shadow:none;"><h2>Niet ✕</h2><p>Pre-revenue startups zonder concreet probleem. En wie een rapport wil — wij leveren werkende software.</p></div>
     </div>
   </div>
-  <div class="foot"><span>Kaelo — belofte &amp; doelgroep</span><span>09</span></div>
+  <div class="foot"><span>Kaelo — belofte &amp; doelgroep</span><span>10</span></div>
 </div>
 
-<!-- 10 — WAAROM NU -->
+<!-- 11 — WAAROM NU -->
 <div class="slide">
   <div class="top">
     <div class="logo">kaelo<sup>®</sup></div>
-    <span class="pill y">09 · Waarom nu</span>
+    <span class="pill y">10 · Waarom nu</span>
   </div>
   <div class="body">
     <h1 class="sm" style="margin-bottom:24px;">Wachten kost geld dat je al uitgeeft.</h1>
@@ -351,14 +392,14 @@
       Op basis van de rekensom op slide 4. In de audit rekenen we met jullie eigen cijfers.
     </p>
   </div>
-  <div class="foot"><span>Kaelo — waarom nu</span><span>10</span></div>
+  <div class="foot"><span>Kaelo — waarom nu</span><span>11</span></div>
 </div>
 
 <!-- 11 — CTA -->
 <div class="slide pink">
   <div class="top">
     <div class="logo">kaelo<sup>®</sup></div>
-    <span class="pill">10 · Begin vandaag</span>
+    <span class="pill">11 · Begin vandaag</span>
   </div>
   <div class="body">
     <h1>Begin met<br><span class="outline">de</span> <span class="tilt">audit.</span></h1>

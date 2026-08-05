@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/* Kaelo design tokens — "Engineered": deep graphite, electric violet  */
+/* Kaelo design tokens — "Pink": hot pink, ink, harde randen           */
+/* Zelfde palet als de statische pagina's in public/site.              */
 /* ------------------------------------------------------------------ */
 
 :root {
-  --background: #07070b;
-  --foreground: #f6f6f8;
-  --muted: #0c0c13;
-  --muted-foreground: #9092a3;
-  --border: #1b1c26;
-  --accent: #7c6cff;
+  --background: #fff4fa; /* paper */
+  --foreground: #0b0b0d; /* ink */
+  --muted: #ffffff;
+  --muted-foreground: #5e5a63;
+  --border: #0b0b0d;
+  --accent: #ff2eb2;
   --accent-foreground: #ffffff;
-  --accent-2: #22d3ee;
+  --accent-2: #f2ff3d; /* neon geel */
+
+  --pink-soft: #ffd6ef;
+  --mint: #8ff5c6;
+  --lilac: #e4c6ff;
+  --blue: #2e4eff;
 }
 
 @theme inline {
@@ -24,10 +30,13 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-2: var(--accent-2);
+  --color-mint: var(--mint);
+  --color-lilac: var(--lilac);
+  --color-pink-soft: var(--pink-soft);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-geist-sans);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-jetbrains);
+  --font-display: var(--font-unbounded);
 }
 
 html {
@@ -49,25 +58,106 @@ body {
   color: var(--accent-foreground);
 }
 
-/* Display text: engineered, strak gespatieerd */
+/* Display text: Unbounded, chunky */
 .font-display {
-  font-feature-settings: "ss01";
-  letter-spacing: -0.045em;
+  letter-spacing: -0.025em;
 }
 
-/* Gradient headline-woorden: violet naar cyaan */
-.kaelo-gradient-text {
-  background: linear-gradient(100deg, var(--accent) 0%, var(--accent-2) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Grote koppen: Archivo Black, uppercase — zoals op de statische pagina's */
+.k-h {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.96;
 }
 
-/* Glass surface voor cards en panelen */
-.kaelo-glass {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+/* Pill-badge */
+.k-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--mint);
+  color: var(--foreground);
+}
+.k-pill-yellow { background: var(--accent-2); }
+.k-pill-pink { background: var(--accent); color: #fff; }
+
+/* Kaart met harde offset-schaduw */
+.k-card {
+  background: #fff;
+  border: 3px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 7px 7px 0 var(--border);
+}
+
+/* Knop-pill */
+.k-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-unbounded), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 17px 30px;
+  border-radius: 999px;
+  border: 3px solid var(--border);
+  background: var(--foreground);
+  color: #fff;
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+.k-btn:hover:not(:disabled) {
+  background: var(--accent-2);
+  color: var(--foreground);
+  transform: rotate(-2deg) scale(1.04);
+}
+.k-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.k-btn-pink { background: var(--accent); }
+.k-btn-ghost { background: transparent; color: var(--foreground); }
+.k-btn-ghost:hover:not(:disabled) { background: #fff; transform: rotate(2deg) scale(1.04); }
+
+/* Invoervelden */
+.k-input {
+  width: 100%;
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 16px 18px;
+  border: 2.5px solid var(--border);
+  border-radius: 16px;
+  background: var(--background);
+  color: var(--foreground);
+  outline: none;
+  transition: all 0.2s ease;
+}
+.k-input:focus {
+  background: #fff;
+  box-shadow: 4px 4px 0 var(--accent);
+}
+.k-input::placeholder { color: rgba(11, 11, 13, 0.38); }
+
+/* Scallop-rand tussen secties: bolletjes hangen uit de sectie erbóven,
+   de achtergrondkleur is die van de sectie eronder. */
+.k-scallop {
+  height: 34px;
+  background-image: radial-gradient(
+    circle at 32px -6px,
+    var(--scallop-dot, var(--accent)) 30px,
+    transparent 31px
+  );
+  background-size: 64px 34px;
+  background-repeat: repeat-x;
+  background-color: var(--background);
+}
+.k-scallop-on-ink {
+  background-color: var(--foreground);
 }
 
 /* Subtiel blueprint-grid, uitgefaded naar de randen */
@@ -106,7 +196,7 @@ body {
   animation: kaelo-blink 1s step-end infinite;
 }
 
-/* Subtle grain overlay */
+/* Subtle grain overlay — niet meer gebruikt in de pink huisstijl */
 .kaelo-grain::before {
   content: "";
   position: fixed;
@@ -160,7 +250,7 @@ body {
 
 /* Removes the default focus ring; we add our own via tailwind utility */
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 

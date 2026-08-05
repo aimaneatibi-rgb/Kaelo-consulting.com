@@ -1,47 +1,50 @@
 import Link from "next/link";
-import Marquee from "./Marquee";
 
+/**
+ * Footer in de pink huisstijl — zwart vlak met het roze mega-wordmark,
+ * gelijk aan de statische pagina's in public/site.
+ */
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-background pt-24">
-      <Marquee items={["Wij bouwen het systeem", "10x is makkelijker dan 2x", "Eigen code, jullie eigendom", "Vaste prijs, vaste datum"]} />
-      <div className="mx-auto mt-24 grid max-w-[1600px] grid-cols-1 gap-12 px-6 pb-12 md:grid-cols-4 md:px-12">
-        <div className="md:col-span-2">
-          <p className="font-display text-3xl tracking-tight md:text-4xl">
-            Klaar om te beginnen?
-          </p>
-          <Link
-            href="/start"
-            className="mt-6 inline-flex items-center gap-2 font-mono text-sm uppercase tracking-widest text-accent hover:opacity-80"
-          >
-            Start de audit
-            <span aria-hidden>→</span>
-          </Link>
+    <footer className="overflow-hidden bg-foreground px-5 pb-10 pt-20 text-white md:px-8">
+      <div className="mx-auto max-w-[1320px]">
+        <div className="select-none text-center font-display font-black leading-[0.9] tracking-[-0.04em] text-accent text-[clamp(52px,15vw,220px)]">
+          kaelo®
         </div>
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Site
+
+        <div className="mt-12 flex flex-col items-start justify-between gap-6 border-t border-white/15 pt-7 md:flex-row md:items-center">
+          <p className="text-[13px] font-extrabold uppercase tracking-[0.06em]">
+            Kaelo ©2026 — AI Build Studio
           </p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><Link href="/manifest" className="hover:text-accent">Manifest</Link></li>
-            <li><Link href="/werk" className="hover:text-accent">Werk</Link></li>
-            <li><Link href="/start" className="hover:text-accent">Audit</Link></li>
-          </ul>
+          <nav className="flex flex-wrap gap-6">
+            <FooterLink href="/#aanpak">Aanpak</FooterLink>
+            <FooterLink href="/#systemen">Systemen</FooterLink>
+            <FooterLink href="/portfolio">Portfolio</FooterLink>
+            <FooterLink href="/manifest">Manifest</FooterLink>
+            <FooterLink href="/start">Audit</FooterLink>
+          </nav>
+          <div className="text-[12px] font-semibold text-white/50">
+            <a href="mailto:hallo@kaelo-consulting.com" className="hover:text-accent">
+              hallo@kaelo-consulting.com
+            </a>
+            <span className="mx-2">·</span>
+            <a href="tel:+31621365990" className="hover:text-accent">
+              +31 6 21 36 59 90
+            </a>
+          </div>
         </div>
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Contact
-          </p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="mailto:hallo@kaelo-consulting.com" className="hover:text-accent">hallo@kaelo-consulting.com</a></li>
-            <li><a href="tel:+31621365990" className="hover:text-accent">+31 6 21 36 59 90</a></li>
-          </ul>
-        </div>
-      </div>
-      <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-4 border-t border-border px-6 py-8 font-mono text-xs uppercase tracking-widest text-muted-foreground md:flex-row md:items-center md:px-12">
-        <p>Kaelo — Nederland</p>
-        <p>{new Date().getFullYear()} — Wij bouwen het systeem</p>
       </div>
     </footer>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="text-[13px] font-bold uppercase tracking-[0.06em] text-white/70 transition hover:text-accent"
+    >
+      {children}
+    </Link>
   );
 }

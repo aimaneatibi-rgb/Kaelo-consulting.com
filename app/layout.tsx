@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Unbounded, JetBrains_Mono } from "next/font/google";
 import SmoothScroll from "./components/SmoothScroll";
-import Splash from "./components/Splash";
-import Cursor from "./components/Cursor";
-import ScrollProgress from "./components/ScrollProgress";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
   subsets: ["latin"],
+  weight: ["500", "700", "900"],
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -47,12 +52,9 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${geistSans.variable} ${geistMono.variable} kaelo-grain`}
+      className={`${archivo.variable} ${unbounded.variable} ${jetbrains.variable}`}
     >
       <body className="min-h-screen bg-background text-foreground">
-        <Splash />
-        <ScrollProgress />
-        <Cursor />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

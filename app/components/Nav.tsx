@@ -1,42 +1,44 @@
 import Link from "next/link";
 
+/**
+ * Nav in de pink huisstijl — zelfde opbouw als de statische pagina's in
+ * public/site: roze balk, Unbounded-wordmark, zwarte CTA-pill.
+ */
 export default function Nav() {
   return (
-    <header className="fixed inset-x-0 top-4 z-40 px-4 md:top-6 md:px-6">
-      <div className="mx-auto flex max-w-5xl items-center justify-between rounded-2xl border border-border bg-background/70 px-5 py-3 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 bg-accent">
+      <div className="mx-auto flex max-w-[1320px] items-center justify-between px-5 py-4 md:px-8">
         <Link
           href="/"
-          className="font-display text-xl font-medium tracking-tight"
+          className="font-display text-2xl font-black tracking-tight text-foreground"
         >
-          Kaelo<span className="text-accent">.</span>
+          kaelo<sup className="text-[10px] font-bold">®</sup>
         </Link>
-        <nav className="hidden items-center gap-7 font-mono text-xs uppercase tracking-widest md:flex">
-          <Link
-            href="/manifest"
-            className="text-muted-foreground transition hover:text-foreground"
-          >
-            Manifest
-          </Link>
-          <Link
-            href="/werk"
-            className="text-muted-foreground transition hover:text-foreground"
-          >
-            Werk
-          </Link>
-          <Link
-            href="/start"
-            className="rounded-full bg-accent px-4 py-2 text-accent-foreground shadow-[0_0_24px_rgba(124,108,255,0.35)] transition hover:opacity-90"
-          >
-            Start de audit →
-          </Link>
+
+        <nav className="hidden items-center gap-2 md:flex">
+          <NavLink href="/portfolio">Portfolio</NavLink>
+          <NavLink href="/manifest">Manifest</NavLink>
+          <NavLink href="/#systemen">Systemen</NavLink>
         </nav>
+
         <Link
           href="/start"
-          className="rounded-full bg-accent px-4 py-2 font-mono text-xs uppercase tracking-widest text-accent-foreground md:hidden"
+          className="rounded-full bg-foreground px-5 py-3 text-[12px] font-extrabold uppercase tracking-[0.05em] text-white transition hover:-rotate-2 hover:scale-105 hover:bg-accent-2 hover:text-foreground md:px-6"
         >
-          Start →
+          Start de audit ↗
         </Link>
       </div>
     </header>
+  );
+}
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="rounded-full px-4 py-2.5 text-[13px] font-bold uppercase tracking-[0.05em] text-foreground transition hover:bg-foreground hover:text-accent"
+    >
+      {children}
+    </Link>
   );
 }

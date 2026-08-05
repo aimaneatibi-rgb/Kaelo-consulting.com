@@ -22,52 +22,52 @@ export default function ManifestPage() {
     <>
       <Nav />
       <main>
-        <section className="px-6 pb-24 pt-40 md:px-12 md:pt-48">
-          <div className="mx-auto max-w-4xl">
+        <section className="bg-accent px-5 pb-20 pt-14 md:px-8 md:pb-24">
+          <div className="mx-auto max-w-[1320px]">
             <Reveal>
-              <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                Manifest
-              </p>
+              <span className="k-pill k-pill-yellow">Manifest</span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-8 font-display text-[clamp(3rem,10vw,10rem)] font-medium leading-[0.92] tracking-[-0.03em]">
-                Waarom Kaelo<br />
-                bestaat<span className="text-accent">.</span>
+              <h1 className="k-h mt-7 text-[clamp(42px,9vw,132px)]">
+                Waarom Kaelo
+                <br />
+                <span className="text-white">bestaat.</span>
               </h1>
             </Reveal>
           </div>
         </section>
+        <div className="k-scallop" />
 
-        <section className="border-t border-border px-6 py-24 md:px-12 md:py-32">
-          <div className="mx-auto max-w-3xl space-y-12 text-xl leading-relaxed md:text-2xl">
+        <section className="px-5 py-20 md:px-8 md:py-28">
+          <div className="mx-auto max-w-3xl space-y-9">
             {paragrafen.map((p, i) => (
               <Reveal key={i} delay={i * 0.05}>
-                <p className={i === paragrafen.length - 1 ? "" : ""}>
-                  <span className="mr-4 font-mono text-xs uppercase tracking-widest text-muted-foreground align-top">
+                <div className="k-card p-7 md:p-9">
+                  <span className="font-display text-sm font-black text-accent">
                     §{i + 1}
                   </span>
-                  {p}
-                </p>
+                  <p className="mt-3 text-lg font-medium leading-relaxed md:text-xl">
+                    {p}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>
         </section>
 
-        <section className="border-t border-border bg-accent px-6 py-32 text-accent-foreground md:px-12 md:py-48">
-          <div className="mx-auto max-w-4xl">
+        <section className="bg-foreground px-5 py-24 text-white md:px-8 md:py-32">
+          <div className="mx-auto max-w-[1320px]">
             <Reveal>
-              <p className="font-display text-[clamp(2rem,6vw,5rem)] leading-tight tracking-tight">
-                Wij zijn Kaelo.<br />
-                Wij bouwen het systeem.
+              <p className="k-h text-[clamp(34px,6.5vw,88px)]">
+                Wij zijn Kaelo.
+                <br />
+                <span className="text-accent">Wij bouwen het systeem.</span>
               </p>
             </Reveal>
             <Reveal delay={0.2}>
-              <Link
-                href="/start"
-                className="mt-12 inline-flex items-center gap-3 rounded-full bg-background px-10 py-5 font-mono text-sm uppercase tracking-widest text-foreground transition hover:opacity-90"
-              >
+              <Link href="/start" className="k-btn k-btn-pink mt-10">
                 Start de audit
-                <span aria-hidden>→</span>
+                <span aria-hidden>↗</span>
               </Link>
             </Reveal>
           </div>

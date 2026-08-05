@@ -5,16 +5,35 @@ import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Manifest — waarom Kaelo bestaat",
+  // absolute titel: anders plakt de template er nog een "— Kaelo" achter
+  title: { absolute: "Manifest: waarom Kaelo bestaat" },
   description:
     "10x is geen 2x met een tandje erbij. Waarom wij software bouwen die werk weghaalt in plaats van er werk bij te stapelen.",
   alternates: { canonical: "/manifest" },
   openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    siteName: "Kaelo",
     url: "/manifest",
-    title: "Manifest — waarom Kaelo bestaat",
+    title: "Manifest: waarom Kaelo bestaat",
     description:
       "10x is geen 2x met een tandje erbij. Je moet werk wéghalen, niet erbij stapelen.",
+    // expliciet meegeven: een eigen openGraph-blok erft de share-image niet
+    images: ["/brand/pink/kaelo-pink-og-1200x630.png"],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/brand/pink/kaelo-pink-og-1200x630.png"],
+  },
+};
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kaelo-consulting.com/" },
+    { "@type": "ListItem", position: 2, name: "Manifest", item: "https://www.kaelo-consulting.com/manifest" },
+  ],
 };
 
 const paragrafen = [
@@ -28,6 +47,10 @@ const paragrafen = [
 export default function ManifestPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
       <main>
         <section className="bg-accent px-5 pb-20 pt-14 md:px-8 md:pb-24">

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio van Kaelo — wat we bouwden voor KLOK Works, Panvia en onze eigen cockpit. Per project: de opdracht, wat we bouwden, hoe we het deden en de schermen uit het systeem.">
+<meta name="description" content="Wat Kaelo bouwde voor KLOK Works, Panvia en de eigen cockpit. Per project: de opdracht, wat we bouwden, hoe we het aanpakten en de schermen uit het systeem.">
 <title>Portfolio — wat we bouwden, en hoe | Kaelo</title>
 <link rel="canonical" href="https://www.kaelo-consulting.com/portfolio">
 <meta name="theme-color" content="#FF2EB2">
@@ -29,6 +29,72 @@
 <meta name="twitter:title" content="Portfolio — wat we bouwden, en hoe">
 <meta name="twitter:description" content="KLOK Works, Panvia en onze eigen cockpit — met de schermen uit elk systeem.">
 <meta name="twitter:image" content="https://www.kaelo-consulting.com/brand/pink/kaelo-pink-og-1200x630.png">
+
+<!-- Structured data: kruimelpad + de drie projecten -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kaelo-consulting.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.kaelo-consulting.com/portfolio" }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "name": "Portfolio — wat we bouwden, en hoe",
+      "url": "https://www.kaelo-consulting.com/portfolio",
+      "description": "Wat Kaelo bouwde voor KLOK Works, Panvia en de eigen cockpit.",
+      "isPartOf": { "@type": "WebSite", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "KLOK Works",
+              "url": "https://klokworks.nl",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "description": "Marktplaats voor werk: vacatures en shifts direct tussen werkgever en werknemer, zonder uitzendmarges.",
+              "author": { "@type": "Organization", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Panvia",
+              "url": "https://www.panvia.nl",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "description": "Vastgoedplatform waar eigenaren rechtstreeks aan kopers verkopen, tegen één vaste prijs zonder courtage.",
+              "author": { "@type": "Organization", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Kaelo Command Center",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "description": "Interne cockpit met funnel, projecten en AI-drafts waarbij een mens goedkeurt.",
+              "author": { "@type": "Organization", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -4,21 +4,44 @@ import Footer from "../components/Footer";
 import StartForm from "./StartForm";
 
 export const metadata: Metadata = {
-  title: "Start de audit — gratis, ± 5 minuten",
+  // absolute titel: anders plakt de template er nog een "— Kaelo" achter
+  title: { absolute: "Start de audit — gratis, ± 5 minuten | Kaelo" },
   description:
     "Zes korte vragen in je eigen woorden. Je krijgt direct een eerste analyse van waar tijd verloren gaat — daarna nemen wij binnen één werkdag contact op.",
   alternates: { canonical: "/start" },
   openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    siteName: "Kaelo",
     url: "/start",
     title: "Start de audit — gratis, ± 5 minuten",
     description:
       "Zes korte vragen. Direct een eerste analyse van waar tijd verloren gaat in jullie proces.",
+    // expliciet meegeven: een eigen openGraph-blok erft de share-image niet
+    images: ["/brand/pink/kaelo-pink-og-1200x630.png"],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/brand/pink/kaelo-pink-og-1200x630.png"],
+  },
+};
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kaelo-consulting.com/" },
+    { "@type": "ListItem", position: 2, name: "Start de audit", item: "https://www.kaelo-consulting.com/start" },
+  ],
 };
 
 export default function StartPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
 
       {/* roze kop, zelfde ritme als de statische pagina's */}

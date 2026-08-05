@@ -4,9 +4,16 @@ import Footer from "../components/Footer";
 import StartForm from "./StartForm";
 
 export const metadata: Metadata = {
-  title: "Start de audit",
+  title: "Start de audit — gratis, ± 5 minuten",
   description:
     "Zes korte vragen in je eigen woorden. Je krijgt direct een eerste analyse van waar tijd verloren gaat — daarna nemen wij binnen één werkdag contact op.",
+  alternates: { canonical: "/start" },
+  openGraph: {
+    url: "/start",
+    title: "Start de audit — gratis, ± 5 minuten",
+    description:
+      "Zes korte vragen. Direct een eerste analyse van waar tijd verloren gaat in jullie proces.",
+  },
 };
 
 export default function StartPage() {

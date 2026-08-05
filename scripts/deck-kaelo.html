@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Kaelo — Pitchdeck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Unbounded:wght@500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#FF2EB2; --pink-hot:#F618A6; --ink:#0B0B0D; --paper:#FFF4FA;
+    --blue:#2E4EFF; --mint:#8FF5C6; --yellow:#F2FF3D; --lilac:#E4C6FF; --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @page{size:1280px 720px;margin:0;}
+  html,body{background:var(--paper);}
+  body{font-family:'Archivo',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+  .slide{
+    width:1280px;height:720px;page-break-after:always;position:relative;overflow:hidden;
+    background:var(--paper);padding:56px 72px 84px;display:flex;flex-direction:column;
+  }
+  .slide.pink{background:var(--pink);}
+  .slide.ink{background:var(--ink);color:var(--white);}
+  .slide.blue{background:var(--blue);color:var(--white);}
+
+  .logo{font-family:'Unbounded';font-weight:900;font-size:24px;letter-spacing:-.02em;}
+  .logo sup{font-size:9px;vertical-align:super;}
+  .top{display:flex;justify-content:space-between;align-items:center;}
+
+  .pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;
+    letter-spacing:.13em;text-transform:uppercase;padding:8px 18px;border-radius:999px;
+    background:var(--mint);color:var(--ink);border:2.5px solid var(--ink);}
+  .pill.y{background:var(--yellow);}
+  .pill.p{background:var(--pink);color:#fff;}
+  .pill.w{background:#fff;}
+  .ink .pill,.blue .pill{border-color:var(--ink);}
+
+  h1{font-weight:900;text-transform:uppercase;letter-spacing:-.035em;line-height:.94;font-size:74px;}
+  h1.sm{font-size:56px;}
+  h2{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;font-size:26px;line-height:1.1;}
+  .tilt{display:inline-block;background:var(--yellow);padding:0 12px;border-radius:12px;
+    transform:rotate(-2.5deg);box-shadow:6px 6px 0 var(--ink);color:var(--ink);}
+  .outline{color:transparent;-webkit-text-stroke:3px var(--ink);}
+  .ink .outline,.blue .outline{-webkit-text-stroke-color:#fff;}
+  .lead{font-size:19px;font-weight:600;line-height:1.5;max-width:760px;}
+  .ink .lead,.blue .lead{color:rgba(255,255,255,.82);}
+
+  .body{flex:1;display:flex;flex-direction:column;justify-content:center;}
+
+  .cards{display:grid;gap:18px;}
+  .c3{grid-template-columns:repeat(3,1fr);}
+  .c2{grid-template-columns:1fr 1fr;}
+  .c4{grid-template-columns:repeat(4,1fr);}
+  .card{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:24px 22px;
+    box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;}
+  .card.mint{background:var(--mint);} .card.yellow{background:var(--yellow);}
+  .card.lilac{background:var(--lilac);} .card.dark{background:var(--ink);color:#fff;}
+  .card.pink{background:var(--pink);color:#fff;}
+  .num{font-family:'Unbounded';font-weight:900;font-size:42px;line-height:1;letter-spacing:-.03em;}
+  .kicker{font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;opacity:.6;margin-top:10px;}
+  .card p{font-size:14px;font-weight:600;line-height:1.5;margin-top:10px;opacity:.85;}
+
+  table{border-collapse:collapse;width:100%;font-size:15px;}
+  th,td{text-align:left;padding:13px 16px;border-bottom:2.5px solid rgba(11,11,13,.15);}
+  th{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.55;}
+  td{font-weight:700;}
+  td.win{background:var(--mint);font-weight:900;}
+  td.lose{opacity:.55;}
+
+  .foot{position:absolute;bottom:34px;left:72px;right:72px;display:flex;justify-content:space-between;
+    align-items:center;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.55;}
+  .ink .foot,.blue .foot{color:rgba(255,255,255,.6);}
+  .bar{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:#fff;padding:16px 72px;
+    display:flex;gap:18px;align-items:center;font-size:13px;font-weight:900;text-transform:uppercase;
+    letter-spacing:.1em;}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--pink);}
+  .mono{font-family:'JetBrains Mono',monospace;}
+</style>
+</head>
+<body>
+
+<!-- 1 — COVER -->
+<div class="slide pink">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill">● AI Build Studio — NL &amp; BE</span>
+  </div>
+  <div class="body">
+    <h1>Wij bouwen<br><span class="tilt">het</span> <span class="outline">systeem.</span></h1>
+    <p class="lead" style="margin-top:26px;">
+      Software die werk weghaalt bij MKB en startups. Eigen code, vaste prijs, vaste datum.
+      Geen advertenties, geen rapporten — alleen systemen die draaien.
+    </p>
+  </div>
+  <div class="bar">
+    <span>Eigen code</span><span class="dot"></span>
+    <span>Vaste prijs</span><span class="dot"></span>
+    <span>Vaste datum</span><span class="dot"></span>
+    <span>kaelo-consulting.com</span>
+  </div>
+</div>
+
+<!-- 2 — HET PROBLEEM -->
+<div class="slide">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill y">01 · Herkenbaar?</span>
+  </div>
+  <div class="body">
+    <h1 class="sm" style="margin-bottom:30px;">2x is <span class="tilt">moeilijker</span> dan 10x.</h1>
+    <div class="cards c3">
+      <div class="card">
+        <div class="num">+ mensen</div>
+        <div class="kicker">Meer handjes</div>
+        <p>Elke groei betaal je met een extra salaris. De marge groeit niet mee.</p>
+      </div>
+      <div class="card">
+        <div class="num">+ uren</div>
+        <div class="kicker">Langer doorwerken</div>
+        <p>Avonden en weekenden erbij. Werkt tot iemand omvalt — en dan sta je stil.</p>
+      </div>
+      <div class="card">
+        <div class="num">+ rapporten</div>
+        <div class="kicker">Nog een adviestraject</div>
+        <p>Een mooi document dat vertelt wat je al wist. Er verandert niets op de werkvloer.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:26px;font-weight:800;">
+      Zo probeert iedereen zijn 2x te halen. En precies zó haal je je 10x nooit.
+    </p>
+  </div>
+  <div class="foot"><span>Kaelo — het probleem</span><span>02</span></div>
+</div>
+
+<!-- 3 — DE OPLOSSING -->
+<div class="slide ink">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill p">02 · De oplossing</span>
+  </div>
+  <div class="body">
+    <h1 class="sm">Niet stapelen.<br><span style="color:var(--pink);">Weghalen.</span></h1>
+    <p class="lead" style="margin-top:22px;">
+      Wij bouwen software die het saaie werk doet. Het werk dat tijd kost, fouten maakt,
+      mensen uitput — en dat niemand mist als het weg is.
+    </p>
+    <div class="cards c3" style="margin-top:30px;">
+      <div class="card mint"><h2>Personeel in zijn kracht</h2><p>Mensen doen weer waar ze goed in zijn, niet wat een systeem kan.</p></div>
+      <div class="card yellow"><h2>Marge omhoog</h2><p>Meer omzet uit dezelfde bezetting. Geen extra loonkosten.</p></div>
+      <div class="card lilac"><h2>Hoofd rustig</h2><p>Een zaak die draait — ook zonder dat jij er staat.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaelo — de oplossing</span><span>03</span></div>
+</div>
+
+<!-- 4 — DE REKENSOM -->
+<div class="slide">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill y">03 · De rekensom</span>
+  </div>
+  <div class="body">
+    <h1 class="sm" style="margin-bottom:26px;">Wat repetitief werk nu kost.</h1>
+    <div class="cards c4">
+      <div class="card"><div class="num">8</div><div class="kicker">Mensen met repetitief werk</div></div>
+      <div class="card"><div class="num">6 u/wk</div><div class="kicker">Per persoon</div></div>
+      <div class="card yellow"><div class="num">2.208</div><div class="kicker">Uur per jaar</div></div>
+      <div class="card pink"><div class="num">€ 99k</div><div class="kicker">Loonkosten per jaar</div></div>
+    </div>
+    <p class="lead" style="margin-top:26px;">
+      Acht mensen × zes uur × 46 werkweken tegen € 45 per uur. Dat is
+      <strong>1,2 FTE aan werk dat niemand mist</strong> — elk jaar opnieuw.
+    </p>
+    <p class="mono" style="font-size:12px;margin-top:14px;opacity:.55;">
+      Indicatie op basis van gemiddelden. In de audit rekenen we met jullie eigen cijfers.
+    </p>
+  </div>
+  <div class="foot"><span>Kaelo — de rekensom</span><span>04</span></div>
+</div>
+
+<!-- 5 — WAT WIJ BOUWEN -->
+<div class="slide blue">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill y">04 · Wat wij bouwen</span>
+  </div>
+  <div class="body">
+    <h1 class="sm" style="margin-bottom:26px;">Vier soorten systemen.</h1>
+    <div class="cards c4">
+      <div class="card dark"><h2 style="color:var(--mint);">Foundation</h2><p>CRM, dashboards, workflows en klant-portalen. Het fundament dat elk bedrijf nodig heeft.</p></div>
+      <div class="card yellow"><h2>Web</h2><p>Marketing-sites, landing pages en portalen. Snel, conversie-gericht, visueel niet te negeren.</p></div>
+      <div class="card mint"><h2>Brand</h2><p>Positionering, brandbook en brand-workflows. Strategie, geen photoshoots.</p></div>
+      <div class="card lilac"><h2>Build</h2><p>Webapps, iOS-apps, SaaS-platformen en AI-agents die werk overnemen.</p></div>
+    </div>
+    <p class="lead" style="margin-top:26px;">
+      Plus AI-inzet bij bestaande teams en inhuur van onze expertise per project of per sprint.
+    </p>
+  </div>
+  <div class="foot"><span>Kaelo — diensten</span><span>05</span></div>
+</div>
+
+<!-- 6 — ZO WERKEN WE -->
+<div class="slide">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill p">05 · Zo werken we</span>
+  </div>
+  <div class="body">
+    <h1 class="sm" style="margin-bottom:26px;">Vier stappen. Geen omwegen.</h1>
+    <div class="cards c4">
+      <div class="card"><div class="num" style="color:var(--pink-hot);">01</div><h2 style="margin-top:12px;">Vertel ons over je bedrijf</h2><p>Een paar korte vragen op de site, in je eigen woorden.</p><div class="kicker" style="margin-top:auto;">± 5 min</div></div>
+      <div class="card"><div class="num" style="color:var(--pink-hot);">02</div><h2 style="margin-top:12px;">Kennismaking + offerte</h2><p>Een gesprek mens-tot-mens, daarna een concrete roadmap.</p><div class="kicker" style="margin-top:auto;">Binnen 5 werkdagen</div></div>
+      <div class="card"><div class="num" style="color:var(--pink-hot);">03</div><h2 style="margin-top:12px;">Dicht op je werkdag</h2><p>Korte demo's, snelle reactie. Bij complexe systemen draaien we mee.</p><div class="kicker" style="margin-top:auto;">Doorlopend</div></div>
+      <div class="card"><div class="num" style="color:var(--pink-hot);">04</div><h2 style="margin-top:12px;">Wij bouwen, jij draait</h2><p>Wekelijkse demo, oplevering op de afgesproken datum.</p><div class="kicker" style="margin-top:auto;">Vaste datum</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaelo — werkwijze</span><span>06</span></div>
+</div>
+
+<!-- 7 — WAT WE BOUWDEN -->
+<div class="slide">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill y">06 · Wat we bouwden</span>
+  </div>
+  <div class="body">
+    <h1 class="sm" style="margin-bottom:24px;">Geen portfolio-praat. Live systemen.</h1>
+    <div class="cards c3">
+      <div class="card yellow">
+        <div class="mono" style="font-size:11px;font-weight:700;">klokworks.nl · live</div>
+        <div style="font-family:'Unbounded';font-weight:900;font-size:34px;margin-top:10px;">KLOK</div>
+        <p>Marktplaats voor werk: vacatures en shifts direct tussen werkgever en werknemer.
+           11,5% in plaats van 25–30% marge. Gratis voor werknemers.</p>
+      </div>
+      <div class="card" style="background:var(--blue);color:#fff;">
+        <div class="mono" style="font-size:11px;font-weight:700;">panvia.nl · live</div>
+        <div style="font-family:'Unbounded';font-weight:900;font-size:34px;margin-top:10px;">Panvia</div>
+        <p>Vastgoed rechtstreeks van eigenaar. Eén vaste prijs, € 0 courtage —
+           bij € 450.000 scheelt dat € 7.273. Platform én huisstijl.</p>
+      </div>
+      <div class="card dark">
+        <div class="mono" style="font-size:11px;font-weight:700;color:var(--mint);">intern · in gebruik</div>
+        <div style="font-family:'Unbounded';font-weight:900;font-size:30px;margin-top:10px;color:var(--mint);">Command Center</div>
+        <p>Onze eigen cockpit: funnel, projecten en AI-drafts met een mens die goedkeurt.
+           Wij draaien zelf op wat we bouwen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaelo — portfolio</span><span>07</span></div>
+</div>
+
+<!-- 8 — DE BELOFTE + VOOR WIE -->
+<div class="slide ink">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill p">07 · De belofte</span>
+  </div>
+  <div class="body">
+    <h1 class="sm">Wat we afspreken,<br><span style="color:var(--pink);">leveren we.</span></h1>
+    <p class="lead" style="margin-top:20px;">
+      Geen vage timelines, geen scope-creep. Eén vaste afspraak per project — datum, prijs,
+      deliverable. Iets werkt niet? Dat gaan we regelen.
+    </p>
+    <div class="cards c2" style="margin-top:28px;">
+      <div class="card mint"><h2>Wel ✓</h2><p>Heel MKB Nederland — installatie, productie, logistiek, groothandel, dienstverlening, zorg, retail. Plus startups met grote doelen.</p></div>
+      <div class="card" style="background:transparent;border-color:rgba(255,255,255,.35);color:#fff;box-shadow:none;"><h2>Niet ✕</h2><p>Pre-revenue startups zonder concreet probleem. En wie een rapport wil — wij leveren werkende software.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaelo — belofte &amp; doelgroep</span><span>08</span></div>
+</div>
+
+<!-- 9 — WAAROM NU -->
+<div class="slide">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill y">08 · Waarom nu</span>
+  </div>
+  <div class="body">
+    <h1 class="sm" style="margin-bottom:24px;">Wachten kost geld dat je al uitgeeft.</h1>
+    <table>
+      <tr><th></th><th>Niets doen</th><th>Extra personeel</th><th>Kaelo</th></tr>
+      <tr><td>Kosten jaar 1</td><td class="lose">€ 99.360 aan saai werk</td><td class="lose">+ € 45.000 loon</td><td class="win">Eenmalige build</td></tr>
+      <tr><td>Kosten jaar 3</td><td class="lose">€ 298.080</td><td class="lose">+ € 135.000</td><td class="win">€ 0 — draait door</td></tr>
+      <tr><td>Wat je overhoudt</td><td class="lose">Hetzelfde probleem</td><td class="lose">Meer mensen te managen</td><td class="win">Eigen systeem, eigen code</td></tr>
+      <tr><td>Schaalt mee</td><td class="lose">✕</td><td class="lose">Alleen met meer loon</td><td class="win">✓ zonder extra kosten</td></tr>
+    </table>
+    <p class="mono" style="font-size:12px;margin-top:16px;opacity:.55;">
+      Op basis van de rekensom op slide 4. In de audit rekenen we met jullie eigen cijfers.
+    </p>
+  </div>
+  <div class="foot"><span>Kaelo — waarom nu</span><span>09</span></div>
+</div>
+
+<!-- 10 — CTA -->
+<div class="slide pink">
+  <div class="top">
+    <div class="logo">kaelo<sup>®</sup></div>
+    <span class="pill">09 · Begin vandaag</span>
+  </div>
+  <div class="body">
+    <h1>Begin met<br><span class="outline">de</span> <span class="tilt">audit.</span></h1>
+    <p class="lead" style="margin-top:24px;">
+      Zes korte vragen, ± 5 minuten. Je krijgt direct een eerste analyse van waar tijd verloren gaat —
+      daarna nemen wij binnen één werkdag contact op. Geen verplichtingen, geen kosten.
+    </p>
+    <div style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;">
+      <span class="pill w">kaelo-consulting.com/start</span>
+      <span class="pill w">hallo@kaelo-consulting.com</span>
+      <span class="pill w">+31 6 21 36 59 90</span>
+    </div>
+  </div>
+  <div class="bar">
+    <span>Kaelo — AI Build Studio</span><span class="dot"></span>
+    <span>NL · BE — remote first</span><span class="dot"></span>
+    <span>2026</span>
+  </div>
+</div>
+
+</body>
+</html>

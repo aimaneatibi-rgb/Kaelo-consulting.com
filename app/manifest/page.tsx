@@ -5,8 +5,16 @@ import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Manifest",
-  description: "Waarom Kaelo bestaat. Een korte uitleg van wat we doen en waarom.",
+  title: "Manifest — waarom Kaelo bestaat",
+  description:
+    "10x is geen 2x met een tandje erbij. Waarom wij software bouwen die werk weghaalt in plaats van er werk bij te stapelen.",
+  alternates: { canonical: "/manifest" },
+  openGraph: {
+    url: "/manifest",
+    title: "Manifest — waarom Kaelo bestaat",
+    description:
+      "10x is geen 2x met een tandje erbij. Je moet werk wéghalen, niet erbij stapelen.",
+  },
 };
 
 const paragrafen = [

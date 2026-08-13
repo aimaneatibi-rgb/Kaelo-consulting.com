@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // absolute titel: anders plakt de template er nog een "— Kaelo" achter
   title: { absolute: "Start de audit — gratis, ± 5 minuten | Kaelo" },
   description:
-    "Zes korte vragen in je eigen woorden. Je krijgt direct een eerste analyse van waar tijd verloren gaat — daarna nemen wij binnen één werkdag contact op.",
+    "Zes korte vragen in je eigen woorden. Je ziet direct waar bij jullie de omzet ligt — daarna nemen wij binnen één werkdag contact op. Gratis, zonder verplichtingen.",
   alternates: { canonical: "/start" },
   openGraph: {
     type: "website",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "/start",
     title: "Start de audit — gratis, ± 5 minuten",
     description:
-      "Zes korte vragen. Direct een eerste analyse van waar tijd verloren gaat in jullie proces.",
+      "Zes korte vragen. Direct een eerste analyse van waar bij jullie de omzet ligt.",
     // expliciet meegeven: een eigen openGraph-blok erft de share-image niet
     images: ["/brand/pink/kaelo-pink-og-1200x630.png"],
   },

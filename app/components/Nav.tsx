@@ -17,10 +17,10 @@ export default function Nav() {
 
         {/* zelfde volgorde en items als de statische pagina's in public/site */}
         <nav className="hidden items-center gap-2 md:flex">
+          <NavLink href="/portfolio">Werk</NavLink>
+          <NavLink href="/#bouwen">Diensten</NavLink>
           <NavLink href="/#aanpak">Aanpak</NavLink>
-          <NavLink href="/#systemen">Systemen</NavLink>
-          <NavLink href="/portfolio">Portfolio</NavLink>
-          <NavLink href="/manifest">Manifest</NavLink>
+          <NavLink href="/over-ons">Over ons</NavLink>
           <NavLink href="/#contact">Contact</NavLink>
         </nav>
 

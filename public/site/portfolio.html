@@ -3,909 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Wat Kaelo bouwde voor KLOK Works, Panvia en de eigen cockpit. Per project: de opdracht, wat we bouwden, hoe we het aanpakten en de schermen uit het systeem.">
-<title>Portfolio — wat we bouwden, en hoe | Kaelo</title>
+<meta name="description" content="Het werk van Kaelo: Klok (marktplaats voor werk), Panvia (vastgoed in eigen hand) en onze eigen cockpit. Geen mockups — live systemen die vandaag omzet draaien.">
+<title>Portfolio — live systemen | Kaelo</title>
 <link rel="canonical" href="https://www.kaelo-consulting.com/portfolio">
-<meta name="theme-color" content="#FF2EB2">
+<meta name="theme-color" content="#0B0B0D">
 <meta name="robots" content="index, follow, max-image-preview:large">
-
-<!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="/brand/pink/kaelo-pink-icon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/brand/pink/kaelo-pink-icon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/brand/pink/kaelo-pink-icon-180.png">
-
-<!-- Open Graph / social & Google -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kaelo">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:url" content="https://www.kaelo-consulting.com/portfolio">
-<meta property="og:title" content="Portfolio — wat we bouwden, en hoe">
-<meta property="og:description" content="KLOK Works, Panvia en onze eigen cockpit. Per project: de opdracht, wat we bouwden, hoe we het aanpakten en de schermen uit het systeem.">
+<meta property="og:title" content="Portfolio — live systemen | Kaelo">
+<meta property="og:description" content="Klok, Panvia en onze eigen cockpit. Geen mockups — live systemen die vandaag omzet draaien.">
 <meta property="og:image" content="https://www.kaelo-consulting.com/brand/pink/kaelo-pink-og-1200x630.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Kaelo — Wij bouwen het systeem. AI Build Studio.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Portfolio — wat we bouwden, en hoe">
-<meta name="twitter:description" content="KLOK Works, Panvia en onze eigen cockpit — met de schermen uit elk systeem.">
-<meta name="twitter:image" content="https://www.kaelo-consulting.com/brand/pink/kaelo-pink-og-1200x630.png">
-
-<!-- Structured data: kruimelpad + de drie projecten -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kaelo-consulting.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.kaelo-consulting.com/portfolio" }
-      ]
-    },
-    {
-      "@type": "CollectionPage",
-      "name": "Portfolio — wat we bouwden, en hoe",
-      "url": "https://www.kaelo-consulting.com/portfolio",
-      "description": "Wat Kaelo bouwde voor KLOK Works, Panvia en de eigen cockpit.",
-      "isPartOf": { "@type": "WebSite", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" },
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "KLOK Works",
-              "url": "https://klokworks.nl",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web",
-              "description": "Marktplaats voor werk: vacatures en shifts direct tussen werkgever en werknemer, zonder uitzendmarges.",
-              "author": { "@type": "Organization", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "Panvia",
-              "url": "https://www.panvia.nl",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web",
-              "description": "Vastgoedplatform waar eigenaren rechtstreeks aan kopers verkopen, tegen één vaste prijs zonder courtage.",
-              "author": { "@type": "Organization", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "Kaelo Command Center",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web",
-              "description": "Interne cockpit met funnel, projecten en AI-drafts waarbij een mens goedkeurt.",
-              "author": { "@type": "Organization", "name": "Kaelo", "url": "https://www.kaelo-consulting.com/" }
-            }
-          }
-        ]
-      }
-    }
-  ]
-}
-</script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Unbounded:wght@500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Unbounded:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site/case.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --pink:#FF2EB2;
-  --pink-hot:#F618A6;
-  --pink-soft:#FFD6EF;
-  --ink:#0B0B0D;
-  --paper:#FFF4FA;
-  --blue:#2E4EFF;
-  --mint:#8FF5C6;
-  --yellow:#F2FF3D;
-  --lilac:#E4C6FF;
-  --max-w:1320px;
-  --r:28px;
-}
-html{scroll-behavior:smooth;}
-::selection{background:var(--yellow);color:var(--ink);}
-body{font-family:'Archivo',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
-
-.pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border-radius:999px;background:var(--mint);color:var(--ink);}
-.pill.pink{background:var(--pink);color:#fff;}
-.pill.yellow{background:var(--yellow);}
-.pill.white{background:#fff;}
-.pill.ink{background:var(--ink);color:#fff;}
-
-/* ==== NAV ==== */
-.nav{position:sticky;top:0;z-index:200;background:var(--pink);transition:box-shadow .3s;}
-.nav.scrolled{box-shadow:0 2px 0 var(--ink);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:var(--max-w);margin:0 auto;}
-.logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:24px;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:baseline;gap:2px;}
-.logo sup{font-size:10px;font-weight:700;transform:translateY(-6px);}
-.nlinks{display:flex;gap:8px;align-items:center;}
-.nlink{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:10px 18px;border-radius:999px;transition:all .2s;}
-.nlink:hover{background:var(--ink);color:var(--pink);}
-.nlink.active{background:var(--ink);color:var(--pink);}
-.ncta{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--ink);color:#fff;padding:12px 24px;border-radius:999px;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
-.ncta:hover{background:var(--yellow);color:var(--ink);transform:rotate(-2deg) scale(1.04);}
-.menu-toggle{display:none;background:var(--ink);border:none;cursor:pointer;padding:12px;border-radius:999px;}
-.menu-toggle span{display:block;width:20px;height:2px;background:#fff;margin:4px 0;}
-
-/* ==== HERO ==== */
-.phero{background:var(--pink);padding:60px 32px 0;position:relative;overflow:hidden;}
-.phero-inner{max-width:var(--max-w);margin:0 auto;}
-.back{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:9px 20px;margin-bottom:26px;transition:all .2s;}
-.back:hover{background:var(--ink);color:var(--pink);transform:translateX(-4px);}
-.phero-h{font-weight:900;font-size:clamp(38px,7vw,100px);line-height:.93;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:26px;}
-.phero-h .white{color:#fff;}
-.phero-h .outline{color:transparent;-webkit-text-stroke:3px var(--ink);}
-.phero-sub{font-size:17px;font-weight:500;line-height:1.6;max-width:620px;}
-.phero-sub strong{background:#fff;padding:1px 7px;border-radius:8px;}
-.jump{display:flex;gap:12px;flex-wrap:wrap;margin:38px 0 0;padding-bottom:60px;}
-.jump-item{display:flex;align-items:center;gap:12px;background:#fff;border:3px solid var(--ink);border-radius:999px;padding:12px 14px 12px 22px;font-weight:800;font-size:14px;box-shadow:4px 4px 0 var(--ink);transition:all .2s;}
-.jump-item:hover{transform:translateY(-4px) rotate(-1.5deg);box-shadow:7px 7px 0 var(--ink);}
-.jump-idx{font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.5;}
-.jump-arr{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;}
-
-/* ==== BAND ==== */
-.band{background:var(--ink);color:#fff;padding:18px 0;overflow:hidden;}
-.band-track{display:flex;animation:scroll 26s linear infinite;width:max-content;}
-.band-item{display:flex;align-items:center;gap:26px;white-space:nowrap;padding-right:26px;}
-.bt{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;}
-.bs{display:inline-block;width:11px;height:11px;background:var(--pink);border-radius:50%;}
-@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-/* ==== PROJECT ==== */
-.proj{padding:90px 32px;border-bottom:3px solid var(--ink);}
-.proj-inner{max-width:var(--max-w);margin:0 auto;}
-.proj:nth-of-type(even){background:#fff;}
-
-/* screen header */
-.screen{border:3px solid var(--ink);border-radius:var(--r);overflow:hidden;box-shadow:10px 10px 0 var(--ink);margin-bottom:44px;}
-.screen-bar{display:flex;align-items:center;gap:8px;padding:14px 20px;border-bottom:3px solid var(--ink);background:#fff;}
-.sdot{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);}
-.surl{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;background:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:5px 16px;margin-left:8px;}
-.slive{margin-left:auto;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:var(--mint);border:2px solid var(--ink);border-radius:999px;padding:5px 14px;}
-.slive.intern{background:var(--lilac);}
-.screen-face{padding:60px 40px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;position:relative;overflow:hidden;}
-.screen-face.klok{background:var(--yellow);}
-.screen-face.panvia{background:var(--blue);color:#fff;}
-.screen-face.cc{background:var(--ink);color:#fff;}
-.smark{font-family:'Unbounded',sans-serif;font-size:clamp(32px,6vw,76px);font-weight:900;letter-spacing:-.035em;line-height:1;}
-.stag{font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
-.screen-face.cc .smark{color:var(--mint);}
-
-/* meta strip */
-.meta{display:grid;grid-template-columns:repeat(4,1fr);border:3px solid var(--ink);border-radius:22px;overflow:hidden;margin-bottom:44px;background:#fff;}
-.meta-cell{padding:22px 24px;border-right:3px solid var(--ink);}
-.meta-cell:last-child{border-right:none;}
-.meta-lbl{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.5;margin-bottom:7px;}
-.meta-val{font-size:14.5px;font-weight:800;line-height:1.35;}
-
-/* story */
-.story{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-bottom:52px;}
-.blk-h{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
-.blk-h::before{content:'';width:26px;height:5px;background:var(--pink);border-radius:999px;}
-.blk-p{font-size:15px;font-weight:500;line-height:1.7;opacity:.85;margin-bottom:14px;}
-.blk-p strong{background:var(--yellow);padding:1px 6px;border-radius:6px;font-weight:800;}
-.built{display:flex;flex-direction:column;}
-.built-item{display:flex;gap:14px;padding:15px 0;border-bottom:2px solid rgba(11,11,13,.12);font-size:14.5px;font-weight:600;line-height:1.5;}
-.built-item:first-child{border-top:2px solid rgba(11,11,13,.12);}
-.built-item b{color:var(--pink-hot);font-weight:900;}
-
-/* how */
-.how{margin-bottom:52px;}
-.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px;}
-.how-step{border:3px solid var(--ink);border-radius:22px;padding:26px 24px;background:var(--paper);box-shadow:5px 5px 0 var(--ink);transition:transform .25s;}
-.how-step:hover{transform:translateY(-6px) rotate(-1deg);}
-.how-step:nth-child(1){background:var(--pink-soft);}
-.how-step:nth-child(2){background:var(--mint);}
-.how-step:nth-child(3){background:var(--yellow);}
-.how-step:nth-child(4){background:var(--lilac);}
-.how-num{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:900;margin-bottom:10px;}
-.how-h{font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:8px;line-height:1.2;}
-.how-p{font-size:13px;font-weight:500;line-height:1.55;opacity:.8;}
-
-/* examples */
-.ex-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px;}
-.ex-h{font-family:'Unbounded',sans-serif;font-size:clamp(22px,2.6vw,32px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;}
-.ex-note{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:.5;}
-.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-.ex-card{border:3px solid var(--ink);border-radius:24px;background:#fff;box-shadow:7px 7px 0 var(--ink);overflow:hidden;}
-.ex-card.wide{grid-column:1/-1;}
-.ex-cap{background:var(--ink);color:#fff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:11px 20px;display:flex;justify-content:space-between;gap:12px;align-items:center;}
-.ex-cap span:last-child{color:var(--mint);}
-.ex-body{padding:24px 22px;}
-
-/* KLOK vacature-kaart */
-.vac{display:flex;gap:14px;align-items:center;border:2.5px solid var(--ink);border-radius:18px;padding:16px 18px;margin-bottom:12px;background:var(--paper);transition:transform .2s;}
-.vac:last-child{margin-bottom:0;}
-.vac:hover{transform:translateX(5px);}
-.vac-ico{width:46px;height:46px;border-radius:14px;background:var(--yellow);border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
-.vac-t{font-weight:900;font-size:15px;line-height:1.2;}
-.vac-s{font-size:12.5px;font-weight:600;opacity:.65;margin-top:3px;}
-.vac-r{margin-left:auto;text-align:right;flex-shrink:0;}
-.vac-pay{font-family:'Unbounded',sans-serif;font-size:13.5px;font-weight:900;white-space:nowrap;}
-.vac-h{font-size:11px;font-weight:700;opacity:.6;margin-top:3px;}
-.vac-badge{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:var(--mint);border:2px solid var(--ink);border-radius:999px;padding:3px 10px;display:inline-block;margin-top:5px;}
-
-/* activiteit feed */
-.feed-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
-.feed-live{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;}
-.live-dot{width:9px;height:9px;border-radius:50%;background:var(--pink);animation:pulse 1.6s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.75);}}
-.feed-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:2px solid rgba(11,11,13,.1);}
-.feed-row:last-child{border-bottom:none;}
-.av{width:36px;height:36px;border-radius:50%;border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;}
-.feed-t{font-size:13.5px;font-weight:700;line-height:1.3;}
-.feed-m{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;opacity:.5;margin-top:3px;text-transform:uppercase;}
-.feed-tag{margin-left:auto;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;border:2px solid var(--ink);border-radius:999px;padding:3px 10px;flex-shrink:0;}
-
-/* vergelijkingstabel */
-.tbl{width:100%;border-collapse:collapse;font-size:13.5px;}
-.tbl th,.tbl td{padding:13px 14px;text-align:left;border-bottom:2px solid rgba(11,11,13,.12);}
-.tbl th{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;opacity:.55;}
-.tbl td{font-weight:700;}
-.tbl td:first-child{font-weight:600;opacity:.7;}
-.tbl .win{background:var(--mint);font-weight:900;}
-.tbl .lose{color:rgba(11,11,13,.55);}
-.tbl tr:last-child td{border-bottom:none;}
-
-/* stat trio */
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.trio-c{border:2.5px solid var(--ink);border-radius:18px;padding:20px 18px;text-align:center;}
-.trio-c.a{background:var(--pink);color:#fff;}
-.trio-c.b{background:var(--yellow);}
-.trio-c.c{background:var(--mint);}
-.trio-n{font-family:'Unbounded',sans-serif;font-size:26px;font-weight:900;line-height:1;}
-.trio-l{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-top:8px;opacity:.75;line-height:1.35;}
-
-/* Panvia pand-kaart */
-.pand{border:2.5px solid var(--ink);border-radius:20px;overflow:hidden;background:var(--paper);}
-.pand-img{height:120px;background:linear-gradient(135deg,var(--blue) 0%,#5B74FF 100%);position:relative;display:flex;align-items:flex-end;padding:14px;}
-.pand-price{background:#fff;border:2.5px solid var(--ink);border-radius:999px;padding:6px 16px;font-family:'Unbounded',sans-serif;font-size:14px;font-weight:900;}
-.pand-flag{position:absolute;top:14px;right:14px;background:var(--mint);border:2.5px solid var(--ink);border-radius:999px;padding:5px 13px;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;}
-.pand-b{padding:16px 18px;}
-.pand-t{font-weight:900;font-size:16px;}
-.pand-c{font-size:13px;font-weight:600;opacity:.65;margin-top:3px;}
-.pand-f{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;margin-top:10px;padding-top:10px;border-top:2px solid rgba(11,11,13,.12);opacity:.7;}
-
-/* de som */
-.som{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
-.som-c{border:2.5px solid var(--ink);border-radius:18px;padding:22px 20px;}
-.som-c.mak{background:var(--paper);}
-.som-c.pan{background:var(--blue);color:#fff;}
-.som-l{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-bottom:8px;}
-.som-n{font-family:'Unbounded',sans-serif;font-size:clamp(26px,3vw,36px);font-weight:900;line-height:1;}
-.som-p{font-size:11.5px;font-weight:600;margin-top:9px;line-height:1.45;opacity:.75;}
-.som-diff{background:var(--yellow);border:2.5px solid var(--ink);border-radius:16px;padding:16px 20px;font-weight:800;font-size:14.5px;text-align:center;}
-.som-diff b{font-family:'Unbounded',sans-serif;font-size:19px;}
-
-/* Command center dashboard */
-.dash{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;}
-.dash-c{border:2.5px solid var(--ink);border-radius:16px;padding:16px 15px;background:var(--paper);}
-.dash-l{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;opacity:.55;}
-.dash-n{font-family:'Unbounded',sans-serif;font-size:23px;font-weight:900;margin-top:7px;line-height:1;}
-.dash-d{font-size:10.5px;font-weight:700;margin-top:6px;color:var(--pink-hot);}
-.draft{border:2.5px solid var(--ink);border-radius:18px;padding:18px;background:var(--paper);}
-.draft-top{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
-.draft-ai{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:var(--lilac);border:2px solid var(--ink);border-radius:999px;padding:4px 12px;}
-.draft-to{font-size:12.5px;font-weight:800;}
-.draft-txt{font-size:13px;font-weight:500;line-height:1.6;opacity:.8;border-left:3px solid var(--pink);padding-left:14px;margin-bottom:14px;}
-.draft-btns{display:flex;gap:9px;flex-wrap:wrap;}
-.dbtn{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;border:2.5px solid var(--ink);border-radius:999px;padding:8px 18px;}
-.dbtn.ok{background:var(--mint);}
-.dbtn.edit{background:#fff;}
-.dbtn.no{background:#fff;opacity:.55;}
-
-/* resultaat */
-.result{margin-top:48px;border:3px solid var(--ink);border-radius:var(--r);background:var(--ink);color:#fff;padding:34px 36px;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;box-shadow:8px 8px 0 var(--pink);}
-.result-h{font-family:'Unbounded',sans-serif;font-size:19px;font-weight:900;text-transform:uppercase;margin-bottom:9px;}
-.result-p{font-size:14.5px;font-weight:500;line-height:1.6;color:rgba(255,255,255,.78);max-width:640px;}
-.result-btn{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;background:var(--pink);color:#fff;padding:17px 28px;border-radius:999px;white-space:nowrap;transition:all .2s;}
-.result-btn:hover{background:var(--yellow);color:var(--ink);transform:rotate(-2deg) scale(1.04);}
-.result-btn.ghost{background:transparent;border:2.5px solid rgba(255,255,255,.35);}
-.result-btns{display:flex;gap:12px;flex-wrap:wrap;}
-
-/* CTA */
-.pcta{background:var(--pink);padding:100px 32px;text-align:center;}
-.pcta-h{font-weight:900;font-size:clamp(40px,6vw,88px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;margin:22px 0 18px;}
-.pcta-h .white{color:#fff;}
-.pcta-p{font-size:16.5px;font-weight:600;max-width:620px;margin:0 auto 38px;line-height:1.6;}
-.pcta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.btn-big{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:20px 34px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;transition:all .25s;border:3px solid var(--ink);}
-.btn-big:hover{background:var(--yellow);color:var(--ink);transform:rotate(-2deg) scale(1.05);}
-.btn-ghost{font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;background:transparent;color:var(--ink);padding:20px 34px;border-radius:999px;border:3px solid var(--ink);display:inline-flex;align-items:center;gap:10px;transition:all .25s;}
-.btn-ghost:hover{background:#fff;transform:rotate(2deg) scale(1.05);}
-
-/* FOOTER */
-footer{background:var(--ink);color:#fff;padding:76px 32px 40px;overflow:hidden;}
-.footer-inner{max-width:var(--max-w);margin:0 auto;}
-.footer-mega{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(52px,15vw,220px);line-height:.9;letter-spacing:-.04em;color:var(--pink);text-align:center;user-select:none;}
-.footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:52px;padding-top:26px;border-top:1.5px solid rgba(255,255,255,.15);}
-.flinks{display:flex;gap:26px;flex-wrap:wrap;}
-.flink{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.7);transition:color .2s;}
-.flink:hover{color:var(--pink);}
-.fcopy{font-size:12px;color:rgba(255,255,255,.45);font-weight:600;}
-
-.reveal{opacity:0;transform:translateY(34px);transition:all .8s cubic-bezier(.2,.7,.2,1);}
-.reveal.in{opacity:1;transform:translateY(0);}
-
+/* Overzicht-specifiek */
+.pf-hero{padding:clamp(140px,18vh,190px) clamp(20px,3vw,40px) clamp(50px,7vh,70px);background:var(--pink);}
+.pf-hero-inner{max-width:var(--max-w);margin:0 auto;}
+.pf-title{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(44px,9vw,132px);letter-spacing:-.03em;text-transform:uppercase;line-height:.95;margin:26px 0 20px;color:var(--ink);}
+.pf-title .outline{color:transparent;-webkit-text-stroke:2.5px var(--ink);}
+.pf-sub{font-size:clamp(15px,1.7vw,19px);font-weight:600;line-height:1.6;max-width:56ch;color:rgba(11,11,13,.8);}
+.pc-logo{width:clamp(48px,4.6vw,64px);height:auto;border-radius:16px;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);margin-bottom:14px;}
+.pcase{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,3.5vw,54px);border:3px solid var(--ink);border-radius:38px;padding:clamp(26px,3.4vw,50px);margin-bottom:clamp(28px,4vh,44px);box-shadow:12px 12px 0 rgba(255,244,250,.14);align-items:center;transition:transform .3s;will-change:transform;}
+.pcase:hover{transform:translateY(-8px);}
+.pcase.klok{background:#E3FF3C;color:#101010;transform:rotate(-.5deg);}
+.pcase.panvia{background:#2438D8;color:#fff;transform:rotate(.5deg);}
+.pcase.cc{background:var(--mint);color:var(--ink);transform:rotate(-.4deg);}
+.pcase:hover{transform:translateY(-8px) rotate(0deg);}
+.pc-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.75;}
+.pc-title{font-family:'Unbounded',sans-serif;font-size:clamp(32px,4.4vw,64px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;margin:12px 0 14px;}
+.pc-desc{font-size:14.5px;font-weight:600;line-height:1.65;opacity:.9;max-width:54ch;}
+.pc-tags{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 8px;}
+.pc-tag{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;border:2px solid currentColor;border-radius:999px;padding:5px 13px;opacity:.85;}
+.pc-stats{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 22px;}
+.pc-stat b{display:block;font-family:'Unbounded',sans-serif;font-size:19px;font-weight:900;letter-spacing:-.01em;}
+.pc-stat span{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;opacity:.65;}
+.pc-link{font-family:'Unbounded',sans-serif;font-size:12.5px;font-weight:700;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:999px;padding:15px 28px;transition:background .25s,color .25s;}
+.pcase:hover .pc-link{background:var(--yellow);color:var(--ink);}
+.pcase .mock-wrap{padding-bottom:24px;}
+.pcase .mock-browser{box-shadow:9px 9px 0 var(--ink);}
+.pcase .mock-view{height:clamp(230px,24vw,340px);}
+.pcase .mock-phone{width:clamp(115px,10vw,158px);}
+.pcase .mock-phone img{height:clamp(220px,20vw,300px);}
+.cc-feed{background:var(--ink);border-radius:22px;border:3px solid var(--ink);box-shadow:9px 9px 0 var(--ink);padding:26px 24px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:2.15;color:#fff;}
+.cc-feed .p{color:var(--pink);}
+.cc-feed .g{color:var(--mint);}
+.cc-feed .t{color:rgba(255,255,255,.4);}
 @media(max-width:1024px){
-  .meta{grid-template-columns:1fr 1fr;}
-  .meta-cell:nth-child(2){border-right:none;}
-  .meta-cell:nth-child(1),.meta-cell:nth-child(2){border-bottom:3px solid var(--ink);}
-  .story{grid-template-columns:1fr;gap:34px;}
-  .how-grid{grid-template-columns:1fr 1fr;}
-  .ex-grid{grid-template-columns:1fr;}
-  .dash{grid-template-columns:1fr;}
-}
-@media(max-width:760px){
-  .nlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--pink);flex-direction:column;padding:20px 32px;gap:4px;border-bottom:3px solid var(--ink);z-index:100;}
-  .nlinks.open{display:flex;}
-  .menu-toggle{display:block;}
-  .ncta{display:none;}
-  .how-grid{grid-template-columns:1fr;}
-  .trio{grid-template-columns:1fr;}
-  .som{grid-template-columns:1fr;}
-  .meta{grid-template-columns:1fr;}
-  .meta-cell{border-right:none;border-bottom:3px solid var(--ink);}
-  .meta-cell:last-child{border-bottom:none;}
-  .screen-face{padding:40px 24px;}
-  .proj{padding:60px 20px;}
-  .vac-r{margin-left:0;text-align:left;width:100%;}
-  .vac{flex-wrap:wrap;}
-  .ex-card.wide .ex-body{overflow-x:auto;}
-  .ex-card.wide .tbl{min-width:520px;}
-}
-@media(max-width:520px){
-  .nav-inner,.phero,.pcta,footer{padding-left:20px;padding-right:20px;}
-  .nlinks{padding:20px;}
-  .proj{padding:52px 16px;}
-  .screen-face{padding:32px 20px;}
-  .screen,.ex-card,.result{box-shadow:6px 6px 0 var(--ink);}
-  .jump-item{width:100%;justify-content:space-between;}
-  .ex-body{padding:20px 16px;}
-  .meta-cell{padding:18px 20px;}
-  .result{padding:26px 22px;}
-  .how-step{padding:22px 20px;}
+  .pcase{grid-template-columns:1fr;}
+  .pcase .mock-wrap{order:-1;}
 }
 </style>
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader"><div class="pre-logo" id="preLogo">kaelo®</div></div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="curDot"></div>
+<div class="cursor-ring" id="curRing"><span class="cur-label" id="curLabel">Bekijk</span></div>
 
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="logo">kaelo<sup>®</sup></a>
     <div class="nlinks" id="nlinks">
+      <a href="/portfolio" class="nlink actief">Werk</a>
+      <a href="/#bouwen" class="nlink">Diensten</a>
       <a href="/#aanpak" class="nlink">Aanpak</a>
-      <a href="/#systemen" class="nlink">Systemen</a>
-      <a href="/portfolio" class="nlink active">Portfolio</a>
-      <a href="/manifest" class="nlink">Manifest</a>
+      <a href="/over-ons" class="nlink">Over ons</a>
       <a href="/#contact" class="nlink">Contact</a>
+      <a href="/start" class="ncta">Start de audit</a>
     </div>
-    <a href="/#contact" class="ncta">Start de audit ↗</a>
-    <button class="menu-toggle" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="phero">
-  <div class="phero-inner">
-    <a href="/" class="back">← Terug naar Kaelo</a>
-    <span class="pill yellow">Portfolio · 3 systemen · 2025—2026</span>
-    <h1 class="phero-h" style="margin-top:24px;">Wat we bouwden.<br><span class="outline">En</span> <span class="white">hoe.</span></h1>
-    <p class="phero-sub">Geen mood-boards en geen "concepten". Dit zijn systemen die dagelijks draaien, met echte gebruikers en echt geld. Per project: <strong>de opdracht</strong>, wat we bouwden, hoe we het aanpakten — en de schermen uit het systeem zelf.</p>
-    <div class="jump">
-      <a href="#klok" class="jump-item"><span class="jump-idx">01</span> KLOK Works <span class="jump-arr">↓</span></a>
-      <a href="#panvia" class="jump-item"><span class="jump-idx">02</span> Panvia <span class="jump-arr">↓</span></a>
-      <a href="#cockpit" class="jump-item"><span class="jump-idx">03</span> Command Center <span class="jump-arr">↓</span></a>
-    </div>
+<header class="pf-hero">
+  <div class="pf-hero-inner">
+    <span class="pill yellow" data-intro>Portfolio — drie systemen, alle drie live</span>
+    <h1 class="pf-title" data-intro>Werk dat <span class="outline">draait.</span></h1>
+    <p class="pf-sub" data-intro>Geen mockups, geen concepten. Drie systemen die vandaag klanten bedienen en omzet draaien — met het merk, de code en de betaalflows door ons gebouwd. Klik erdoorheen en zie precies hoe wij werken.</p>
   </div>
 </header>
 
-<div class="band">
-  <div class="band-track">
-    <div class="band-item"><span class="bt">Marktplaats-platform</span><span class="bs"></span></div>
-    <div class="band-item"><span class="bt">Vastgoedplatform</span><span class="bs"></span></div>
-    <div class="band-item"><span class="bt">AI-cockpit</span><span class="bs"></span></div>
-    <div class="band-item"><span class="bt">Branding</span><span class="bs"></span></div>
-    <div class="band-item"><span class="bt">Betalingen</span><span class="bs"></span></div>
-    <div class="band-item"><span class="bt">Van 0 naar live</span><span class="bs"></span></div>
-  </div>
-</div>
+<!-- CASES -->
+<section class="sec" style="padding-top:20px;" id="cases">
+  <div class="sec-inner">
 
-<!-- ============ 01 · KLOK WORKS ============ -->
-<section class="proj reveal" id="klok">
-  <div class="proj-inner">
-    <div class="screen">
-      <div class="screen-bar">
-        <span class="sdot" style="background:var(--pink);"></span>
-        <span class="sdot" style="background:var(--yellow);"></span>
-        <span class="sdot" style="background:var(--mint);"></span>
-        <span class="surl">klokworks.nl</span>
-        <span class="slive">● Live</span>
-      </div>
-      <div class="screen-face klok">
-        <span class="pill ink">01 · Marktplaats-platform</span>
-        <div class="smark">KLOK</div>
-        <div class="stag">De marktplaats voor werk. Niets meer.</div>
-      </div>
-    </div>
-
-    <div class="meta">
-      <div class="meta-cell"><div class="meta-lbl">Onze rol</div><div class="meta-val">Product, platform &amp; brand — van 0 af aan</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Stack</div><div class="meta-val">Next.js 15 · React 19 · TypeScript · Tailwind · Supabase</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Status</div><div class="meta-val">Live — marktplaats open, app in aanbouw</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Sectoren</div><div class="meta-val">8 · horeca tot bouw, heel NL</div></div>
-    </div>
-
-    <div class="story">
+    <a href="/portfolio/klok" class="pcase klok" id="klok" data-card data-cursor="view">
       <div>
-        <div class="blk-h">De opdracht</div>
-        <p class="blk-p">Uitzendbureaus pakken <strong>25 tot 30% marge</strong> op ieder gewerkt uur. De werkgever betaalt te veel, de werknemer krijgt te weinig, en niemand kan eromheen — omdat er simpelweg geen plek is waar vraag en aanbod elkaar rechtstreeks vinden.</p>
-        <p class="blk-p">De opdracht: bouw die plek. Geen uitzendbureau met een website, maar een échte marktplaats — zoals Funda voor woningen — waar werkgevers en werknemers direct zaken doen. Met één harde eis: het moest voor werknemers voor altijd gratis blijven.</p>
+        <img class="pc-logo" src="/site/img/logo-klok.png" alt="KLOK — merkteken">
+        <span class="pc-kicker">Case /01 — ● Live op klokworks.nl</span>
+        <div class="pc-title">Klok</div>
+        <p class="pc-desc">De marktplaats voor werk. Vacatures en shifts, direct tussen werkgever en werknemer — zonder uitzendmarges. Compleet SaaS-platform: matching, billing-engine met automatische incasso, admin-cockpit én het merk.</p>
+        <div class="pc-tags"><span class="pc-tag">Custom SaaS</span><span class="pc-tag">Merk</span><span class="pc-tag">Billing-engine</span><span class="pc-tag">App op komst</span></div>
+        <div class="pc-stats">
+          <div class="pc-stat"><b>€ 0</b><span>voor werknemers</span></div>
+          <div class="pc-stat"><b>24+</b><span>sectoren</span></div>
+          <div class="pc-stat"><b>14 dgn</b><span>gratis per vacature</span></div>
+        </div>
+        <span class="pc-link">Bekijk de volledige case →</span>
       </div>
+      <div class="mock-wrap">
+        <div class="mock-browser">
+          <div class="mock-bar"><span class="mock-dot" style="background:var(--pink);"></span><span class="mock-dot" style="background:var(--yellow);"></span><span class="mock-dot" style="background:var(--mint);"></span><span class="mock-url">klokworks.nl</span></div>
+          <div class="mock-view"><img src="/site/img/klok-full.jpg" alt="Klok — homepage"></div>
+        </div>
+        <div class="mock-phone" data-phone><span class="mock-notch"></span><img src="/site/img/klok-phone.jpg" alt="Klok — de webapp"></div>
+      </div>
+    </a>
+
+    <a href="/portfolio/panvia" class="pcase panvia" id="panvia" data-card data-cursor="view">
       <div>
-        <div class="blk-h">Wat we bouwden</div>
-        <div class="built">
-          <div class="built-item"><b>→</b> Marktplaats met vacatures én shifts, doorzoekbaar op sector, locatie en beschikbaarheid</div>
-          <div class="built-item"><b>→</b> Dubbele onboarding: werknemersprofiel met compleet cv, plus werkgeversaccount met vacaturebeheer</div>
-          <div class="built-item"><b>→</b> Matching op locatie, ervaring en beschikbaarheid — met een realtime activiteitenfeed die de markt levend maakt</div>
-          <div class="built-item"><b>→</b> Referral-economie: € 1 per gewerkt uur, levenslang, voor wie iemand aanbrengt</div>
-          <div class="built-item"><b>→</b> Prijsmodel in het product: 14 dagen gratis per vacature, daarna staffel van € 195 naar € 149 p/m</div>
-          <div class="built-item"><b>→</b> Volledige merkidentiteit, site, blog en de opzet voor de iOS/Android-app</div>
+        <img class="pc-logo" src="/site/img/logo-panvia.png" alt="Panvia — merkteken">
+        <span class="pc-kicker">Case /02 — ● Live op panvia.nl</span>
+        <div class="pc-title">Panvia</div>
+        <p class="pc-desc">Vastgoed in eigen hand. Kopen en verkopen rechtstreeks van eigenaar — € 0 courtage, één vaste prijs. Platform met kaart-splitview, chat & biedingen, Mollie-betaalflows en een complete huisstijl door ons ontworpen.</p>
+        <div class="pc-tags"><span class="pc-tag">Platform</span><span class="pc-tag">Branding</span><span class="pc-tag">NL + EN</span><span class="pc-tag">Betaalflows</span></div>
+        <div class="pc-stats">
+          <div class="pc-stat"><b>47.786</b><span>kijkers / 30 dagen</span></div>
+          <div class="pc-stat"><b>€ 0</b><span>courtage — ooit</span></div>
+          <div class="pc-stat"><b>43</b><span>pagina's, 2 talen</span></div>
         </div>
+        <span class="pc-link">Bekijk de volledige case →</span>
       </div>
-    </div>
-
-    <div class="how">
-      <div class="blk-h">Hoe we het deden</div>
-      <div class="how-grid">
-        <div class="how-step">
-          <div class="how-num">01</div>
-          <div class="how-h">Model eerst, code daarna</div>
-          <p class="how-p">Eerst het verdienmodel uitgerekend: welke fee houdt het eerlijk én levensvatbaar? Pas toen dat klopte (11,5% i.p.v. 25–30%) zijn we gaan bouwen.</p>
+      <div class="mock-wrap">
+        <div class="mock-browser">
+          <div class="mock-bar"><span class="mock-dot" style="background:var(--pink);"></span><span class="mock-dot" style="background:var(--yellow);"></span><span class="mock-dot" style="background:var(--mint);"></span><span class="mock-url">panvia.nl</span></div>
+          <div class="mock-view"><img src="/site/img/panvia-full.jpg" alt="Panvia — homepage"></div>
         </div>
-        <div class="how-step">
-          <div class="how-num">02</div>
-          <div class="how-h">Het kip-ei-probleem opgelost</div>
-          <p class="how-p">Elke marktplaats start leeg. Daarom eerst vacatures live, shifts pas als de markt vol genoeg is — zodat er vanaf dag één écht werk én genoeg mensen zijn.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">03</div>
-          <div class="how-h">Bouwen in weken, niet kwartalen</div>
-          <p class="how-p">Next.js met Supabase als fundament: auth, database en profielen in dagen staand, zodat alle tijd naar de marktplaats-logica ging.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">04</div>
-          <div class="how-h">Juridisch buiten de deur</div>
-          <p class="how-p">Contracten en loonadministratie via contract-partners. KLOK blijft marktplaats — geen uitzender — en dat scheelt een vergunningentraject.</p>
-        </div>
+        <div class="mock-phone" data-phone><span class="mock-notch"></span><img src="/site/img/panvia-phone.jpg" alt="Panvia — de webapp"></div>
       </div>
-    </div>
+    </a>
 
-    <div class="ex-head">
-      <div class="ex-h">Uit het systeem</div>
-      <div class="ex-note">Schermen zoals ze live staan</div>
-    </div>
-    <div class="ex-grid">
-      <div class="ex-card">
-        <div class="ex-cap"><span>Vacature-feed</span><span>klokworks.nl</span></div>
-        <div class="ex-body">
-          <div class="vac">
-            <div class="vac-ico">🍽️</div>
-            <div>
-              <div class="vac-t">Zelfstandig werkend kok</div>
-              <div class="vac-s">Brasserie Centro · Amsterdam</div>
-              <span class="vac-badge">Vast</span>
-            </div>
-            <div class="vac-r"><div class="vac-pay">€ 2.900–3.400</div><div class="vac-h">36u p/w</div></div>
-          </div>
-          <div class="vac">
-            <div class="vac-ico" style="background:var(--mint);">⚕️</div>
-            <div>
-              <div class="vac-t">Verzorgende IG (nacht)</div>
-              <div class="vac-s">ZorgVitaal · Rotterdam</div>
-              <span class="vac-badge">Vast</span>
-            </div>
-            <div class="vac-r"><div class="vac-pay">€ 2.750–3.250</div><div class="vac-h">28u p/w</div></div>
-          </div>
-          <div class="vac">
-            <div class="vac-ico" style="background:var(--lilac);">🚚</div>
-            <div>
-              <div class="vac-t">Heftruckchauffeur</div>
-              <div class="vac-s">FastLane · Eindhoven</div>
-              <span class="vac-badge">Vast</span>
-            </div>
-            <div class="vac-r"><div class="vac-pay">€ 2.600–2.950</div><div class="vac-h">40u p/w</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ex-card">
-        <div class="ex-cap"><span>Marktplaats-activiteit</span><span>realtime</span></div>
-        <div class="ex-body">
-          <div class="feed-top">
-            <span class="feed-live"><span class="live-dot"></span> Live op de marktplaats</span>
-          </div>
-          <div class="feed-row">
-            <div class="av" style="background:var(--yellow);">BC</div>
-            <div><div class="feed-t">Brasserie Centro plaatste een vacature</div><div class="feed-m">Amsterdam · Horeca · zojuist</div></div>
-            <span class="feed-tag">Vacature</span>
-          </div>
-          <div class="feed-row">
-            <div class="av" style="background:var(--mint);">SK</div>
-            <div><div class="feed-t">Sanne K. maakte haar profiel compleet</div><div class="feed-m">Utrecht · cv compleet · 1 min</div></div>
-            <span class="feed-tag">Werknemer</span>
-          </div>
-          <div class="feed-row">
-            <div class="av" style="background:var(--pink-soft);">ZV</div>
-            <div><div class="feed-t">ZorgVitaal zoekt 3 verzorgenden</div><div class="feed-m">Rotterdam · Zorg · 2 min</div></div>
-            <span class="feed-tag">Vacature</span>
-          </div>
-          <div class="feed-row">
-            <div class="av" style="background:var(--lilac);">MD</div>
-            <div><div class="feed-t">Mehmet D. bewaarde 3 vacatures</div><div class="feed-m">Den Haag · cv compleet · 4 min</div></div>
-            <span class="feed-tag">Werknemer</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ex-card wide">
-        <div class="ex-cap"><span>Het verschil — uitzendbureau vs. marktplaats</span><span>in het product zelf</span></div>
-        <div class="ex-body">
-          <table class="tbl">
-            <tr><th></th><th>Uitzendbureau</th><th>KLOK</th></tr>
-            <tr><td>Type bedrijf</td><td class="lose">Uitzendbureau</td><td class="win">Marktplaats</td></tr>
-            <tr><td>Marge werkgever</td><td class="lose">25–30%</td><td class="win">11,5%</td></tr>
-            <tr><td>Kosten werknemer</td><td>€ 0</td><td class="win">€ 0 — voor altijd</td></tr>
-            <tr><td>Referral-economie</td><td class="lose">✗ geen</td><td class="win">✓ € 1/uur levenslang</td></tr>
-          </table>
-          <div class="trio" style="margin-top:20px;">
-            <div class="trio-c a"><div class="trio-n">€ 1/u</div><div class="trio-l">Levenslang per aangebrachte werknemer</div></div>
-            <div class="trio-c b"><div class="trio-n">14 dgn</div><div class="trio-l">Gratis per geplaatste vacature</div></div>
-            <div class="trio-c c"><div class="trio-n">8</div><div class="trio-l">Sectoren live door heel Nederland</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="result">
+    <div class="pcase cc" id="cc" data-card>
       <div>
-        <div class="result-h">Het resultaat</div>
-        <p class="result-p">Een draaiend marktplaats-platform met eigen code en eigen verdienmodel — geen licenties, geen tussenpersonen. De marktplaats staat open voor werkgevers en werknemers; shifts en de mobiele app staan klaar als volgende fase.</p>
+        <span class="pc-kicker">Case /03 — ● Draait dagelijks, intern</span>
+        <div class="pc-title">Command Center</div>
+        <p class="pc-desc">Onze eigen cockpit: funnel, projecten, outreach en content in één dashboard. AI zet het werk klaar, een mens keurt goed. Wij draaien zelf op wat we voor klanten bouwen — dit is het bewijs.</p>
+        <div class="pc-tags"><span class="pc-tag">Intern systeem</span><span class="pc-tag">Dashboard</span><span class="pc-tag">AI-workflows</span><span class="pc-tag">Human-in-the-loop</span></div>
+        <div class="pc-stats">
+          <div class="pc-stat"><b>1</b><span>dashboard voor alles</span></div>
+          <div class="pc-stat"><b>Dagelijks</b><span>in gebruik</span></div>
+        </div>
       </div>
-      <div class="result-btns">
-        <a href="https://klokworks.nl" target="_blank" rel="noopener" class="result-btn">Bekijk klokworks.nl ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 02 · PANVIA ============ -->
-<section class="proj reveal" id="panvia">
-  <div class="proj-inner">
-    <div class="screen">
-      <div class="screen-bar">
-        <span class="sdot" style="background:var(--pink);"></span>
-        <span class="sdot" style="background:var(--yellow);"></span>
-        <span class="sdot" style="background:var(--mint);"></span>
-        <span class="surl">panvia.nl</span>
-        <span class="slive">● Live</span>
-      </div>
-      <div class="screen-face panvia">
-        <span class="pill yellow">02 · Vastgoedplatform</span>
-        <div class="smark">Panvia</div>
-        <div class="stag">Vastgoed in eigen hand.</div>
+      <div class="cc-feed">
+        <div><span class="t">09:41</span> <span class="p">▸</span> funnel — 3 nieuwe audits binnen</div>
+        <div><span class="t">09:52</span> <span class="p">▸</span> outreach-drafts klaargezet — mens keurt goed</div>
+        <div><span class="t">10:15</span> <span class="p">▸</span> project klok — wekelijkse demo gepland</div>
+        <div><span class="t">10:30</span> <span class="p">▸</span> content ingepland voor volgende week</div>
+        <div><span class="t">10:31</span> <span class="g">✓</span> systeem draait — intern</div>
       </div>
     </div>
 
-    <div class="meta">
-      <div class="meta-cell"><div class="meta-lbl">Onze rol</div><div class="meta-val">Platform, huisstijl, copy &amp; livegang</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Stack</div><div class="meta-val">Eigen HTML/CSS/JS · serverless API · Mollie-betalingen</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Status</div><div class="meta-val">Live op www.panvia.nl</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Bereik</div><div class="meta-val">47.786 kijkers in 30 dagen · 23 plaatsen</div></div>
+    <div class="cta-row">
+      <a href="/start" class="btn-big magnetic">Jouw systeem hiertussen? Start de audit ↗</a>
+      <a href="/" class="btn-ghost magnetic">← Terug naar home</a>
     </div>
-
-    <div class="story">
-      <div>
-        <div class="blk-h">De opdracht</div>
-        <p class="blk-p">Je mág je huis zonder makelaar verkopen — geen wet verbiedt het. Maar in de praktijk kán het niet: alle zichtbaarheid loopt via de makelaarsportals. Dus huur je een kantoor in en draag je <strong>1,2 tot 1,6% van je verkoopprijs</strong> af voor werk dat je grotendeels zelf doet.</p>
-        <p class="blk-p">De opdracht: bouw de directe route. Een plek waar eigenaren zelf hun pand plaatsen, zelf met kopers praten en zelf onderhandelen — voor één bedrag dat vooraf vaststaat en niet meegroeit met de opbrengst.</p>
-      </div>
-      <div>
-        <div class="blk-h">Wat we bouwden</div>
-        <div class="built">
-          <div class="built-item"><b>→</b> Compleet aanbodplatform: pand plaatsen, foto's, kenmerken en vraagprijs — binnen een dag online</div>
-          <div class="built-item"><b>→</b> Betaalflow met Mollie: € 895 per 24 weken, of gespreid per 4 weken (€ 150) of per week (€ 37,50)</div>
-          <div class="built-item"><b>→</b> Kopersaccounts met abonnement (€ 12,95 p/m) zodat eigenaren alleen serieuze kopers spreken</div>
-          <div class="built-item"><b>→</b> De courtage-rekentool: jouw verkoopprijs, jouw percentage — en direct zichtbaar wat je bespaart</div>
-          <div class="built-item"><b>→</b> Zakelijke tak voor projecten van 10+ eenheden, plus buitenland-aanbod</div>
-          <div class="built-item"><b>→</b> Huisstijl "Open Huis", alle copy, gidsen en de SEO-fundering voor organische vindbaarheid</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="how">
-      <div class="blk-h">Hoe we het deden</div>
-      <div class="how-grid">
-        <div class="how-step">
-          <div class="how-num">01</div>
-          <div class="how-h">Positie scherp krijgen</div>
-          <p class="how-p">Niet "goedkopere makelaar" worden, maar categorie verlaten: Panvia ís geen makelaar. Die ene zin bepaalde het hele platform, de prijs en de toon.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">02</div>
-          <div class="how-h">Rekenen als verkoopargument</div>
-          <p class="how-p">In plaats van claims: een rekentool waarin de bezoeker zijn eigen bedragen invult. Bij € 450.000 zie je € 8.168 naast € 895 staan. Dat overtuigt zichzelf.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">03</div>
-          <div class="how-h">Snel boven frameworks</div>
-          <p class="how-p">Eigen HTML/CSS/JS met een serverless API-laag: laadt vrijwel instant, scoort in Google en heeft geen buildketen die onderhoud vraagt.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">04</div>
-          <div class="how-h">Eerlijk vergelijken, ook waar we verliezen</div>
-          <p class="how-p">Een vergelijkingstabel met drie routes — inclusief wanneer een makelaar beter past. Dat wint meer vertrouwen dan alleen je eigen kolom.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="ex-head">
-      <div class="ex-h">Uit het systeem</div>
-      <div class="ex-note">Schermen zoals ze live staan</div>
-    </div>
-    <div class="ex-grid">
-      <div class="ex-card">
-        <div class="ex-cap"><span>Pand in het aanbod</span><span>panvia.nl/aanbod</span></div>
-        <div class="ex-body">
-          <div class="pand">
-            <div class="pand-img">
-              <span class="pand-flag">Van eigenaar</span>
-              <span class="pand-price">€ 450.000 k.k.</span>
-            </div>
-            <div class="pand-b">
-              <div class="pand-t">Meidoornlaan 14</div>
-              <div class="pand-c">Utrecht</div>
-              <div class="pand-f">124 m² · 1988 · Label B</div>
-            </div>
-          </div>
-          <div class="trio" style="margin-top:16px;">
-            <div class="trio-c b"><div class="trio-n">24</div><div class="trio-l">Panden online</div></div>
-            <div class="trio-c c"><div class="trio-n">23</div><div class="trio-l">Plaatsen, tot Jávea</div></div>
-            <div class="trio-c a"><div class="trio-n">€ 0</div><div class="trio-l">Courtage betaald, ooit</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ex-card">
-        <div class="ex-cap"><span>De som — courtage vs. vaste prijs</span><span>rekentool</span></div>
-        <div class="ex-body">
-          <div class="som">
-            <div class="som-c mak">
-              <div class="som-l">Via een makelaar</div>
-              <div class="som-n">€ 8.168</div>
-              <p class="som-p">1,5% courtage over € 450.000, incl. btw. Groeit mee met je verkoopprijs.</p>
-            </div>
-            <div class="som-c pan">
-              <div class="som-l">Via Panvia</div>
-              <div class="som-n">€ 895</div>
-              <p class="som-p">24 weken online, excl. btw. Vooraf bekend, verandert niet.</p>
-            </div>
-          </div>
-          <div class="som-diff">Dat verschil is van jou: <b>€ 7.273</b></div>
-        </div>
-      </div>
-
-      <div class="ex-card wide">
-        <div class="ex-cap"><span>Drie routes naast elkaar — ook waar wij niet winnen</span><span>bij € 450.000</span></div>
-        <div class="ex-body">
-          <table class="tbl">
-            <tr><th></th><th>Panvia</th><th>Internetmakelaar</th><th>Traditionele makelaar</th></tr>
-            <tr><td>Wat je betaalt</td><td class="win">€ 895 / 24 weken</td><td>€ 495–1.250 + pakketten</td><td class="lose">± € 8.168</td></tr>
-            <tr><td>Wie praat met kopers</td><td class="win">Jij, rechtstreeks</td><td>Jij, via hun systeem</td><td class="lose">De makelaar</td></tr>
-            <tr><td>Wie bepaalt de prijs</td><td class="win">Jij</td><td>Jij</td><td class="lose">Samen met de makelaar</td></tr>
-            <tr><td>Begeleiding</td><td>Checklists + route naar notaris</td><td>Beperkt, per pakket</td><td class="win">Volledig traject</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="result">
-      <div>
-        <div class="result-h">Het resultaat</div>
-        <p class="result-p">Een live vastgoedplatform met eigen betaalflow, kopersabonnementen en een huisstijl die staat — bezocht door 47.786 kijkers in de afgelopen 30 dagen, met aanbod van Groningen tot Jávea.</p>
-      </div>
-      <div class="result-btns">
-        <a href="https://www.panvia.nl" target="_blank" rel="noopener" class="result-btn">Bekijk panvia.nl ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 03 · COMMAND CENTER ============ -->
-<section class="proj reveal" id="cockpit">
-  <div class="proj-inner">
-    <div class="screen">
-      <div class="screen-bar">
-        <span class="sdot" style="background:var(--pink);"></span>
-        <span class="sdot" style="background:var(--yellow);"></span>
-        <span class="sdot" style="background:var(--mint);"></span>
-        <span class="surl">localhost:4000</span>
-        <span class="slive intern">● Intern</span>
-      </div>
-      <div class="screen-face cc">
-        <span class="pill pink">03 · AI-cockpit</span>
-        <div class="smark">Command Center</div>
-        <div class="stag">Wij draaien zelf op wat we bouwen.</div>
-      </div>
-    </div>
-
-    <div class="meta">
-      <div class="meta-cell"><div class="meta-lbl">Onze rol</div><div class="meta-val">Eigen product — opdrachtgever én bouwer</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Stack</div><div class="meta-val">Next.js 16 · React 19 · Tailwind 4 · Claude API</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Status</div><div class="meta-val">In dagelijks gebruik, niet publiek</div></div>
-      <div class="meta-cell"><div class="meta-lbl">Waarom hier</div><div class="meta-val">Dit is precies wat we voor klanten bouwen</div></div>
-    </div>
-
-    <div class="story">
-      <div>
-        <div class="blk-h">De opdracht</div>
-        <p class="blk-p">Twee bedrijven runnen betekent tien tabbladen, drie spreadsheets en een hoop werk dat niemand mist als het weg is: leads bijhouden, opvolging schrijven, projecten najagen, content plannen.</p>
-        <p class="blk-p">Dus bouwden we voor onszelf wat we voor klanten bouwen: <strong>één cockpit</strong> waarin AI het voorwerk doet en een mens de knop indrukt. Zo weten we uit ervaring wat wél werkt op de werkvloer — en wat AI-hype is.</p>
-      </div>
-      <div>
-        <div class="blk-h">Wat we bouwden</div>
-        <div class="built">
-          <div class="built-item"><b>→</b> Funnel-overzicht: elke lead met status, waarde en eerstvolgende actie in beeld</div>
-          <div class="built-item"><b>→</b> Outreach-drafts die AI schrijft, met de mens als verplichte laatste stap — nooit automatisch versturen</div>
-          <div class="built-item"><b>→</b> Projectenbord over beide bedrijven heen, met deadlines en opleverdata</div>
-          <div class="built-item"><b>→</b> Content- en teamplanning naast elkaar, zodat niets dubbel gebeurt</div>
-          <div class="built-item"><b>→</b> Claude direct in het systeem: analyseren, schrijven en samenvatten binnen de context van ons eigen werk</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="how">
-      <div class="blk-h">Hoe we het deden</div>
-      <div class="how-grid">
-        <div class="how-step">
-          <div class="how-num">01</div>
-          <div class="how-h">Het saaie werk eerst</div>
-          <p class="how-p">Niet beginnen bij de mooiste feature, maar bij het werk dat de meeste tijd kost. Dat is waar automatisering direct terugverdient.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">02</div>
-          <div class="how-h">Human-in-the-loop als regel</div>
-          <p class="how-p">AI stelt voor, de mens beslist. Alles wat naar buiten gaat, passeert een goedkeurknop — precies zoals we het bij klanten inrichten.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">03</div>
-          <div class="how-h">Eén cockpit, geen tool-salade</div>
-          <p class="how-p">Geen zeven abonnementen aan elkaar knopen. Eén systeem, eigen code, dat precies onze manier van werken volgt.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">04</div>
-          <div class="how-h">Zelf gebruiken wat we verkopen</div>
-          <p class="how-p">We draaien er dagelijks op. Wat hier faalt, komt niet bij een klant terecht — en wat hier werkt, weten we zeker.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="ex-head">
-      <div class="ex-h">Uit het systeem</div>
-      <div class="ex-note">Onze eigen cockpit</div>
-    </div>
-    <div class="ex-grid">
-      <div class="ex-card">
-        <div class="ex-cap"><span>Dashboard</span><span>vandaag</span></div>
-        <div class="ex-body">
-          <div class="dash">
-            <div class="dash-c"><div class="dash-l">Funnel</div><div class="dash-n">12</div><div class="dash-d">4 wachten op actie</div></div>
-            <div class="dash-c"><div class="dash-l">Projecten</div><div class="dash-n">5</div><div class="dash-d">2 leveren deze week</div></div>
-            <div class="dash-c"><div class="dash-l">Drafts</div><div class="dash-n">7</div><div class="dash-d">klaar voor review</div></div>
-          </div>
-          <div class="dash" style="grid-template-columns:1fr;margin-bottom:0;">
-            <div class="dash-c" style="background:var(--mint);">
-              <div class="dash-l">Eerstvolgende actie</div>
-              <div class="dash-n" style="font-size:16px;line-height:1.35;">Offerte nabellen — installatiebedrijf Midden-NL</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ex-card">
-        <div class="ex-cap"><span>Outreach-draft — human in the loop</span><span>AI schrijft, mens keurt</span></div>
-        <div class="ex-body">
-          <div class="draft">
-            <div class="draft-top">
-              <span class="draft-ai">⚡ Door AI opgesteld</span>
-              <span class="draft-to">→ Installatiebedrijf, 24 medewerkers</span>
-            </div>
-            <p class="draft-txt">"Jullie plannen de buitendienst nog met een gedeelde agenda en losse appjes. Wij bouwden voor een vergelijkbaar bedrijf een systeem dat de offerteflow en planning aan elkaar knoopt — vaste prijs, vaste datum. Zal ik laten zien hoe dat er bij jullie uit zou zien?"</p>
-            <div class="draft-btns">
-              <span class="dbtn ok">✓ Goedkeuren &amp; versturen</span>
-              <span class="dbtn edit">Aanpassen</span>
-              <span class="dbtn no">Weg</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="result">
-      <div>
-        <div class="result-h">Het resultaat</div>
-        <p class="result-p">Onze eigen administratie draait op één systeem in plaats van tien tabbladen — en het is meteen onze showcase: als je wilt zien hoe AI-inzet er in de praktijk uitziet, laten we dit gewoon zien in een gesprek.</p>
-      </div>
-      <div class="result-btns">
-        <a href="/#contact" class="result-btn">Laat het me zien ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="pcta reveal">
-  <span class="pill yellow">Jouw project</span>
-  <h2 class="pcta-h">Volgende<br><span class="white">systeem?</span></h2>
-  <p class="pcta-p">Vertel wat er bij jullie blijft liggen. Binnen vijf werkdagen ligt er een concrete roadmap met vaste prijs en vaste opleverdatum.</p>
-  <div class="pcta-btns">
-    <a href="/#contact" class="btn-big">Start de audit ↗</a>
-    <a href="/#systemen" class="btn-ghost">Bekijk wat we doen</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-mega">kaelo®</div>
-    <div class="footer-row">
-      <div style="font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.06em;">Kaelo ©2026 — AI Build Studio</div>
-      <div class="flinks">
-        <a href="/#aanpak" class="flink">Aanpak</a>
-        <a href="/#systemen" class="flink">Systemen</a>
-        <a href="/portfolio" class="flink">Portfolio</a>
-        <a href="/manifest" class="flink">Manifest</a>
-        <a href="/start" class="flink">Audit</a>
-        <a href="/#contact" class="flink">Contact</a>
-      </div>
-      <div class="fcopy">Wij bouwen het systeem. — NL · BE · Remote first</div>
+    <div class="fcopy">Kaelo ©2026 — AI Build Studio</div>
+    <div class="flinks">
+      <a href="/portfolio" class="flink">Werk</a>
+      <a href="/#bouwen" class="flink">Diensten</a>
+      <a href="/over-ons" class="flink">Over ons</a>
+      <a href="/start" class="flink">Audit</a>
+      <a href="/#contact" class="flink">Contact</a>
     </div>
+    <div class="fcopy">Wij bouwen het systeem.</div>
   </div>
 </footer>
 
-<script>
-document.querySelectorAll('.band-track').forEach(t => { t.innerHTML += t.innerHTML; });
-
-const menuBtn = document.getElementById('menuBtn');
-const nlinks = document.getElementById('nlinks');
-if(menuBtn){
-  menuBtn.addEventListener('click', () => nlinks.classList.toggle('open'));
-  nlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nlinks.classList.remove('open')));
-}
-
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), {passive:true});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); } });
-}, { threshold: 0.05 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+<script src="/site/case.js"></script>
 
 </body>
 </html>

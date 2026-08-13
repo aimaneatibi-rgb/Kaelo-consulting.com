@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     template: "%s — Kaelo",
   },
   description:
-    "Wij bouwen AI-systemen die werk weghalen. Eigen code, vaste prijs, vaste datum. Voor MKB-bedrijven die richting 10x willen.",
+    "Wij bouwen software die je team efficiënter laat werken en je omzet laat groeien. Eigen code, vaste prijs, vaste datum. Voor MKB en startups die geloven in innovatie.",
   openGraph: {
     title: "Kaelo — Wij bouwen het systeem",
     description:
-      "AI-systemen die werk weghalen. Eigen code, vaste prijs, vaste datum.",
+      "Software die je team efficiënter laat werken en je omzet laat groeien. Eigen code, vaste prijs, vaste datum.",
     type: "website",
     locale: "nl_NL",
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kaelo — Wij bouwen het systeem",
     description:
-      "AI-systemen die werk weghalen. Eigen code, vaste prijs, vaste datum.",
+      "Software die je team efficiënter laat werken en je omzet laat groeien. Eigen code, vaste prijs, vaste datum.",
   },
 };
 

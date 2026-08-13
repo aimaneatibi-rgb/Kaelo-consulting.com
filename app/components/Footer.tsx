@@ -17,10 +17,10 @@ export default function Footer() {
             Kaelo ©2026 — AI Build Studio
           </p>
           <nav className="flex flex-wrap gap-6">
+            <FooterLink href="/portfolio">Werk</FooterLink>
+            <FooterLink href="/#bouwen">Diensten</FooterLink>
             <FooterLink href="/#aanpak">Aanpak</FooterLink>
-            <FooterLink href="/#systemen">Systemen</FooterLink>
-            <FooterLink href="/portfolio">Portfolio</FooterLink>
-            <FooterLink href="/manifest">Manifest</FooterLink>
+            <FooterLink href="/over-ons">Over ons</FooterLink>
             <FooterLink href="/start">Audit</FooterLink>
             <FooterLink href="/#contact">Contact</FooterLink>
           </nav>

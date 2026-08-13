@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
       beforeFiles: [
         { source: "/", destination: "/site/index.html" },
         { source: "/portfolio", destination: "/site/portfolio.html" },
+        { source: "/portfolio/klok", destination: "/site/klok.html" },
+        { source: "/portfolio/panvia", destination: "/site/panvia.html" },
+        { source: "/over-ons", destination: "/site/over-ons.html" },
       ],
       afterFiles: [],
       fallback: [],
@@ -26,9 +29,10 @@ const nextConfig: NextConfig = {
   // De cases staan nu op de portfolio-pagina i.p.v. losse /werk-routes.
   async redirects() {
     return [
+      { source: "/manifest", destination: "/over-ons", permanent: false },
       { source: "/werk", destination: "/portfolio", permanent: false },
-      { source: "/werk/klok", destination: "/portfolio#klok", permanent: false },
-      { source: "/werk/panvia", destination: "/portfolio#panvia", permanent: false },
+      { source: "/werk/klok", destination: "/portfolio/klok", permanent: false },
+      { source: "/werk/panvia", destination: "/portfolio/panvia", permanent: false },
     ];
   },
 };
